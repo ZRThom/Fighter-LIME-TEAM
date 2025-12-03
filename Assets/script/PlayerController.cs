@@ -95,8 +95,10 @@ public class PlayerController2D : MonoBehaviour
         }
 
         // 4. Flip
-        if (x > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (x < 0) transform.localScale = new Vector3(-1, 1, 1);
+        Vector3 scale = transform.localScale;
+        if (x > 0) scale.x = Mathf.Abs(scale.x);
+        else if (x < 0) scale.x = -Mathf.Abs(scale.x);
+        transform.localScale = scale;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
