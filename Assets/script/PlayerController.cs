@@ -30,6 +30,7 @@ public class PlayerController2D : MonoBehaviour
     private BoxCollider2D col;
     [SerializeField] private bool isCrouching;
     [SerializeField] bool Grounded;
+    [SerializeField] private bool isGrounded;
 
 
     private void Awake()
@@ -86,11 +87,11 @@ public class PlayerController2D : MonoBehaviour
         }
 
         float currentSpeed = isCrouching ? crouchSpeed : speed;
-        rb.velocity = new Vector2(x * currentSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(x * currentSpeed, rb.linearVelocity.y);
         // 3. Saut
         if (Input.GetKeyDown(jumpKey) && Grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
         // 4. Flip
