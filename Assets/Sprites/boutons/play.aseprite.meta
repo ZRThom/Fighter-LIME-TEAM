@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: play
     originalName: 
-    pivot: {x: 0.5, y: -1.1}
+    pivot: {x: 0.4791667, y: -1.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -167,8 +167,8 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 8
-        y: 22
+        x: 9
+        y: 30
         width: 48
         height: 20
       spriteId: f76b4f55de469534ca4f70c79ed4ef9f
