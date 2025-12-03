@@ -9,7 +9,7 @@ public class PlayerController2D : MonoBehaviour
     [Header("Mouvement")]
     [SerializeField] private float speed = 8f;
     [SerializeField] private float crouchSpeed = 4f;
-    [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private float jumpForce = 7f;
 
     [Header("Contrôles")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -28,10 +28,8 @@ public class PlayerController2D : MonoBehaviour
     // Variables privées
     private Rigidbody2D rb;
     private BoxCollider2D col;
-    private bool isGrounded;
-    private bool isCrouching;
-    private int jumpCount = 0;
-    private int maxJumps = 1;
+    [SerializeField] private bool isCrouching;
+    [SerializeField] bool Grounded;
 
 
     private void Awake()
@@ -59,12 +57,8 @@ public class PlayerController2D : MonoBehaviour
     {
         // 1. Vérifier le sol
         bool wasGrounded = isGrounded;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        Grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        if (isGrounded && rb.linearVelocity.y <= 0.1f)
-        {
-            jumpCount = 0;
-        }
 
         // --- BLOCAGE DES MOUVEMENTS ---
         if (!CanMove)
@@ -78,7 +72,7 @@ public class PlayerController2D : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
 
         // Accroupissement
-        if (isGrounded && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
+        if (Grounded && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             isCrouching = true;
             col.size = crouchSize;
@@ -92,20 +86,31 @@ public class PlayerController2D : MonoBehaviour
         }
 
         float currentSpeed = isCrouching ? crouchSpeed : speed;
-        rb.linearVelocity = new Vector2(x * currentSpeed, rb.linearVelocity.y);
-
+        rb.velocity = new Vector2(x * currentSpeed, rb.velocity.y);
         // 3. Saut
-        if (Input.GetKeyDown(jumpKey) && jumpCount < maxJumps && !isCrouching)
+        if (Input.GetKeyDown(jumpKey) && Grounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            jumpCount++;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
         // 4. Flip
         if (x > 0) transform.localScale = new Vector3(1, 1, 1);
         else if (x < 0) transform.localScale = new Vector3(-1, 1, 1);
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grounded"))
+        {
+            Grounded = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grounded"))
+        {
+            Grounded = false;
+        }
+    }
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
