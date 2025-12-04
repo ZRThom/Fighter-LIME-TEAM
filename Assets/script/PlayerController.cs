@@ -6,8 +6,7 @@ public class PlayerController2D : MonoBehaviour
     public static PlayerController2D instance;
 
     [Header("---- IMPORTANT ----")]
-    [Tooltip("GLISSE ICI l'objet qui contient l'image de ton personnage (le Sprite Renderer)")]
-    public SpriteRenderer visualRenderer; // C'est ici qu'on force le lien
+    public SpriteRenderer visualRenderer;
 
     [Header("États")]
     public bool CanMove = true;
@@ -29,7 +28,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private float attackRate = 2f;
     private float nextAttackTime = 0f;
 
-    [Header("Effets Visuels")]
+    [Header("Effets Visuels (Attaque)")]
     public GameObject attackEffectPrefab; 
     public Sprite[] attackSprites;        
     public float frameRate = 0.05f;       
@@ -45,7 +44,7 @@ public class PlayerController2D : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D col;
-    private Animator anim;
+    private Animator anim; // On réutilise l'animator standard pour ne rien casser
     
     [SerializeField] private bool isCrouching;
     [SerializeField] bool Grounded;
@@ -60,16 +59,12 @@ public class PlayerController2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>(); // Récupération automatique
 
-        // Sécurité : Si tu as oublié de remplir la case, on essaie de le trouver
         if (visualRenderer == null) 
         {
             visualRenderer = GetComponent<SpriteRenderer>();
-            // Si toujours vide, on cherche dans les enfants
             if (visualRenderer == null) visualRenderer = GetComponentInChildren<SpriteRenderer>();
-            
-            if (visualRenderer == null) Debug.LogError("ERREUR CRITIQUE : Je ne trouve pas le SpriteRenderer ! Glisse-le manuellement dans l'inspecteur.");
         }
 
         col.size = standingSize;
@@ -77,12 +72,13 @@ public class PlayerController2D : MonoBehaviour
 
     void Update()
     {
+        // Vérification du sol
         if (groundCheck != null)
             Grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (!CanMove) { rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); return; }
 
-        // ATTAQUE
+        // --- ATTAQUE ---
         if (Input.GetKeyDown(attackKey))
         {
             if (CanAttack && Time.time >= nextAttackTime)
@@ -92,10 +88,10 @@ public class PlayerController2D : MonoBehaviour
             }
         }
 
-        // MOUVEMENT
+        // --- MOUVEMENT ---
         float x = Input.GetAxisRaw("Horizontal");
 
-        // ACCROUPISSEMENT
+        // --- ACCROUPISSEMENT ---
         if (Grounded && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
         {
             isCrouching = true;
@@ -107,71 +103,78 @@ public class PlayerController2D : MonoBehaviour
             col.size = standingSize;
         }
 
+        // Application de la vitesse
         float currentSpeed = isCrouching ? crouchSpeed : speed;
         rb.linearVelocity = new Vector2(x * currentSpeed, rb.linearVelocity.y);
 
-        // SAUT
+        // --- SAUT ---
         if (Input.GetKeyDown(jumpKey) && Grounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        // DIRECTION DU REGARD
+        // --- DIRECTION DU REGARD ---
         if (x > 0) transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         else if (x < 0) transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
-        // ANIMATION (Seulement si le renderer est visible, sinon ça veut dire qu'on attaque)
+        // --- ANIMATION STANDARD ---
+        // On envoie la vitesse à l'Animator pour qu'il gère Idle/Run tout seul
         if (anim != null && visualRenderer.enabled)
         {
             anim.SetFloat("Speed", Mathf.Abs(x));
             anim.SetBool("IsJumping", !Grounded);
+            anim.SetBool("IsCrouching", isCrouching);
         }
     }
 
     void Attack()
     {
-        GestionEffetAttaqueManuel();
-        if (attackPoint != null) Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        StartCoroutine(PerformAttackSequence());
     }
 
-    void GestionEffetAttaqueManuel()
+    IEnumerator PerformAttackSequence()
     {
+        // 1. Dégâts immédiats (ou retardés selon tes besoins)
+        if (attackPoint != null) Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // 2. Si on a des effets visuels configurés
         if (attackEffectPrefab != null && attackSprites.Length > 0)
         {
-            // 1. ON DESACTIVE L'IMAGE DU JOUEUR (IDLE/RUN)
+            // On cache le sprite du joueur (l'Animator tourne toujours mais on ne voit pas le perso)
             if (visualRenderer != null) visualRenderer.enabled = false;
 
-            // 2. ON CRÉE L'EFFET D'ATTAQUE
+            // Création de l'effet
             GameObject effet = Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
             effet.transform.SetParent(this.transform);
             effet.transform.localScale = new Vector3(effectSizeMultiplier, effectSizeMultiplier, 1f);
-            effet.transform.localPosition = effectOffset; 
+            effet.transform.localPosition = effectOffset;
 
             SpriteRenderer srEffet = effet.GetComponent<SpriteRenderer>();
-            
-            // On s'assure que l'effet est visible au-dessus de tout
             if (srEffet != null && visualRenderer != null) srEffet.sortingOrder = visualRenderer.sortingOrder + 1;
 
-            StartCoroutine(AnimateEffectRoutine(srEffet, effet));
-        }
-    }
+            // Animation de l'effet frame par frame
+            foreach (Sprite frame in attackSprites)
+            {
+                if (srEffet != null) srEffet.sprite = frame;
+                yield return new WaitForSeconds(frameRate);
+            }
 
-    IEnumerator AnimateEffectRoutine(SpriteRenderer sr, GameObject objToDestroy)
-    {
-        foreach (Sprite frame in attackSprites)
+            // Nettoyage
+            Destroy(effet);
+            
+            // On réaffiche le joueur
+            if (visualRenderer != null) visualRenderer.enabled = true;
+        }
+        else
         {
-            if(sr != null) sr.sprite = frame;
-            yield return new WaitForSeconds(frameRate);
+            // Sécurité : si pas d'effets, on attend juste un peu pour ne pas spammer
+            yield return new WaitForSeconds(0.2f);
         }
-
-        // 3. UNE FOIS FINI, ON RÉACTIVE L'IMAGE DU JOUEUR
-        if (visualRenderer != null) visualRenderer.enabled = true;
-
-        if(objToDestroy != null) Destroy(objToDestroy);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) { if (collision.gameObject.CompareTag("Grounded")) Grounded = true; }
     private void OnCollisionExit2D(Collision2D collision) { if (collision.gameObject.CompareTag("Grounded")) Grounded = false; }
+    
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null) { Gizmos.color = Color.red; Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius); }

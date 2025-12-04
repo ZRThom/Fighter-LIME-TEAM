@@ -415,6 +415,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+--- !u!1 &96804151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96804152}
+  m_Layer: 3
+  m_Name: AttackPoint
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96804152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96804151}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.407, y: -0.103, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 127899073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &127899069
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +539,7 @@ Transform:
   m_Children:
   - {fileID: 1321555340}
   - {fileID: 1680573847}
+  - {fileID: 96804152}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &127899074
@@ -522,16 +554,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f815d8089f69c514ea1f4758dc3929f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  visualRenderer: {fileID: 1321555341}
   CanMove: 1
   CanAttack: 1
   speed: 3
   crouchSpeed: 4
   jumpForce: 5
   jumpKey: 32
+  attackKey: 323
+  attackPoint: {fileID: 96804152}
+  attackRange: 0.1
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  attackRate: 2
+  attackEffectPrefab: {fileID: 4126532597948701765, guid: acf9d20f31b7b17408984e7a3b85a99d, type: 3}
+  attackSprites:
+  - {fileID: -729706501800808540, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: 5848376267094942988, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: 4217395768250826065, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: -3612864934616726843, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: 4937481791546425679, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: -6155941379534094662, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: -6799777295461468743, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: -354192115356467317, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: -4895130122966084533, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  frameRate: 0.05
+  effectSizeMultiplier: 3.28
+  effectOffset: {x: -0.1, y: -1.09}
   standingSize: {x: 1, y: 1}
-  standingOffset: {x: 0, y: 0}
   crouchSize: {x: 1, y: 1}
-  crouchOffset: {x: 0, y: -0.5}
   groundCheck: {fileID: 1680573847}
   groundCheckRadius: 0.1
   groundLayer:
@@ -539,7 +592,6 @@ MonoBehaviour:
     m_Bits: 64
   isCrouching: 0
   Grounded: 0
-  isGrounded: 0
 --- !u!61 &127899075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -927,6 +979,11 @@ Transform:
 --- !u!4 &1321555340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+  m_PrefabInstance: {fileID: 61010756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1321555341 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
   m_PrefabInstance: {fileID: 61010756}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1680573846
