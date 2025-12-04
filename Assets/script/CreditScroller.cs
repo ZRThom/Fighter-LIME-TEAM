@@ -7,7 +7,7 @@ public class CreditScroller : MonoBehaviour
     public float scrollSpeed = 50f;
 
     [Tooltip("Position Y (coordonnées monde/Canvas) où le défilement doit s'arrêter.")]
-    public float stopYPosition = 4000f; 
+    public float stopYPosition = 5000f; 
 
     private Transform objectTransform;
 
