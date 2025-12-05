@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 127899076}
   - component: {fileID: 127899075}
   - component: {fileID: 127899074}
+  - component: {fileID: 127899077}
   m_Layer: 3
   m_Name: Player1
   m_TagString: Player
@@ -708,6 +709,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &127899077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127899069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e7977a95be3af4f8ff58ac323eac0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
+  textMeshPro: {fileID: 0}
+  sentences: []
+  typingSpeed: 0.05
+  timeBetweenLines: 0.5
+  playerController: {fileID: 127899074}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
