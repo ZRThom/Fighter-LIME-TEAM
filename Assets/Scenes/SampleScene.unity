@@ -862,9 +862,9 @@ MonoBehaviour:
   block: {fileID: 1495060490}
   FollowSpeed: 2
   zoomSpeed: 2
-  zoomMultiplier: 1
-  minZoom: 3
-  maxZoom: 11
+  zoomMultiplier: 0.5
+  minZoom: 2.5
+  maxZoom: 10
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
