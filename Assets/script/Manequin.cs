@@ -1,49 +1,73 @@
 using UnityEngine;
+using System.Collections;
 
 public class Manequin : MonoBehaviour
 {
-    [Header("Configuration")]
+    [Header("Configuration Vie")]
     public int health = 100;
-    public GameObject floatingTextPrefab; // Glisse ton Prefab "DamagePopup" ici
-    public Vector3 textOffset = new Vector3(0, 2f, 0); // Hauteur d'apparition du texte
 
-    // Variables privées (gérées par le script)
-    private Animator _animator;
+    [Header("Configuration Visuelle")]
+    // Si tu veux, tu peux glisser l'objet enfant qui contient l'image ici.
+    // Sinon, le script le cherchera tout seul.
+    public SpriteRenderer targetRenderer; 
+    
+    public Sprite normalSprite;
+    public Sprite hitSprite;
+    public float hitDuration = 0.2f;
+
+    [Header("Texte Flottant")]
+    public GameObject floatingTextPrefab;
+    public Vector3 textOffset = new Vector3(0, 2f, 0);
 
     void Start()
     {
-        // Le script cherche tout seul le composant Animator sur l'objet
-        _animator = GetComponent<Animator>();
+        // Si tu n'as pas rempli la case manuellement, on cherche dans les enfants
+        if (targetRenderer == null)
+        {
+            targetRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        // On vérifie si on a bien trouvé le composant
+        if (targetRenderer != null && normalSprite != null)
+        {
+            targetRenderer.sprite = normalSprite;
+        }
+        else
+        {
+            Debug.LogError("Attention : Aucun SpriteRenderer trouvé dans le Mannequin ou ses enfants !");
+        }
     }
 
-    // Fonction appelée quand on frappe le mannequin
     public void TakeDamage(int damageAmount)
     {
-        // 1. Gérer la vie
         health -= damageAmount;
         if (health < 0) health = 0;
 
-        // 2. Gérer l'Animation
-        if (_animator != null)
+        // Gestion du Sprite (vérifie qu'on a bien trouvé le renderer)
+        if (targetRenderer != null && hitSprite != null)
         {
-            // Lance l'animation associée au trigger "Hit"
-            _animator.SetTrigger("Hit");
+            StopAllCoroutines();
+            StartCoroutine(FlashSprite());
         }
 
-        // 3. Gérer le Texte Flottant
         ShowFloatingText(damageAmount);
+    }
+
+    IEnumerator FlashSprite()
+    {
+        targetRenderer.sprite = hitSprite;
+        yield return new WaitForSeconds(hitDuration);
+        targetRenderer.sprite = normalSprite;
     }
 
     void ShowFloatingText(int damage)
     {
         if (floatingTextPrefab != null)
         {
-            // Crée le texte à la position du mannequin + le décalage (offset)
+            // Note: On ne met pas le texte en enfant, sinon il bougerait bizarrement avec le mannequin
             GameObject textObj = Instantiate(floatingTextPrefab, transform.position + textOffset, Quaternion.identity);
-
-            // Récupère le script FloatingText que tu m'as montré et envoie le chiffre
-            FloatingText textScript = textObj.GetComponent<FloatingText>();
             
+            FloatingText textScript = textObj.GetComponent<FloatingText>();
             if (textScript != null)
             {
                 textScript.SetDamage(damage);

@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 127899075}
   - component: {fileID: 127899074}
   - component: {fileID: 127899077}
+  - component: {fileID: 127899078}
   m_Layer: 3
   m_Name: Player1
   m_TagString: Player
@@ -622,7 +623,7 @@ MonoBehaviour:
   score: 0
   maxHealth: 100
   walkSpeed: 4
-  runSpeed: 8
+  runSpeed: 4
   crouchSpeed: 4
   jumpForce: 5
   runKey: 304
@@ -635,7 +636,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   standingSize: {x: 1, y: 1}
-  crouchSize: {x: 1, y: 1}
+  crouchSize: {x: 1, y: 0.81}
 --- !u!61 &127899075
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -726,6 +727,22 @@ MonoBehaviour:
   typingSpeed: 0.05
   timeBetweenLines: 0.5
   playerController: {fileID: 127899074}
+--- !u!111 &127899078
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127899069}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdc2c6f52d6dd344965addeaef20393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  health: 100
+  targetRenderer: {fileID: 0}
+  normalSprite: {fileID: 0}
+  hitSprite: {fileID: 0}
+  hitDuration: 0.2
+  floatingTextPrefab: {fileID: 0}
+  textOffset: {x: 0, y: 2, z: 0}
 --- !u!1 &1680573846
 GameObject:
   m_ObjectHideFlags: 0
