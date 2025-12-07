@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.UI; // Ajouté : Nécessaire pour le composant Image
 
 public class BackgroundScroller : MonoBehaviour
 {
     // --- PARAMÈTRES VISUELS ---
     [Header("---- VISUELS ----")]
-    public SpriteRenderer visualRenderer;
+    // CHANGEMENT CRUCIAL : Utilise le composant Image de l'UI
+    public Image visualRenderer; 
+    
     [Tooltip("Images d'animation du background (laisser vide si pas d'animation)")]
     public Sprite[] backgroundSprites;
     [Tooltip("Temps entre chaque image pour l'animation (si backgroundSprites est utilisé)")]
@@ -26,21 +30,18 @@ public class BackgroundScroller : MonoBehaviour
     private int currentFrame;
 
     // -------------------------------------------------------------------------
-    // RAPPEL : Le Rigidbody2D, le Collider, la Santé, les Inputs, et toutes les
-    // méthodes de mouvement/combat (saut, attaque, course, accroupissement) 
-    // ont été **supprimés** car ils ne sont pas pertinents pour un arrière-plan.
-    // -------------------------------------------------------------------------
 
     void Start()
     {
-        // Assurez-vous d'avoir un SpriteRenderer
+        // Tente de trouver l'Image si non assignée
         if (visualRenderer == null)
         {
-            visualRenderer = GetComponent<SpriteRenderer>();
+            visualRenderer = GetComponent<Image>();
             if (visualRenderer == null)
             {
-                Debug.LogError("BackgroundScroller nécessite un SpriteRenderer sur le même GameObject.");
-                enabled = false; // Désactive le script si pas de Renderer
+                // Message d'erreur mis à jour pour être précis
+                Debug.LogError("BackgroundScroller nécessite un composant Image (UI) sur le même GameObject.");
+                enabled = false; 
                 return;
             }
         }
@@ -48,7 +49,13 @@ public class BackgroundScroller : MonoBehaviour
         // Commence l'animation au premier sprite (si disponible)
         if (backgroundSprites != null && backgroundSprites.Length > 0)
         {
-            visualRenderer.sprite = backgroundSprites[0];
+            // CHANGÉ : Accède au sprite via le composant Image
+            visualRenderer.sprite = backgroundSprites[0]; 
+        }
+        else
+        {
+            // Sécurité si le tableau est vide, pour au moins voir une couleur unie
+            visualRenderer.sprite = null;
         }
     }
 
@@ -82,6 +89,7 @@ public class BackgroundScroller : MonoBehaviour
     /// </summary>
     void HandleManualAnimation()
     {
+        // Vérifie la référence au visualRenderer et la présence de sprites
         if (visualRenderer == null || backgroundSprites == null || backgroundSprites.Length <= 1) return;
 
         animTimer += Time.deltaTime;
