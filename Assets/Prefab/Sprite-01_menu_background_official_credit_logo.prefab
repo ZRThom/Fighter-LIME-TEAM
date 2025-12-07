@@ -12,25 +12,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sprite-01_menu_background_official_credit_logo
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 8908cee69553c5e48a55623da4050881, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 8908cee69553c5e48a55623da4050881, type: 3}
+      propertyPath: m_TagString
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 8908cee69553c5e48a55623da4050881, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 8908cee69553c5e48a55623da4050881, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 8908cee69553c5e48a55623da4050881, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 8908cee69553c5e48a55623da4050881, type: 3}
       propertyPath: m_LocalScale.x
-      value: 19345.283
+      value: 19447.814
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 8908cee69553c5e48a55623da4050881, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10721.835
+      value: 10859.074
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 8908cee69553c5e48a55623da4050881, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.016541
+      value: -9.687067
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 8908cee69553c5e48a55623da4050881, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -512.89575
+      value: -540.15125
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 8908cee69553c5e48a55623da4050881, type: 3}
       propertyPath: m_LocalPosition.z

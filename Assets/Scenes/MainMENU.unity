@@ -203,8 +203,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 1655811044}
     m_Modifications:
     - target: {fileID: 1152039726520417289, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
+      propertyPath: m_MaskInteraction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1152039726520417289, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
       propertyPath: m_RenderingLayerMask
@@ -215,17 +215,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4828329477627440737, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: backgroundSprites.Array.size
+      value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 5835608381903623136, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 19447.814
-      objectReference: {fileID: 0}
-    - target: {fileID: 5835608381903623136, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10859.074
-      objectReference: {fileID: 0}
+    - target: {fileID: 4828329477627440737, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
+      propertyPath: 'backgroundSprites.Array.data[19]'
+      value: 
+      objectReference: {fileID: -2935072920295474089, guid: 8908cee69553c5e48a55623da4050881, type: 3}
     - target: {fileID: 5835608381903623136, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.687067
@@ -270,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sprite-01_menu_background_official_credit_logo
       objectReference: {fileID: 0}
+    - target: {fileID: 6706357272126159749, guid: ae35a6bffa30dbe418d383995508528b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 242135881}
   - component: {fileID: 242135883}
   - component: {fileID: 242135882}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 258096546}
   - component: {fileID: 258096545}
   - component: {fileID: 258096544}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 712661192}
   - component: {fileID: 712661194}
   - component: {fileID: 712661193}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 763376401}
   - component: {fileID: 763376400}
   - component: {fileID: 763376399}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SETUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 1264410354}
   - component: {fileID: 1264410353}
   - component: {fileID: 1264410352}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EXIT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1380,7 +1380,7 @@ GameObject:
   - component: {fileID: 1271582171}
   - component: {fileID: 1271582173}
   - component: {fileID: 1271582172}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,7 +1592,7 @@ GameObject:
   - component: {fileID: 1449455171}
   - component: {fileID: 1449455173}
   - component: {fileID: 1449455172}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,9 +1865,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1655811044}
   - component: {fileID: 1655811045}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background_UI
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2017,9 +2017,9 @@ GameObject:
   - component: {fileID: 1810366049}
   - component: {fileID: 1810366048}
   - component: {fileID: 1810366047}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: menu
-  m_TagString: Untagged
+  m_TagString: MENU
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2174,7 +2174,7 @@ GameObject:
   - component: {fileID: 2052110300}
   - component: {fileID: 2052110299}
   - component: {fileID: 2052110298}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ABOUT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
