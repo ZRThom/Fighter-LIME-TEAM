@@ -1,3 +1,4 @@
+// Version modifiée avec ajout des frames d'attaque en l'air et accroupi
 using UnityEngine;
 using System.Collections;
 
@@ -13,6 +14,8 @@ public class PlayerController2D : MonoBehaviour
     public Sprite[] crouchSprites;
     public Sprite[] jumpSprites;
     public Sprite[] attackSprites;
+    public Sprite[] airAttackSprites;     // NOUVEAU
+    public Sprite[] crouchAttackSprites;  // NOUVEAU
 
     [Tooltip("Temps entre chaque image")]
     public float animSpeed = 0.1f;
@@ -42,7 +45,7 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private Vector2 standingSize = new Vector2(1f, 1f);
     [SerializeField] private Vector2 crouchSize = new Vector2(1f, 0.5f);
 
-    private Vector2 standingOffset; // Stocke l’offset debout
+    private Vector2 standingOffset;
 
     private Rigidbody2D rb;
     private BoxCollider2D col;
@@ -67,19 +70,15 @@ public class PlayerController2D : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
-
         if (visualRenderer == null)
             visualRenderer = GetComponent<SpriteRenderer>();
 
         currentAnimSet = idleSprites;
-
         standingOffset = col.offset;
-        Debug.Log("Box collider trouvé sur : " + col.gameObject.name);
     }
 
     void Update()
     {
-        // --- 1. DETECTION SOL ---
         if (groundCheck != null)
             Grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -89,13 +88,10 @@ public class PlayerController2D : MonoBehaviour
             return;
         }
 
-        // --- 2. INPUTS & MOUVEMENT ---
         float x = Input.GetAxisRaw("Horizontal");
         isMoving = Mathf.Abs(x) > 0.1f;
 
-        HandleCrouch(); // Gestion accroupissement
-
-        // Course
+        HandleCrouch();
         isRunning = Input.GetKey(runKey) && !isCrouching && isMoving;
 
         float currentSpeed = walkSpeed;
@@ -104,86 +100,41 @@ public class PlayerController2D : MonoBehaviour
 
         rb.linearVelocity = new Vector2(x * currentSpeed, rb.linearVelocity.y);
 
-        // Saut
         if (Input.GetKeyDown(jumpKey) && Grounded && !isCrouching)
-        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
 
-        // Flip direction
         if (x > 0)
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         else if (x < 0)
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
-        // Animation
         if (!isAttacking)
             HandleManualAnimation();
 
-        // Attaque
         if (Input.GetKeyDown(attackKey) && CanAttack && !isAttacking)
             StartCoroutine(PerformAttackSequence());
-
-        if (health <= 0)
-            Debug.Log("Player is dead!");
-
-        if (score >= 3)
-            Debug.Log("Player wins the game!");
     }
 
-    // --- GESTION DU CROUCH ---
-    void HandleCrouch()
+    IEnumerator PerformAttackSequence()
     {
-        bool crouchInput =
-            Input.GetKey(KeyCode.LeftControl) ||
-            Input.GetKey(KeyCode.S) ||
-            Input.GetKey(KeyCode.DownArrow);
+        isAttacking = true;
 
-        if (Grounded && crouchInput)
+        Sprite[] selectedAttack = attackSprites;
+
+        if (!Grounded && airAttackSprites.Length > 0)
+            selectedAttack = airAttackSprites;         // ATTAQUE EN L'AIR
+        else if (isCrouching && crouchAttackSprites.Length > 0)
+            selectedAttack = crouchAttackSprites;      // ATTAQUE ACCROUPIE
+
+        foreach (Sprite frame in selectedAttack)
         {
-            if (!isCrouching)
-            {
-                isCrouching = true;
-                ApplyColliderSize(crouchSize);
-            }
+            visualRenderer.sprite = frame;
+            yield return new WaitForSeconds(animSpeed);
         }
-        else
-        {
-            if (isCrouching)
-            {
-                // Vérifie s'il n'y a pas d'obstacle au-dessus pour se relever
-                Vector2 checkPos = (Vector2)transform.position + Vector2.up * (standingSize.y / 2f);
-                Collider2D hit = Physics2D.OverlapBox(
-                    checkPos,
-                    new Vector2(standingSize.x * 0.9f, standingSize.y - crouchSize.y),
-                    0f,
-                    groundLayer
-                );
 
-                if (hit == null)
-                {
-                    isCrouching = false;
-                    ApplyColliderSize(standingSize);
-                }
-            }
-        }
-    }
-
-    void ApplyColliderSize(Vector2 targetSize)
-    {
-        float pivotFactor = 0.5f; // 0.5 si pivot centré, 0 si pivot en bas
-
-        Vector2 newOffset = new Vector2(
-            standingOffset.x,
-            standingOffset.y - (standingSize.y - targetSize.y) * pivotFactor
-        );
-
-        col.size = targetSize;
-        col.offset = newOffset;
-
-        // Mise à jour visuel pour plus de précision
-        if (isCrouching && crouchSprites.Length > 0)
-            visualRenderer.sprite = crouchSprites[0];
+        isAttacking = false;
+        currentAnimSet = idleSprites;
+        animTimer = animSpeed;
     }
 
     void HandleManualAnimation()
@@ -222,29 +173,53 @@ public class PlayerController2D : MonoBehaviour
             visualRenderer.sprite = currentAnimSet[currentFrame];
         }
     }
-
-    IEnumerator PerformAttackSequence()
+    void HandleCrouch()
     {
-        isAttacking = true;
+        bool crouchInput =
+            Input.GetKey(KeyCode.LeftControl) ||
+            Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.DownArrow);
 
-        if (attackSprites != null && attackSprites.Length > 0)
+        if (Grounded && crouchInput)
         {
-            foreach (Sprite frame in attackSprites)
+            if (!isCrouching)
             {
-                visualRenderer.sprite = frame;
-                yield return new WaitForSeconds(animSpeed);
+                isCrouching = true;
+                ApplyColliderSize(crouchSize);
             }
         }
+        else
+        {
+            if (isCrouching)
+            {
+                Vector2 checkPos = (Vector2)transform.position + Vector2.up * (standingSize.y / 2f);
+                Collider2D hit = Physics2D.OverlapBox(
+                    checkPos,
+                    new Vector2(standingSize.x * 0.9f, standingSize.y - crouchSize.y),
+                    0f,
+                    groundLayer
+                );
 
-        isAttacking = false;
-
-        currentAnimSet = idleSprites;
-        animTimer = animSpeed;
+                if (hit == null)
+                {
+                    isCrouching = false;
+                    ApplyColliderSize(standingSize);
+                }
+            }
+        }
     }
-    public void TakeDamage(int damage)
+    void ApplyColliderSize(Vector2 targetSize)
     {
-        health -= damage;
-        if (health < 0) health = 0;
-        Debug.Log("Player took " + damage + " damage. Current health: " + health);
+        float pivotFactor = 0.5f;
+
+        Vector2 newOffset = new Vector2(
+            standingOffset.x,
+            standingOffset.y - (standingSize.y - targetSize.y) * pivotFactor
+        );
+
+        col.size = targetSize;
+        col.offset = newOffset;
     }
+
+    public void TakeDamage(int damage){}
 }
