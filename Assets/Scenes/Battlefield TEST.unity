@@ -878,9 +878,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2d
   player: {fileID: 127899073}
   block: {fileID: 1495060490}
-  FollowSpeed: 2
+  FollowSpeed: 1.5
   zoomSpeed: 2
-  zoomMultiplier: 1
+  zoomMultiplier: 0
   minZoom: 3
   maxZoom: 11
 --- !u!1001 &591343266
@@ -893,19 +893,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1162035152001146647, guid: d8a469792810984428880f1850f4280a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7933109
+      value: 1.9323782
       objectReference: {fileID: 0}
     - target: {fileID: 1162035152001146647, guid: d8a469792810984428880f1850f4280a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1983
+      value: 1.4712117
       objectReference: {fileID: 0}
     - target: {fileID: 1162035152001146647, guid: d8a469792810984428880f1850f4280a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1152.2617
+      value: -1152.27
       objectReference: {fileID: 0}
     - target: {fileID: 1162035152001146647, guid: d8a469792810984428880f1850f4280a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -158.84386
+      value: -159.22
       objectReference: {fileID: 0}
     - target: {fileID: 1162035152001146647, guid: d8a469792810984428880f1850f4280a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1211,17 +1211,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.040151134, y: 0.3370075}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.2631579, y: -0.826087}
+    oldSize: {x: 0.19, y: 0.23}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.26425716, y: 0.325985}
   m_EdgeRadius: 0
 --- !u!50 &1495060488
 Rigidbody2D:
@@ -1297,8 +1297,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -7940989349373393071, guid: e62bc0ba4b866044d85acc2fac6822cb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1317,8 +1317,8 @@ Transform:
   m_GameObject: {fileID: 1495060486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9243388, y: 1.5463722, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.0392, y: 0.7622, z: 0}
+  m_LocalScale: {x: 3.2979, y: 2.8672, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
