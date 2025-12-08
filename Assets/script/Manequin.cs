@@ -7,35 +7,25 @@ public class Manequin : MonoBehaviour
     public int health = 100;
 
     [Header("Configuration Visuelle")]
-    // Si tu veux, tu peux glisser l'objet enfant qui contient l'image ici.
-    // Sinon, le script le cherchera tout seul.
-    public SpriteRenderer targetRenderer; 
-    
+    public SpriteRenderer targetRenderer;
     public Sprite normalSprite;
-    public Sprite hitSprite;
-    public float hitDuration = 0.2f;
+
+    [Header("Animation de HIT")]
+    public Sprite[] hitFrames;      
+    public float hitFrameDuration = 0.1f;
 
     [Header("Texte Flottant")]
-    public GameObject floatingTextPrefab;
-    public Vector3 textOffset = new Vector3(0, 2f, 0);
+    public GameObject floatingTextPrefab; 
+    // Ajuste Y ici (par ex: 1.5 ou 2.0) pour que le texte apparaisse au-dessus de la tête
+    public Vector3 textOffset = new Vector3(0, 1.5f, 0); 
 
     void Start()
     {
-        // Si tu n'as pas rempli la case manuellement, on cherche dans les enfants
         if (targetRenderer == null)
-        {
             targetRenderer = GetComponentInChildren<SpriteRenderer>();
-        }
 
-        // On vérifie si on a bien trouvé le composant
         if (targetRenderer != null && normalSprite != null)
-        {
             targetRenderer.sprite = normalSprite;
-        }
-        else
-        {
-            Debug.LogError("Attention : Aucun SpriteRenderer trouvé dans le Mannequin ou ses enfants !");
-        }
     }
 
     public void TakeDamage(int damageAmount)
@@ -43,30 +33,40 @@ public class Manequin : MonoBehaviour
         health -= damageAmount;
         if (health < 0) health = 0;
 
-        // Gestion du Sprite (vérifie qu'on a bien trouvé le renderer)
-        if (targetRenderer != null && hitSprite != null)
+        // Lancer l'animation de coup
+        if (targetRenderer != null && hitFrames.Length > 0)
         {
-            StopAllCoroutines();
-            StartCoroutine(FlashSprite());
+            StopAllCoroutines(); 
+            StartCoroutine(PlayHitAnimation());
         }
 
+        // Faire apparaître le texte de dégâts
         ShowFloatingText(damageAmount);
     }
 
-    IEnumerator FlashSprite()
+    IEnumerator PlayHitAnimation()
     {
-        targetRenderer.sprite = hitSprite;
-        yield return new WaitForSeconds(hitDuration);
-        targetRenderer.sprite = normalSprite;
+        foreach (Sprite s in hitFrames)
+        {
+            targetRenderer.sprite = s;
+            yield return new WaitForSeconds(hitFrameDuration);
+        }
+
+        if(normalSprite != null)
+            targetRenderer.sprite = normalSprite;
     }
 
     void ShowFloatingText(int damage)
     {
         if (floatingTextPrefab != null)
         {
-            // Note: On ne met pas le texte en enfant, sinon il bougerait bizarrement avec le mannequin
-            GameObject textObj = Instantiate(floatingTextPrefab, transform.position + textOffset, Quaternion.identity);
+            // Calcul de la position avec l'offset (hauteur)
+            Vector3 finalPosition = transform.position + textOffset;
             
+            GameObject textObj = Instantiate(floatingTextPrefab, finalPosition, Quaternion.identity);
+
+            // Vérification et assignation des dégâts
+            // Assure-toi que ton script "FloatingText" a bien une méthode "SetDamage(int)"
             FloatingText textScript = textObj.GetComponent<FloatingText>();
             if (textScript != null)
             {

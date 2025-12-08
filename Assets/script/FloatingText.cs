@@ -1,45 +1,73 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 
 public class FloatingText : MonoBehaviour
 {
-    [Header("Réglages")]
-    public float destroyTime = 1f;        
-    public Vector3 moveSpeed = new Vector3(0, 2f, 0); 
-
     private TMP_Text textComponent;
+    private float timer;
+    private Color startColor;
 
-    void Awake()
-    {
-        textComponent = GetComponent<TMP_Text>();
-    }
+    [Header("Réglages")]
+    public float speed = 2f;
+    public float duration = 1f;
 
     void Start()
     {
-        // --- SPÉCIAL 2D ---
-        // On récupère le Renderer du texte pour forcer l'affichage au premier plan
-        MeshRenderer render = GetComponent<MeshRenderer>();
-        if (render != null)
+        // 1. On cherche le composant Texte
+        if (textComponent == null)
+             textComponent = GetComponentInChildren<TMP_Text>();
+
+        // 2. On configure la couleur de départ
+        if (textComponent != null)
         {
-            // Met le texte sur un ordre très élevé pour qu'il soit devant les sprites
-            render.sortingOrder = 50; 
+            startColor = textComponent.color;
         }
-        // ------------------
+        else
+        {
+             Debug.LogError("ERREUR : Pas de TMP_Text trouvé sur le FloatingText !");
+        }
 
-        Destroy(gameObject, destroyTime);
-    }
+        // 3. CORRECTION DE L'ERREUR : On utilise le MeshRenderer pour le Sorting Order
+        MeshRenderer mesh = GetComponentInChildren<MeshRenderer>();
+        if (mesh != null)
+        {
+            mesh.sortingOrder = 500; // Force l'affichage devant tout le reste
+            mesh.sortingLayerName = "Default";
+        }
 
-    void Update()
-    {
-        // En 2D, on bouge aussi sur les axes X/Y, donc ça marche pareil
-        transform.position += moveSpeed * Time.deltaTime;
+        // 4. Petit décalage aléatoire
+        transform.localPosition += new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0);
     }
 
     public void SetDamage(int damageAmount)
     {
-        if (textComponent != null)
+        // Sécurité : On cherche le texte si on ne l'a pas encore
+        if (textComponent == null)
+            textComponent = GetComponentInChildren<TMP_Text>();
+
+        // On applique le chiffre
+        if(textComponent != null)
         {
             textComponent.text = damageAmount.ToString();
+        }
+    }
+
+    void Update()
+    {
+        // Monter vers le haut
+        transform.position += Vector3.up * speed * Time.deltaTime;
+        
+        // Gestion de la disparition
+        timer += Time.deltaTime;
+        if (textComponent != null)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, timer / duration);
+            textComponent.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
+        }
+
+        if (timer >= duration)
+        {
+            Destroy(gameObject);
         }
     }
 }
