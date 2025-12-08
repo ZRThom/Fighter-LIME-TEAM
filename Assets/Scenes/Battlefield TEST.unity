@@ -460,8 +460,6 @@ GameObject:
   - component: {fileID: 127899076}
   - component: {fileID: 127899075}
   - component: {fileID: 127899074}
-  - component: {fileID: 127899077}
-  - component: {fileID: 127899078}
   m_Layer: 3
   m_Name: Player1
   m_TagString: Player
@@ -616,12 +614,34 @@ MonoBehaviour:
   - {fileID: -354192115356467317, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
   - {fileID: -4895130122966084533, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
   - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  airAttackSprites:
+  - {fileID: 5024303534678568033, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: -3207623714019379929, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: 997672736345518527, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: -820749118808552057, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: 6851777110509659213, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: 6814662259321758891, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: -1095012728140720447, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: -6743612884321565379, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: -1048918116740533509, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  - {fileID: 2383115855814543485, guid: abdd2e7fe8a66af44af59a47ba83b824, type: 3}
+  crouchAttackSprites:
+  - {fileID: -5146945168167097630, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: 1221444055979344737, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: -5938630067563578444, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: -8624340148199734656, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: 8921265546411229275, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: -388231965209756075, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: -6331487757316625713, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: 1275316407345338606, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: 7711873826704400878, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: -6095078984073458180, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: 7822885278810644256, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
+  - {fileID: 5645503430827681082, guid: 1fbaa32ca01959f4daf3a2ee356b0b19, type: 3}
   animSpeed: 0.1
   CanMove: 1
   CanAttack: 1
   health: 100
-  score: 0
-  maxHealth: 100
   walkSpeed: 4
   runSpeed: 4
   crouchSpeed: 4
@@ -630,6 +650,17 @@ MonoBehaviour:
   jumpKey: 32
   attackKey: 323
   attackDamage: 5
+  groundAttackPoint: {fileID: 96804152}
+  airAttackPoint: {fileID: 96804152}
+  crouchAttackPoint: {fileID: 96804152}
+  groundAttackRange: 0.1
+  airAttackRange: 0.12
+  crouchAttackRange: 0.08
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  attackCooldown: 0.3
+  knockbackForce: 5
   groundCheck: {fileID: 1680573847}
   groundCheckRadius: 0.1
   groundLayer:
@@ -1169,10 +1200,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1495060490}
   - component: {fileID: 1495060489}
-  - component: {fileID: 1495060488}
   - component: {fileID: 1495060487}
   - component: {fileID: 1495060491}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Mannequin
   m_TagString: Mannequin
   m_Icon: {fileID: 0}
@@ -1225,33 +1255,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.26425716, y: 0.325985}
   m_EdgeRadius: 0
---- !u!50 &1495060488
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495060486}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1495060489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1334,16 +1337,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495060486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdc2c6f52d6dd344965addeaef20393, type: 3}
+  m_Script: {fileID: 11500000, guid: 59afd42cff59eb54f84a04aa9252bdc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  health: 100
-  targetRenderer: {fileID: 0}
-  normalSprite: {fileID: 0}
-  hitSprite: {fileID: 0}
-  hitDuration: 0.2
-  floatingTextPrefab: {fileID: 0}
-  textOffset: {x: 0, y: 2, z: 0}
+  speed: 2
+  duration: 1
 --- !u!1 &1680573846
 GameObject:
   m_ObjectHideFlags: 0
