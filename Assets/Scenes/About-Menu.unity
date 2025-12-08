@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 211316470}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6061044, y: -635.1376, z: 4.99999}
+  m_LocalPosition: {x: 54, y: -635, z: 4.99999}
   m_LocalScale: {x: 21207.414, y: 12617.367, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditScroller
   scrollSpeed: 50
-  stopYPosition: 5000
+  stopYPosition: 7000
 --- !u!1 &1888820585
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +745,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -97.38916, y: 174.24316}
-  m_SizeDelta: {x: -1791.3, y: -886.31}
+  m_AnchoredPosition: {x: -78, y: -99}
+  m_SizeDelta: {x: -1333.8396, y: -30.0383}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888820587
 MonoBehaviour:
@@ -820,7 +820,7 @@ MonoBehaviour:
   - {fileID: 607009275740820620, guid: 8908cee69553c5e48a55623da4050881, type: 3}
   - {fileID: -2705483715250929577, guid: 8908cee69553c5e48a55623da4050881, type: 3}
   - {fileID: -2935072920295474089, guid: 8908cee69553c5e48a55623da4050881, type: 3}
-  animSpeed: 1
+  animSpeed: 0.1
   scrollSpeed: 0
   resetPositionX: 0
   startPositionX: 0
@@ -858,7 +858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190.47064, y: -3037.2358}
+  m_AnchoredPosition: {x: -1122, y: -3297}
   m_SizeDelta: {x: 3878.1, y: 2896.1685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922567360
@@ -881,20 +881,38 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "----------------------------------------------------------------------------------------------------------\n\r\n                       
-    SCRUM MASTER & D\xC9VELOPPEMENT\r\n                                              
-    Kyllian\n\r\n----------------------------------------------------------------------------------------------------------\n\r\n                         
-    D\xC9VELOPPEMENT & LEVEL DESIGN\r\n                                            
-    Thomas\n\r\n----------------------------------------------------------------------------------------------------------\n\r\n            
-    D\xC9VELOPPEMENT - SYST\xC8MES DE PARAM\xC8TRES\r\n                                            
-    Johann\n\n----------------------------------------------------------------------------------------------------------\r\n\r\n                    
-    D\xC9VELOPPEMENT - MARCH\xC9 & INTERFACE\r\n                                                
-    Iles\r\n----------------------------------------------------------------------------------------------------------\n\r\n                     
-    D\xC9VELOPPEMENT - M\xC9CANIQUES & HITBOXS\r\n                                             
-    Lucas\n\n----------------------------------------------------------------------------------------------------------\n\r\n"
+  m_text: 'SCRUM MASTER & DEVELOPMENT
+
+    Kyllian
+
+
+    DEVELOPMENT & LEVEL DESIGN
+
+    Thomas
+
+
+    DEVELOPMENT
+    - PARAMETER SYSTEMS
+
+    Johann
+
+
+    DEVELOPMENT - MARKETPLACE & INTERFACE
+
+    Iles
+
+
+    DEVELOPMENT
+    - MECHANICS & HITBOXES
+
+    Lucas
+
+
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
+  m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -925,7 +943,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1029,10 +1047,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "                                                                                                                                                                        
-    TEAM LIME PR\xC9SENTE\n              \n"
+    TEAM LIME PRESENT\n              \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
+  m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

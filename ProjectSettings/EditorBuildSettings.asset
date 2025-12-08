@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Profil.unity
     guid: 02672b81b67670846b73d34a41ff0ee4
+  - enabled: 1
+    path: Assets/Scenes/RaphStealerWomens.unity
+    guid: 38a29507342f64b368d092f138d584b4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
