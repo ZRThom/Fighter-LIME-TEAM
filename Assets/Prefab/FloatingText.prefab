@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7510182445778307338}
   - component: {fileID: 7456314460592115309}
   - component: {fileID: 114610105516839337}
-  - component: {fileID: 5702014122594711719}
+  - component: {fileID: 7002085654210901557}
   m_Layer: 7
   m_Name: FloatingText
   m_TagString: Text_Degats
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 7456314460592115309}
   m_maskType: 0
---- !u!114 &5702014122594711719
+--- !u!114 &7002085654210901557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

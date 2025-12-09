@@ -15,7 +15,7 @@ public class FloatingText : MonoBehaviour
     {
         // 1. On cherche le composant Texte
         if (textComponent == null)
-             textComponent = GetComponentInChildren<TMP_Text>();
+            textComponent = GetComponent<TMP_Text>();
 
         // 2. On configure la couleur de départ
         if (textComponent != null)
@@ -43,7 +43,7 @@ public class FloatingText : MonoBehaviour
     {
         // Sécurité : On cherche le texte si on ne l'a pas encore
         if (textComponent == null)
-            textComponent = GetComponentInChildren<TMP_Text>();
+            textComponent = GetComponent<TMP_Text>();
 
         // On applique le chiffre
         if(textComponent != null)
