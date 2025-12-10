@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: ce08025911f83487ba0869c58fa52866
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6435625863522923597
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_0
+  - first:
+      213: 8148764991614764268
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_1
+  - first:
+      213: 4963431147160538809
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_2
+  - first:
+      213: -692417127420774500
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_3
+  - first:
+      213: -3172153462322121190
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_4
+  - first:
+      213: 7174175881182872093
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_5
+  - first:
+      213: 4436068133941536984
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_6
+  - first:
+      213: 1631207763658470155
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_7
+  - first:
+      213: 4966041155701328
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_8
+  - first:
+      213: 8502080690855422131
+    second: Sprite-05-engineer_steam_crouch_sprite-Sheet_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 18
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb4661ef5010b6a0800000000000000
+      internalID: -6435625863522923597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 18
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4465bf59a361170800000000000000
+      internalID: 8148764991614764268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 18
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be0d99b456a1e440800000000000000
+      internalID: 4963431147160538809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 18
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9730bb8a4a0466f0800000000000000
+      internalID: -692417127420774500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 18
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16b3499b3f3af3d0800000000000000
+      internalID: -3172153462322121190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 18
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12841a14facf8360800000000000000
+      internalID: 7174175881182872093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 18
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d8e30be674109d30800000000000000
+      internalID: 4436068133941536984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 18
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b03f8bb81d633a610800000000000000
+      internalID: 1631207763658470155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 18
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a860f8694a11000800000000000000
+      internalID: 4966041155701328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-05-engineer_steam_crouch_sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 18
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b82526a7557df570800000000000000
+      internalID: 8502080690855422131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_0: -6435625863522923597
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_1: 8148764991614764268
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_2: 4963431147160538809
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_3: -692417127420774500
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_4: -3172153462322121190
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_5: 7174175881182872093
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_6: 4436068133941536984
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_7: 1631207763658470155
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_8: 4966041155701328
+      Sprite-05-engineer_steam_crouch_sprite-Sheet_9: 8502080690855422131
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

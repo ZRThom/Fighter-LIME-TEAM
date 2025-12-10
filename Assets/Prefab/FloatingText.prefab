@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7510182445778307338}
   - component: {fileID: 7456314460592115309}
   - component: {fileID: 114610105516839337}
-  - component: {fileID: 7002085654210901557}
-  m_Layer: 7
+  - component: {fileID: 5702014122594711719}
+  m_Layer: 9
   m_Name: FloatingText
   m_TagString: Text_Degats
   m_Icon: {fileID: 0}

@@ -616,12 +616,12 @@ MonoBehaviour:
   - {fileID: -354192115356467317, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
   - {fileID: -4895130122966084533, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
   - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+  airAttackSprites: []
+  crouchAttackSprites: []
   animSpeed: 0.1
   CanMove: 1
   CanAttack: 1
   health: 100
-  score: 0
-  maxHealth: 100
   walkSpeed: 4
   runSpeed: 4
   crouchSpeed: 4
@@ -630,6 +630,17 @@ MonoBehaviour:
   jumpKey: 32
   attackKey: 323
   attackDamage: 5
+  groundAttackPoint: {fileID: 96804152}
+  airAttackPoint: {fileID: 96804152}
+  crouchAttackPoint: {fileID: 96804152}
+  groundAttackRange: 0.1
+  airAttackRange: 0.12
+  crouchAttackRange: 0.08
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  attackCooldown: 0.3
+  knockbackForce: 5
   groundCheck: {fileID: 1680573847}
   groundCheckRadius: 0.1
   groundLayer:
@@ -984,7 +995,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1495060490}
   - component: {fileID: 1495060489}
-  - component: {fileID: 1495060488}
   - component: {fileID: 1495060487}
   - component: {fileID: 1495060491}
   m_Layer: 7
@@ -1028,45 +1038,18 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.012431972, y: 0.30547297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5882353, y: -0.71999997}
+    oldSize: {x: 0.17, y: 0.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.17593335, y: 0.2718376}
   m_EdgeRadius: 0
---- !u!50 &1495060488
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495060486}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1495060489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1114,8 +1097,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 7871307632017871591, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1134,8 +1117,8 @@ Transform:
   m_GameObject: {fileID: 1495060486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.97, y: -1.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.18, y: -3.66, z: 0}
+  m_LocalScale: {x: 6.0499, y: 6.0499, z: 6.0499}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1153,11 +1136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   health: 100
-  targetRenderer: {fileID: 0}
-  normalSprite: {fileID: 0}
-  hitSprite: {fileID: 0}
-  hitDuration: 0.2
-  floatingTextPrefab: {fileID: 0}
+  targetRenderer: {fileID: 1495060489}
+  normalSprite: {fileID: 7871307632017871591, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  hitFrames:
+  - {fileID: 7871307632017871591, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  - {fileID: -33928435815615189, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  - {fileID: -3099965736314397606, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  - {fileID: 7002047226250799050, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  - {fileID: 1260217785647457353, guid: 1bab5fdc0e6bf984d86a5c6942842345, type: 3}
+  hitFrameDuration: 0.1
+  floatingTextPrefab: {fileID: 8497035421861359554, guid: 41525c45e5342ac4b830dc10e3e0f855, type: 3}
   textOffset: {x: 0, y: 2, z: 0}
 --- !u!1 &1680573846
 GameObject:

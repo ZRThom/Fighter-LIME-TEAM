@@ -44,7 +44,6 @@ public class FloatingText : MonoBehaviour
         // Sécurité : On cherche le texte si on ne l'a pas encore
         if (textComponent == null)
             textComponent = GetComponent<TMP_Text>();
-
         // On applique le chiffre
         if(textComponent != null)
         {

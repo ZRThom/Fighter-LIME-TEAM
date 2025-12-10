@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Grounded
+  - Background
+  - MENU
+  - Undefined
   - Mannequin
   - Text_Degats
   layers:
@@ -16,9 +19,9 @@ TagManager:
   - Water
   - UI
   - Sol
+  - BackGround
   - Mannequin
   - Text_Degats
-  - 
   - 
   - 
   - 
