@@ -32,7 +32,7 @@ public class CameraFollow2d : MonoBehaviour
             FollowSpeed * Time.deltaTime
         );
 
-        // zoom adaptation
+        // zoom adaptation// zoom adaptation
         var targetSize = Mathf.Clamp(dist * zoomMultiplier , minZoom, maxZoom);
 
         cam.orthographicSize = Mathf.Lerp(
