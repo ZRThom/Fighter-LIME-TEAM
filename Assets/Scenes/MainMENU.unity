@@ -682,7 +682,7 @@ MonoBehaviour:
   musicSource: {fileID: 1651757023}
   SFXSource: {fileID: 1251452921}
   MasterSource: {fileID: 0}
-  background: {fileID: 8300000, guid: c4ba2440b3c1043459917fe03a3327fa, type: 3}
+  background: {fileID: 8300000, guid: 84967366b6e902c4d828a84e64b50100, type: 3}
   testSFX: {fileID: 8300000, guid: 2698940cd520b6a49ab7db131f0aa1e2, type: 3}
 --- !u!4 &339649715
 Transform:
