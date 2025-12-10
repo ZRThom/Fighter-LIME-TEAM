@@ -8,6 +8,8 @@ TagManager:
   - Grounded
   - Background
   - MENU
+  - Mannequin
+  - Text_Degats
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Sol
   - BackGround
-  - 
+  - Mannequin
   - 
   - 
   - 
