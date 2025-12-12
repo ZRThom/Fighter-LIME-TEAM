@@ -8,7 +8,6 @@ TagManager:
   - Grounded
   - Background
   - MENU
-  - Undefined
   - Mannequin
   - Text_Degats
   layers:
@@ -21,7 +20,7 @@ TagManager:
   - Sol
   - BackGround
   - Mannequin
-  - Text_Degats
+  - 
   - 
   - 
   - 
