@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public int attackDamage = 10;
     public LayerMask enemyLayers;
 
+    [Header("Bouclier")]
+    public float maxShieldTime = 15f;
+    public float shieldBurnOutCooldown = 30f;
+
     [Header("Ground Check")]
     public Transform groundCheck;
     public float groundCheckRadius = 0.12f;
@@ -27,12 +31,12 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] jumpSprites;
     public Sprite[] crouchSprites;
     public Sprite[] attackSprites;
+    public Sprite[] shieldSprites;
 
     public float animSpeed = 0.1f;
     public float attackAnimSpeed = 0.08f;
     public float attackDuration = 0.3f;
 
-    // internes animation
     private float animTimer;
     private int currentFrame;
     private Sprite[] currentAnimSet;
@@ -43,19 +47,27 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpPressed;
     private bool attackPressed;
+    private bool shieldPressed;
     private bool isGrounded = true;
     private bool facingRight = true;
 
-    // états locaux
     private bool isCrouching;
     private bool isMoving;
     private bool isAttacking;
 
+    // ===== SHIELD =====
+    private bool isShielding;
+    private float shieldTimer;
+    private float shieldCooldownTimer;
+    private bool shieldBurnedOut;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
+
         if (visualRenderer == null)
-            visualRenderer = GetComponent<SpriteRenderer>();
+            visualRenderer = GetComponentInChildren<SpriteRenderer>();
 
         currentAnimSet = idleSprites;
     }
@@ -64,33 +76,39 @@ public class PlayerMovement : MonoBehaviour
     {
         // Ground check
         if (groundCheck != null)
+        {
             isGrounded = Physics2D.OverlapCircle(
                 groundCheck.position,
                 groundCheckRadius,
                 groundLayer
             );
+        }
 
         ReadInputs();
         Move();
         Flip(moveInput.x);
 
-        // Saut
-        if (jumpPressed && isGrounded && !isCrouching)
+        // Jump
+        if (jumpPressed && isGrounded && !isCrouching && !isShielding)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
         }
 
-        // Attaque
-        if (attackPressed && !isAttacking)
+        // Attack
+        if (attackPressed && !isAttacking && !isShielding)
         {
             StartAttack();
         }
 
+        // Shield logic
+        HandleShield();
+
         jumpPressed = false;
         attackPressed = false;
+        shieldPressed = false;
 
-        // Timer attaque
+        // Attack timer
         if (isAttacking)
         {
             attackTimer -= Time.deltaTime;
@@ -99,46 +117,46 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Animation
-        if (!isAttacking)
+        if (isShielding)
+            HandleShieldAnimation();
+        else if (!isAttacking)
             HandleManualAnimation();
         else
             HandleAttackAnimation();
     }
 
-    // --- INPUTS ---
     void ReadInputs()
     {
+        float h = 0f;
+
         if (playerNumber == 1)
         {
-            float h = 0f;
             if (Keyboard.current.aKey.isPressed) h = -1f;
             else if (Keyboard.current.dKey.isPressed) h = 1f;
-
-            moveInput = new Vector2(h, 0f);
 
             jumpPressed = Keyboard.current.spaceKey.wasPressedThisFrame;
             isCrouching = Keyboard.current.sKey.isPressed && isGrounded;
             attackPressed = Mouse.current.leftButton.wasPressedThisFrame;
+            shieldPressed = Keyboard.current.eKey.isPressed; // Player 1 bouclier
         }
         else
         {
-            float h = 0f;
             if (Keyboard.current.leftArrowKey.isPressed) h = -1f;
             else if (Keyboard.current.rightArrowKey.isPressed) h = 1f;
-
-            moveInput = new Vector2(h, 0f);
 
             jumpPressed = Keyboard.current.rightShiftKey.wasPressedThisFrame;
             isCrouching = Keyboard.current.downArrowKey.isPressed && isGrounded;
             attackPressed = Mouse.current.rightButton.wasPressedThisFrame;
+            shieldPressed = Keyboard.current.rKey.isPressed; // Player 2 bouclier
         }
+
+        moveInput = new Vector2(h, 0f);
     }
 
-    // --- MOUVEMENT ---
     void Move()
     {
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
-        isMoving = Mathf.Abs(moveInput.x) > 0.1f;
+        isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
     }
 
     void Flip(float horizontal)
@@ -152,7 +170,47 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // --- ATTAQUE ---
+    // ===== SHIELD =====
+    void HandleShield()
+    {
+        if (shieldCooldownTimer > 0f)
+        {
+            shieldCooldownTimer -= Time.deltaTime;
+            return;
+        }
+
+        if (shieldPressed && !shieldBurnedOut)
+        {
+            isShielding = true;
+            shieldTimer += Time.deltaTime;
+
+            if (shieldTimer >= maxShieldTime)
+            {
+                // Burn out
+                isShielding = false;
+                shieldBurnedOut = true;
+                shieldCooldownTimer = shieldBurnOutCooldown;
+                shieldTimer = 0f;
+            }
+        }
+        else
+        {
+            isShielding = false;
+            shieldTimer = Mathf.Max(0f, shieldTimer - Time.deltaTime);
+        }
+
+        if (shieldBurnedOut && shieldCooldownTimer <= 0f)
+        {
+            shieldBurnedOut = false;
+        }
+    }
+
+    public bool IsShieldActive()
+    {
+        return isShielding;
+    }
+
+    // ===== ATTACK =====
     void StartAttack()
     {
         isAttacking = true;
@@ -183,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // --- ANIMATION ---
+    // ===== ANIMATIONS =====
     void HandleManualAnimation()
     {
         Sprite[] target = idleSprites;
@@ -195,53 +253,38 @@ public class PlayerMovement : MonoBehaviour
         else if (isMoving && walkSprites.Length > 0)
             target = walkSprites;
 
-        if (target != currentAnimSet)
+        SwitchAnim(target, animSpeed);
+    }
+
+    void HandleAttackAnimation()
+    {
+        SwitchAnim(attackSprites, attackAnimSpeed);
+    }
+
+    void HandleShieldAnimation()
+    {
+        if (shieldSprites != null && shieldSprites.Length > 0)
+            SwitchAnim(shieldSprites, animSpeed);
+    }
+
+    void SwitchAnim(Sprite[] target, float speed)
+    {
+        if (target == null || target.Length == 0) return;
+
+        if (currentAnimSet != target)
         {
             currentAnimSet = target;
             currentFrame = 0;
             animTimer = 0f;
         }
 
-        if (currentAnimSet == null || currentAnimSet.Length == 0)
-            return;
-
         animTimer += Time.deltaTime;
-        if (animTimer >= animSpeed)
+        if (animTimer >= speed)
         {
             animTimer = 0f;
             currentFrame = (currentFrame + 1) % currentAnimSet.Length;
         }
 
         visualRenderer.sprite = currentAnimSet[currentFrame];
-    }
-
-    void HandleAttackAnimation()
-    {
-        if (attackSprites == null || attackSprites.Length == 0)
-            return;
-
-        animTimer += Time.deltaTime;
-        if (animTimer >= attackAnimSpeed)
-        {
-            animTimer = 0f;
-            currentFrame = (currentFrame + 1) % attackSprites.Length;
-            visualRenderer.sprite = attackSprites[currentFrame];
-        }
-    }
-
-    // --- GIZMOS ---
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        }
-
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        }
     }
 }
