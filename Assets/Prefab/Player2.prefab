@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3359064578736087919}
   - component: {fileID: 1393286315635497371}
-  - component: {fileID: 8924968869623060013}
-  - component: {fileID: 7578118199121233896}
   m_Layer: 8
   m_Name: Player2
   m_TagString: Mannequin
@@ -80,54 +78,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.26425716, y: 0.325985}
   m_EdgeRadius: 0
---- !u!114 &8924968869623060013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873875390410165072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4426017e2c057ff4d875b1b9158637f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 100
---- !u!114 &7578118199121233896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873875390410165072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce5e7673dd93da747a716f80242357a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerNumber: 1
-  moveSpeed: 5
-  jumpForce: 10
-  attackPoint: {fileID: 0}
-  attackRange: 0.5
-  attackDamage: 10
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  maxShieldTime: 15
-  shieldBurnOutCooldown: 30
-  groundCheck: {fileID: 0}
-  groundCheckRadius: 0.12
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  visualRenderer: {fileID: 0}
-  idleSprites: []
-  walkSprites: []
-  jumpSprites: []
-  crouchSprites: []
-  attackSprites: []
-  shieldSprites: []
-  animSpeed: 0.1
-  attackAnimSpeed: 0.08
-  attackDuration: 0.3

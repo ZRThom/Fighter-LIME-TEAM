@@ -800,6 +800,131 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
   m_PrefabInstance: {fileID: 1218408697802177222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260503554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5774fe2a4335544a63eb36bd01eb22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!114 &1260503555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985f5ee3ef4a16c44ba9b82922adfde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  attackPoint: {fileID: 1197973616}
+  attackPointAir: {fileID: 1197973616}
+  attackPointCrouch: {fileID: 1197973616}
+--- !u!114 &1260503556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5e7673dd93da747a716f80242357a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMouvement
+--- !u!114 &1260503557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79414a9b287e7b47aeb4ee3d5051673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+--- !u!114 &1260503558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b5efffb743ddd49876025820f0b8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerState
+  isGrounded: 1
+  facingRight: 1
+  isCrouching: 0
+  isMoving: 0
+  isAttacking: 0
+  isShielding: 0
+  shieldBurnedOut: 0
+  shieldTimer: 0
+  shieldCooldownTimer: 0
+--- !u!114 &1260503559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f94c276f2d86f14f977e9554356baa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
+  playerNumber: 1
+  playerCharacterIndex: 1
+  characterAnimations:
+  - characterName: 
+    idleSprites: []
+    walkSprites: []
+    jumpSprites: []
+    crouchSprites: []
+    attackSprites: []
+    attackAirSprites: []
+    attackCrouchSprites: []
+    shieldSprites: []
+  - characterName: 
+    idleSprites: []
+    walkSprites: []
+    jumpSprites: []
+    crouchSprites: []
+    attackSprites: []
+    attackAirSprites: []
+    attackCrouchSprites: []
+    shieldSprites: []
+  moveSpeed: 5
+  jumpForce: 10
+  attackRange: 0.5
+  attackDamage: 10
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  attackNormalSpeed: 0.16
+  attackAirSpeed: 0.2
+  attackCrouchSpeed: 0.18
+  maxShieldTime: 15
+  shieldBurnOutCooldown: 30
+  groundCheck: {fileID: 1068211226}
+  groundCheckRadius: 0.12
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  visualRenderer: {fileID: 1558785921}
+  animSpeed: 0.1
+  crouchColliderSize: {x: 0.9, y: 0.8}
 --- !u!212 &1275800786 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
@@ -993,6 +1118,131 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1503829564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5774fe2a4335544a63eb36bd01eb22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!114 &1503829565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985f5ee3ef4a16c44ba9b82922adfde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  attackPoint: {fileID: 1724089460}
+  attackPointAir: {fileID: 1724089460}
+  attackPointCrouch: {fileID: 1724089460}
+--- !u!114 &1503829566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5e7673dd93da747a716f80242357a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMouvement
+--- !u!114 &1503829567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79414a9b287e7b47aeb4ee3d5051673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+--- !u!114 &1503829568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b5efffb743ddd49876025820f0b8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerState
+  isGrounded: 1
+  facingRight: 1
+  isCrouching: 0
+  isMoving: 0
+  isAttacking: 0
+  isShielding: 0
+  shieldBurnedOut: 0
+  shieldTimer: 0
+  shieldCooldownTimer: 0
+--- !u!114 &1503829569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f94c276f2d86f14f977e9554356baa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
+  playerNumber: 1
+  playerCharacterIndex: 0
+  characterAnimations:
+  - characterName: 
+    idleSprites: []
+    walkSprites: []
+    jumpSprites: []
+    crouchSprites: []
+    attackSprites: []
+    attackAirSprites: []
+    attackCrouchSprites: []
+    shieldSprites: []
+  - characterName: 
+    idleSprites: []
+    walkSprites: []
+    jumpSprites: []
+    crouchSprites: []
+    attackSprites: []
+    attackAirSprites: []
+    attackCrouchSprites: []
+    shieldSprites: []
+  moveSpeed: 5
+  jumpForce: 10
+  attackRange: 0.5
+  attackDamage: 10
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  attackNormalSpeed: 0.16
+  attackAirSpeed: 0.2
+  attackCrouchSpeed: 0.18
+  maxShieldTime: 15
+  shieldBurnOutCooldown: 30
+  groundCheck: {fileID: 1673334321}
+  groundCheckRadius: 0.12
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  visualRenderer: {fileID: 1275800786}
+  animSpeed: 0.1
+  crouchColliderSize: {x: 0.9, y: 0.8}
 --- !u!212 &1558785921 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6522759040779672700, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
@@ -1126,7 +1376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6048918306752797903, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       propertyPath: m_Size.x
-      value: 0.9337332
+      value: 0.9077165
       objectReference: {fileID: 0}
     - target: {fileID: 6048918306752797903, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       propertyPath: m_Size.y
@@ -1134,7 +1384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6048918306752797903, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       propertyPath: m_Offset.x
-      value: -0.033133388
+      value: -0.020125031
       objectReference: {fileID: 0}
     - target: {fileID: 6048918306752797903, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       propertyPath: m_Offset.y
@@ -1915,7 +2165,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503559}
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503558}
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503557}
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503556}
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503555}
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503554}
   m_SourcePrefab: {fileID: 100100000, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
 --- !u!1001 &5374021320304193045
 PrefabInstance:
@@ -2369,6 +2637,24 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1503829560}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829569}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829568}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829567}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829566}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829565}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829564}
   m_SourcePrefab: {fileID: 100100000, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
