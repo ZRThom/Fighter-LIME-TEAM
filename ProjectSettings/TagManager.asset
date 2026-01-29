@@ -22,9 +22,9 @@ TagManager:
   - BackGround
   - Mannequin
   - Ennemie
-  - 
-  - 
-  - 
+  - 'Pushbox         '
+  - 'Hurtbox         '
+  - 'Hitbox          '
   - 
   - 
   - 

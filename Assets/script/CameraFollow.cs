@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class CameraFollow2d : MonoBehaviour
 {
+    [SerializeField] float xMin = -10f;
+    [SerializeField] float xMax = 10f;
+    [SerializeField] float yMin = -5f;
+    [SerializeField] float yMax = 5f;
+
     [SerializeField] Transform player;
     [SerializeField] Transform block;
     [SerializeField] float followSpeed = 2f;
@@ -26,15 +31,20 @@ public class CameraFollow2d : MonoBehaviour
         // Ajout du décalage vertical pour voir plus haut
         midpoint.y += offset.y;
 
-        // Position cible de la caméra
+        // Position cible avec offset
         var targetPos = new Vector3(midpoint.x + offset.x, midpoint.y, cam.transform.position.z);
 
-        // Déplacement fluide de la caméra
+        // 🔹 Limiter la caméra
+        targetPos.x = Mathf.Clamp(targetPos.x, xMin, xMax);
+        targetPos.y = Mathf.Clamp(targetPos.y, yMin, yMax);
+
+        // Déplacement fluide
         cam.transform.position = Vector3.Lerp(
             cam.transform.position,
             targetPos,
             followSpeed * Time.deltaTime
         );
+
 
         // Calcul de la distance pour zoomer
         var dist = Vector2.Distance(player.position, block.position);

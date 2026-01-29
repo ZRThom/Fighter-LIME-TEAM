@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
+
     // États publics pour lecture par les autres scripts
     public bool isGrounded = true;
     public bool facingRight = true;

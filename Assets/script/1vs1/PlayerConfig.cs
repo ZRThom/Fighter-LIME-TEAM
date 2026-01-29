@@ -32,7 +32,10 @@ public class PlayerConfig : MonoBehaviour
     [Header("Visuel")]
     public SpriteRenderer visualRenderer;
     public float animSpeed = 0.1f;
+    [Header("Hitbox")]
+    public float playerHitboxReduction = 1f;
 
+    public float hitboxScale = 1f;
     [Header("Hitbox Crouch")]
     public Vector2 crouchColliderSize = new Vector2(1f, 1.0f);
 }

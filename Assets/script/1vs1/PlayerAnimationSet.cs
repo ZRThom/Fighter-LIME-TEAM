@@ -3,7 +3,16 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerAnimationSet
 {
+    
+
+    [Header("Character Info")]
     public string characterName;
+    
+    public Sprite characterIcon;
+    [Header("Prefab du personnage")]
+    public GameObject prefab;
+
+    [Header("<-- Animations Sprites -->>")]
 
     [Header("Mouvement")]
     public Sprite[] idleSprites;
@@ -18,4 +27,5 @@ public class PlayerAnimationSet
 
     [Header("Bouclier")]
     public Sprite[] shieldSprites;
+    
 }
