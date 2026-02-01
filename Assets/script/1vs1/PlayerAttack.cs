@@ -7,14 +7,17 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPointAir;
     public Transform attackPointCrouch;
 
+    private Transform currentAttackPoint;
+    private bool hasHitThisAttack;
+
     private PlayerConfig config;
-    private PlayerInputHandler input; // MODIFIÉ ICI (était PlayerInput)
+    private PlayerInputHandler input;
     private PlayerState state;
-    private PlayerController controller; 
+    private PlayerController controller;
 
     private float attackTimer;
+    private float hitMoment; // moment où le coup sort
 
-    // MODIFIÉ ICI : Le paramètre 'pi' est maintenant de type PlayerInputHandler
     public void Init(PlayerConfig pc, PlayerInputHandler pi, PlayerState ps, PlayerController ctrl)
     {
         config = pc;
@@ -34,12 +37,22 @@ public class PlayerAttack : MonoBehaviour
         }
         input.AttackTriggered = false;
 
-        // Timer Attaque en cours
+        // Attaque en cours
         if (state.isAttacking)
         {
             attackTimer -= Time.deltaTime;
+
+            // 👉 HIT AU BON MOMENT (sans Animation Event)
+            if (!hasHitThisAttack && attackTimer <= hitMoment)
+            {
+                PerformDamage(currentAttackPoint);
+                hasHitThisAttack = true;
+            }
+
             if (attackTimer <= 0f)
+            {
                 state.isAttacking = false;
+            }
         }
     }
 
@@ -77,48 +90,66 @@ public class PlayerAttack : MonoBehaviour
     void StartAttackLogic()
     {
         state.isAttacking = true;
-        Transform currentPoint = attackPoint;
+        hasHitThisAttack = false;
+
+        currentAttackPoint = attackPoint;
+
         var animData = config.characterAnimations[config.playerCharacterIndex];
         Sprite[] currentSprites = animData.attackSprites;
         float speed = config.attackNormalSpeed;
 
         if (!state.isGrounded && animData.attackAirSprites.Length > 0 && attackPointAir != null)
         {
-            currentPoint = attackPointAir;
+            currentAttackPoint = attackPointAir;
             currentSprites = animData.attackAirSprites;
             speed = config.attackAirSpeed;
         }
         else if (state.isCrouching && animData.attackCrouchSprites.Length > 0 && attackPointCrouch != null)
         {
-            currentPoint = attackPointCrouch;
+            currentAttackPoint = attackPointCrouch;
             currentSprites = animData.attackCrouchSprites;
             speed = config.attackCrouchSpeed;
         }
 
         attackTimer = speed * currentSprites.Length;
-        
-        // Lancer l'anim via le controller
+
+        // 👉 le coup sort à 40% de l’attaque
+        hitMoment = attackTimer * 0.6f;
+
         controller.SetAttackAnim(currentSprites, speed);
-        
-        PerformDamage(currentPoint);
     }
 
     void PerformDamage(Transform point)
     {
         if (point == null) return;
-        Collider2D[] hits = Physics2D.OverlapCircleAll(point.position, config.attackRange, config.enemyLayers);
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            point.position,
+            config.attackRange,
+            config.enemyLayers
+        );
+
         foreach (Collider2D enemy in hits)
         {
-            PlayerHealth health = enemy.GetComponent<PlayerHealth>();
-            if (health != null) health.TakeDamage(config.attackDamage);
+            PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
+            if (health == null) continue;
+
+            health.TakeDamage(config.attackDamage);
+            break; // 1vs1 → un seul adversaire
         }
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        if (attackPoint != null) Gizmos.DrawWireSphere(attackPoint.position, 0.5f); 
-        if (attackPointAir != null) Gizmos.DrawWireSphere(attackPointAir.position, 0.5f);
-        if (attackPointCrouch != null) Gizmos.DrawWireSphere(attackPointCrouch.position, 0.5f);
+
+        if (attackPoint != null)
+            Gizmos.DrawWireSphere(attackPoint.position, config.attackRange);
+
+        if (attackPointAir != null)
+            Gizmos.DrawWireSphere(attackPointAir.position, config.attackRange);
+
+        if (attackPointCrouch != null)
+            Gizmos.DrawWireSphere(attackPointCrouch.position, config.attackRange);
     }
 }

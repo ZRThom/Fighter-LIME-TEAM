@@ -577,18 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ace46e43169a84aace5a44c005a4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2d
-  xMin: -10
-  xMax: 10
-  yMin: -5
-  yMax: 5
-  player: {fileID: 0}
-  block: {fileID: 0}
-  followSpeed: 2
-  zoomSpeed: 2
-  zoomMultiplier: 1
-  minZoom: 3
-  maxZoom: 11
-  offset: {x: 0, y: 2}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,8 +972,18 @@ MonoBehaviour:
   - characterName: Pablo
     characterIcon: {fileID: 0}
     prefab: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
-    idleSprites: []
-    walkSprites: []
+    idleSprites:
+    - {fileID: 3469704248156425608, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    walkSprites:
+    - {fileID: 4741381626244118236, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -4675530033111320152, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -1478846622008408599, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -3435811309223497230, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -250112011864588069, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -5901303612172724605, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -6309315673255223157, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -2653386452169247108, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -8745664065672232020, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     jumpSprites: []
     crouchSprites:
     - {fileID: -1382581888231760086, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
@@ -1000,15 +998,45 @@ MonoBehaviour:
     - {fileID: 6349146484379433942, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
     - {fileID: -1198416299836722784, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
     - {fileID: -8979190171299580770, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
-    attackSprites: []
+    attackSprites:
+    - {fileID: -729706501800808540, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: 5848376267094942988, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: 4217395768250826065, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -3612864934616726843, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: 4937481791546425679, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -6155941379534094662, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -6799777295461468743, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -354192115356467317, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -4895130122966084533, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
     attackAirSprites: []
     attackCrouchSprites: []
     shieldSprites: []
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
-    idleSprites: []
-    walkSprites: []
+    idleSprites:
+    - {fileID: 8570025691734315002, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 3398685364442365152, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 1066740512064510008, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 67023469947417538, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 4740955834436295709, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -4381958478969352449, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -4762126366987147191, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -7379869354378694723, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -8858916524451142258, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 5397161088936006068, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    walkSprites:
+    - {fileID: 6670013158627102337, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -7498966738037271362, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: 3865615119111990378, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -9208832189255025500, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -6757924326819456520, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: 8919208615140736916, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -8163515940883218187, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -7928127207926353983, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: 3773711932619530103, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -3617498868565448476, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
     jumpSprites: []
     crouchSprites:
     - {fileID: 6272150415785704399, guid: e62bc0ba4b866044d85acc2fac6822cb, type: 3}
@@ -1027,7 +1055,7 @@ MonoBehaviour:
     shieldSprites: []
   moveSpeed: 3
   jumpForce: 3
-  attackRange: 0.5
+  attackRange: 1.5
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
@@ -1047,6 +1075,19 @@ MonoBehaviour:
   playerHitboxReduction: 0.8
   hitboxScale: 1
   crouchColliderSize: {x: 1.3, y: 1.4}
+--- !u!114 &1260503563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260503548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4426017e2c057ff4d875b1b9158637f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
 --- !u!212 &1275800786 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
@@ -1408,8 +1449,27 @@ MonoBehaviour:
   - characterName: Pablo
     characterIcon: {fileID: 0}
     prefab: {fileID: 1260503548}
-    idleSprites: []
-    walkSprites: []
+    idleSprites:
+    - {fileID: 3469704248156425608, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 4820723138321302619, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 4427342677407701161, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 2737102817663402274, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: -3496574980750464693, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 1627558419646467698, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: -5989042337383649887, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 5112734543822376996, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 3248019013357707892, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 7892290911522085962, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    walkSprites:
+    - {fileID: 4741381626244118236, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -4675530033111320152, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -1478846622008408599, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -3435811309223497230, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -250112011864588069, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -5901303612172724605, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -6309315673255223157, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -2653386452169247108, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
+    - {fileID: -8745664065672232020, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     jumpSprites: []
     crouchSprites:
     - {fileID: -1382581888231760086, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
@@ -1424,15 +1484,45 @@ MonoBehaviour:
     - {fileID: 6349146484379433942, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
     - {fileID: -1198416299836722784, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
     - {fileID: -8979190171299580770, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
-    attackSprites: []
+    attackSprites:
+    - {fileID: -729706501800808540, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: 5848376267094942988, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: 4217395768250826065, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -3612864934616726843, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: 4937481791546425679, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -6155941379534094662, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -6799777295461468743, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -354192115356467317, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -4895130122966084533, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
+    - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
     attackAirSprites: []
     attackCrouchSprites: []
     shieldSprites: []
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 1503829554}
-    idleSprites: []
-    walkSprites: []
+    idleSprites:
+    - {fileID: 8570025691734315002, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 3398685364442365152, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 1066740512064510008, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 67023469947417538, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 4740955834436295709, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -4381958478969352449, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -4762126366987147191, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -7379869354378694723, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: -8858916524451142258, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    - {fileID: 5397161088936006068, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
+    walkSprites:
+    - {fileID: 6670013158627102337, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -7498966738037271362, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: 3865615119111990378, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -9208832189255025500, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -6757924326819456520, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: 8919208615140736916, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -8163515940883218187, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -7928127207926353983, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: 3773711932619530103, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
+    - {fileID: -3617498868565448476, guid: 12dd2225c50ec5c449ff12750535b04e, type: 3}
     jumpSprites: []
     crouchSprites:
     - {fileID: 6272150415785704399, guid: e62bc0ba4b866044d85acc2fac6822cb, type: 3}
@@ -1471,6 +1561,19 @@ MonoBehaviour:
   playerHitboxReduction: 1
   hitboxScale: 1
   crouchColliderSize: {x: 0.3, y: 0.4}
+--- !u!114 &1503829571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503829554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4426017e2c057ff4d875b1b9158637f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
 --- !u!212 &1558785921 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6522759040779672700, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
@@ -1532,7 +1635,7 @@ Transform:
   m_GameObject: {fileID: 1724089459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.116, y: 0.304, z: 0}
+  m_LocalPosition: {x: 0.49, y: 0.423, z: 0}
   m_LocalScale: {x: 0.20833, y: 0.15833, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1617,6 +1720,14 @@ PrefabInstance:
     - target: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716465277741178462, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.414
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716465277741178462, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.292
       objectReference: {fileID: 0}
     - target: {fileID: 6048918306752797903, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       propertyPath: m_Size.x
@@ -2428,6 +2539,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1260503554}
+    - targetCorrespondingSourceObject: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260503563}
   m_SourcePrefab: {fileID: 100100000, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
 --- !u!1001 &5374021320304193045
 PrefabInstance:
@@ -2439,7 +2553,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Size.x
-      value: 0.32255036
+      value: 0.303639
       objectReference: {fileID: 0}
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Size.y
@@ -2447,7 +2561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Offset.x
-      value: 0.33708298
+      value: 0.34653866
       objectReference: {fileID: 0}
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Offset.y
@@ -2899,6 +3013,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1503829564}
+    - targetCorrespondingSourceObject: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503829571}
   m_SourcePrefab: {fileID: 100100000, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

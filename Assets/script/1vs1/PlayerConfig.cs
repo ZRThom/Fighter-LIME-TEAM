@@ -11,7 +11,7 @@ public class PlayerConfig : MonoBehaviour
     public float jumpForce = 10f;
 
     [Header("Attaque")]
-    public float attackRange = 0.5f;
+    public float attackRange = 1.5f;
     public int attackDamage = 10;
     public LayerMask enemyLayers;
 
