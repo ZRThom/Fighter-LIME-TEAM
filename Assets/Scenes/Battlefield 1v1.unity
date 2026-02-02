@@ -369,19 +369,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6519922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9657619
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.263
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_LocalPosition.z
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7ace46e43169a84aace5a44c005a4f1, type: 3}
   m_Name: 
@@ -582,7 +582,7 @@ MonoBehaviour:
   yMin: -5
   yMax: 5
   player: {fileID: 0}
-  block: {fileID: 0}
+  player2: {fileID: 0}
   followSpeed: 2
   zoomSpeed: 2
   zoomMultiplier: 1
@@ -606,7 +606,7 @@ MonoBehaviour:
   yMin: -5
   yMax: 5
   player: {fileID: 127899073}
-  block: {fileID: 1495060490}
+  player2: {fileID: 1495060490}
   followSpeed: 2
   zoomSpeed: 2
   zoomMultiplier: 0
@@ -921,6 +921,8 @@ MonoBehaviour:
   attackPoint: {fileID: 1197973616}
   attackPointAir: {fileID: 1197973616}
   attackPointCrouch: {fileID: 1197973616}
+  knockbackForce: 5
+  knockbackLift: 2
 --- !u!114 &1260503556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79414a9b287e7b47aeb4ee3d5051673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+  useController: 0
 --- !u!114 &1260503558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,6 +989,15 @@ MonoBehaviour:
     prefab: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
     idleSprites:
     - {fileID: 3469704248156425608, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 4820723138321302619, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 4427342677407701161, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 2737102817663402274, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: -3496574980750464693, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 1627558419646467698, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: -5989042337383649887, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 5112734543822376996, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 3248019013357707892, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
+    - {fileID: 7892290911522085962, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
     walkSprites:
     - {fileID: 4741381626244118236, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     - {fileID: -4675530033111320152, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
@@ -996,7 +1008,17 @@ MonoBehaviour:
     - {fileID: -6309315673255223157, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     - {fileID: -2653386452169247108, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     - {fileID: -8745664065672232020, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
-    jumpSprites: []
+    jumpSprites:
+    - {fileID: -7282925179243745560, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -656172924093588553, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: 8810200804791846463, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -3951197727696706028, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -4336651884052266038, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -8079974110603702272, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -1827628698661824392, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: 4469169407337548644, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: 748258712423960681, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -8321765864069434404, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
     crouchSprites:
     - {fileID: -1382581888231760086, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
     - {fileID: -8273582639100570310, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
@@ -1023,7 +1045,13 @@ MonoBehaviour:
     - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
     attackAirSprites: []
     attackCrouchSprites: []
-    shieldSprites: []
+    shieldSprites:
+    - {fileID: 8682652978284165054, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 8919960378932674370, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 1448283550684085886, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 1898205550522619279, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 3297026338139073979, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 1595139745244555583, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
@@ -1066,13 +1094,13 @@ MonoBehaviour:
     attackCrouchSprites: []
     shieldSprites: []
   moveSpeed: 3
-  jumpForce: 3
+  jumpForce: 5
   attackRange: 1.5
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
-  attackNormalSpeed: 0.16
+  attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
   maxShieldTime: 15
@@ -1370,7 +1398,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1503829564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,6 +1426,8 @@ MonoBehaviour:
   attackPoint: {fileID: 1724089460}
   attackPointAir: {fileID: 1724089460}
   attackPointCrouch: {fileID: 1724089460}
+  knockbackForce: 5
+  knockbackLift: 2
 --- !u!114 &1503829566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79414a9b287e7b47aeb4ee3d5051673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+  useController: 1
 --- !u!114 &1503829568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,7 +1513,17 @@ MonoBehaviour:
     - {fileID: -6309315673255223157, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     - {fileID: -2653386452169247108, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
     - {fileID: -8745664065672232020, guid: 7828a48f34aac3c458ca3472b138a8a3, type: 3}
-    jumpSprites: []
+    jumpSprites:
+    - {fileID: -7282925179243745560, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -656172924093588553, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: 8810200804791846463, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -3951197727696706028, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -4336651884052266038, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -8079974110603702272, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -1827628698661824392, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: 4469169407337548644, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: 748258712423960681, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
+    - {fileID: -8321765864069434404, guid: 1619f3ea55493ec448fcfaf56e640ae5, type: 3}
     crouchSprites:
     - {fileID: -1382581888231760086, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
     - {fileID: -8273582639100570310, guid: 8b04fb23cf303184cbee5cd2ad362290, type: 3}
@@ -1509,7 +1550,13 @@ MonoBehaviour:
     - {fileID: -2404810297681356871, guid: 7f9e0ccb652984a44a90fc56777f4b44, type: 3}
     attackAirSprites: []
     attackCrouchSprites: []
-    shieldSprites: []
+    shieldSprites:
+    - {fileID: 8682652978284165054, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 8919960378932674370, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 1448283550684085886, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 1898205550522619279, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 3297026338139073979, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    - {fileID: 1595139745244555583, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 1503829554}
@@ -1551,14 +1598,14 @@ MonoBehaviour:
     attackAirSprites: []
     attackCrouchSprites: []
     shieldSprites: []
-  moveSpeed: 5
-  jumpForce: 10
+  moveSpeed: 3
+  jumpForce: 5
   attackRange: 0.5
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
-  attackNormalSpeed: 0.16
+  attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
   maxShieldTime: 15
@@ -1572,7 +1619,7 @@ MonoBehaviour:
   animSpeed: 0.1
   playerHitboxReduction: 1
   hitboxScale: 1
-  crouchColliderSize: {x: 0.3, y: 0.4}
+  crouchColliderSize: {x: 0.15, y: 0.2}
 --- !u!114 &1503829571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,7 +1694,7 @@ Transform:
   m_GameObject: {fileID: 1724089459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.451, y: 0.462, z: 0}
+  m_LocalPosition: {x: 0.108, y: 0.303, z: 0}
   m_LocalScale: {x: 0.20833, y: 0.15833, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2565,19 +2612,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Size.x
-      value: 0.28663468
+      value: 0.17529683
       objectReference: {fileID: 0}
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Size.y
-      value: 0.5649004
+      value: 0.28910688
       objectReference: {fileID: 0}
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Offset.x
-      value: 1.3242894
+      value: 0.029461466
       objectReference: {fileID: 0}
     - target: {fileID: 1393286315635497371, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Offset.y
-      value: 0.52482617
+      value: 0.32914466
       objectReference: {fileID: 0}
     - target: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_Name
@@ -2592,12 +2639,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.5259156
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.673642
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9788095
+      objectReference: {fileID: 0}
+    - target: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.973
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.376
+      value: -3.93
       objectReference: {fileID: 0}
     - target: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
       propertyPath: m_LocalPosition.z
