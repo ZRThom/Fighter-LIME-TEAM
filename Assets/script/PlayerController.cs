@@ -1,12 +1,6 @@
-// PlayerController2D amélioré avec :
-// - Hitbox sol / air / accroupi
-// - Knockback du mannequin
-// - Cooldown d'attaque
-// - FIX: 1 seul dégât par attaque (plus de spam de textes)
-
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // <--- AJOUT INDISPENSABLE POUR LES LISTES
+using System.Collections.Generic; 
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -134,7 +128,6 @@ public class PlayerController2D : MonoBehaviour
         isAttacking = true;
         attackOnCooldown = true;
 
-        // --- FIX : On crée la liste des ennemis déjà touchés pour CETTE attaque ---
         List<GameObject> enemiesHitThisAttack = new List<GameObject>();
 
         Sprite[] selectedAttack = attackSprites;
@@ -161,7 +154,6 @@ public class PlayerController2D : MonoBehaviour
         attackOnCooldown = false;
     }
 
-    // --- FIX : La fonction accepte maintenant la liste en paramètre ---
     void DetectAttackHit(List<GameObject> enemiesHitList)
     {
         Transform point = groundAttackPoint;
@@ -181,7 +173,6 @@ public class PlayerController2D : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(point.position, range, enemyLayer);
         foreach (var hit in hits)
         {
-            // --- FIX : Si l'ennemi est déjà dans la liste, on l'ignore ---
             if (enemiesHitList.Contains(hit.gameObject)) continue;
 
             Manequin m = hit.GetComponent<Manequin>();
@@ -189,7 +180,6 @@ public class PlayerController2D : MonoBehaviour
             {
                 m.TakeDamage(attackDamage);
 
-                // --- FIX : On ajoute l'ennemi à la liste pour ne plus le retoucher durant cette attaque ---
                 enemiesHitList.Add(hit.gameObject);
 
                 Rigidbody2D ennemiRB = hit.GetComponent<Rigidbody2D>();

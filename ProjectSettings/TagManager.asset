@@ -10,6 +10,7 @@ TagManager:
   - MENU
   - Mannequin
   - Text_Degats
+  - Ennemie
   layers:
   - Default
   - TransparentFX
@@ -20,10 +21,10 @@ TagManager:
   - Sol
   - BackGround
   - Mannequin
-  - 
-  - 
-  - 
-  - 
+  - Ennemie
+  - 'Pushbox         '
+  - 'Hurtbox         '
+  - 'Hitbox          '
   - 
   - 
   - 
