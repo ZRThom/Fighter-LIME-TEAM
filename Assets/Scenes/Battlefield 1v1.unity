@@ -982,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
   playerNumber: 1
+  opponentTransform: {fileID: 1495060490}
   playerCharacterIndex: 0
   characterAnimations:
   - characterName: Pablo
@@ -1510,6 +1511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
   playerNumber: 2
+  opponentTransform: {fileID: 127899073}
   playerCharacterIndex: 1
   characterAnimations:
   - characterName: Pablo

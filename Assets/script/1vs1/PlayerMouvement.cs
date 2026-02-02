@@ -13,7 +13,7 @@ public class PlayerMouvement : MonoBehaviour
     private Vector2 standingColliderSize;
     private Vector2 standingColliderOffset;
 
-    // --- NOUVEAU : Variables pour la gestion du temps du bouclier ---
+    // Gestion du temps du bouclier
     private float currentShieldTimer = 0f;
     private float burnoutTimer = 0f;
     private bool isBurnedOut = false;
@@ -41,10 +41,10 @@ public class PlayerMouvement : MonoBehaviour
         if (config.groundCheck != null)
             state.isGrounded = Physics2D.OverlapCircle(config.groundCheck.position, config.groundCheckRadius, config.groundLayer);
 
-        // --- 2. Mise à jour des états (Crouch & Shield LOGIC) ---
+        // --- 2. Mise à jour des états (Crouch & Shield) ---
         state.isCrouching = input.CrouchHeld && state.isGrounded;
 
-        // Appel de la nouvelle fonction pour gérer le temps du bouclier
+        // Logique du bouclier
         HandleShieldLogic();
 
         // --- 3. Déplacement Horizontal ---
@@ -57,17 +57,13 @@ public class PlayerMouvement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(input.MoveInput.x * config.moveSpeed, rb.linearVelocity.y);
             state.isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
-
-            if ((input.MoveInput.x > 0 && !state.facingRight) || (input.MoveInput.x < 0 && state.facingRight))
-            {
-                state.facingRight = !state.facingRight;
-                Vector3 scale = transform.localScale;
-                scale.x *= -1f;
-                transform.localScale = scale;
-            }
         }
 
-        // --- 4. Saut ---
+        // --- 4. GESTION DU FLIP (Rotation) ---
+        // On ne regarde plus l'Input, mais la position de l'ennemi
+        HandleFlip();
+
+        // --- 5. Saut ---
         if (input.JumpTriggered && state.isGrounded && !state.isCrouching && !state.isShielding)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, config.jumpForce);
@@ -75,58 +71,70 @@ public class PlayerMouvement : MonoBehaviour
         }
         input.JumpTriggered = false;
 
-        // --- 5. Gestion Collider Crouch/Stand ---
+        // --- 6. Gestion Collider Crouch/Stand ---
         if (state.isCrouching) ApplyCrouchCollider();
         else ApplyStandingCollider();
     }
 
-    // --- NOUVELLE FONCTION : LOGIQUE DU BOUCLIER ---
+    // Nouvelle fonction dédiée au retournement
+    void HandleFlip()
+    {
+        if (config.opponentTransform == null) return;
+
+        // On calcule la différence de position X entre l'ennemi et nous
+        float xDiff = config.opponentTransform.position.x - transform.position.x;
+
+        // Si l'ennemi est à droite (xDiff > 0) et qu'on regarde à gauche (!facingRight)
+        if (xDiff > 0 && !state.facingRight)
+        {
+            Flip();
+        }
+        // Si l'ennemi est à gauche (xDiff < 0) et qu'on regarde à droite (facingRight)
+        else if (xDiff < 0 && state.facingRight)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        state.facingRight = !state.facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1f;
+        transform.localScale = scale;
+    }
+
     void HandleShieldLogic()
     {
-        // 1. Si le bouclier est en surchauffe (Burnout)
         if (isBurnedOut)
         {
-            state.isShielding = false; // Force le bouclier à se désactiver
+            state.isShielding = false;
             burnoutTimer -= Time.deltaTime;
-
-            // Si le temps de recharge est fini
             if (burnoutTimer <= 0)
             {
                 isBurnedOut = false;
-                currentShieldTimer = 0f; // Reset du timer de bouclier
-                Debug.Log("Bouclier réactivé !");
+                currentShieldTimer = 0f;
             }
-            return; // On arrête là, on ne peut pas utiliser le bouclier
+            return;
         }
 
-        // 2. Gestion de l'utilisation normale
         if (input.ShieldPressed)
         {
-            // On augmente le temps d'utilisation
             currentShieldTimer += Time.deltaTime;
-
-            // Vérifie si on dépasse le temps max
             if (currentShieldTimer >= config.maxShieldTime)
             {
-                // SURCHAUFFE !
                 isBurnedOut = true;
                 state.isShielding = false;
                 burnoutTimer = config.shieldBurnOutCooldown;
-                Debug.Log("Bouclier en surchauffe (Burnout) !");
             }
             else
             {
-                // Utilisation valide
                 state.isShielding = true;
             }
         }
         else
         {
-            // Si on ne tient pas le bouton
             state.isShielding = false;
-
-            // Optionnel : Récupération du bouclier quand on ne l'utilise pas
-            // Ici je le fais descendre 2x plus vite qu'il ne monte pour recharger
             if (currentShieldTimer > 0)
             {
                 currentShieldTimer -= Time.deltaTime * 2f; 
