@@ -48,4 +48,9 @@ public class SceneLoader : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
+    public void DebugTest()
+    {
+        Debug.Log("Scene debug");
+    }
 }
