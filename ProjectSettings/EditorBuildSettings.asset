@@ -31,7 +31,7 @@ EditorBuildSettings:
     guid: 8ba368ceb2f6ea24bb9441ee0a464221
   - enabled: 1
     path: Assets/Scenes/Shop.unity
-    guid: 7272b2b5887cd5c49a41ee139634655a
+    guid: 5796eb31012df4514b28aa4a6b7e53e8
   - enabled: 1
     path: Assets/Scenes/Profil.unity
     guid: 02672b81b67670846b73d34a41ff0ee4
@@ -43,10 +43,13 @@ EditorBuildSettings:
     guid: 70354ca1fb89c40a6abde694992ba27f
   - enabled: 1
     path: Assets/Scenes/Battlefield 1v1.unity
-    guid: 4a2e27c86138c024291e01a3e706dfd1
+    guid: 21df9275c1a1f432db30eb7897b2401f
   - enabled: 1
     path: Assets/Scenes/PLAYM STORY.unity
     guid: 3b6d99952d067884b8c4d4165e9e6523
+  - enabled: 1
+    path: Assets/Scenes/SceneLoading.unity
+    guid: 9ad3905f2eb99ba449c3939570d38770
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
