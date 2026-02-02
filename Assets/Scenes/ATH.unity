@@ -224,6 +224,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &87653023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 87653025}
+  - component: {fileID: 87653024}
+  m_Layer: 0
+  m_Name: RoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &87653024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87653023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb6b9f35c63b5242a76dcc2a5fc9145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoundManager
+  p1HealthScript: {fileID: 1457274235}
+  p2HealthScript: {fileID: 0}
+  timerScript: {fileID: 1535753747}
+  p1UltimateScript: {fileID: 0}
+  p1Wins: 0
+  p2Wins: 0
+  roundsToWin: 2
+--- !u!4 &87653025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87653023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &405739139
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +953,7 @@ MonoBehaviour:
   highColor: {r: 0.061236024, g: 1, b: 0, a: 1}
   mediumColor: {r: 0.96055627, g: 1, b: 0, a: 1}
   lowColor: {r: 1, g: 0, b: 0, a: 1}
+  animationSpeed: 5
 --- !u!114 &1457274236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,3 +1363,4 @@ SceneRoots:
   - {fileID: 405739142}
   - {fileID: 87536350}
   - {fileID: 930331131}
+  - {fileID: 87653025}
