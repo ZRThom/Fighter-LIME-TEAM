@@ -8,7 +8,7 @@ public class CameraFollow2d : MonoBehaviour
     [SerializeField] float yMax = 5f;
 
     [SerializeField] Transform player;
-    [SerializeField] Transform block;
+    [SerializeField] Transform player2;
     [SerializeField] float followSpeed = 2f;
     [SerializeField] float zoomSpeed = 2f;
     [SerializeField] float zoomMultiplier = 1f;
@@ -25,8 +25,8 @@ public class CameraFollow2d : MonoBehaviour
 
     void LateUpdate()
     {
-        // Calcul du midpoint entre joueur et bloc
-        var midpoint = (player.position + block.position) * 0.5f;
+        // Calcul du midpoint entre les deux joueur 
+        var midpoint = (player.position + player2.position) * 0.5f;
 
         // Ajout du décalage vertical pour voir plus haut
         midpoint.y += offset.y;
@@ -47,7 +47,7 @@ public class CameraFollow2d : MonoBehaviour
 
 
         // Calcul de la distance pour zoomer
-        var dist = Vector2.Distance(player.position, block.position);
+        var dist = Vector2.Distance(player.position, player2.position);
         var targetSize = Mathf.Clamp(dist * zoomMultiplier, minZoom, maxZoom);
 
         // Zoom fluide
