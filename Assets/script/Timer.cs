@@ -29,4 +29,15 @@ public class Timer : MonoBehaviour
             }
         }
     }
+
+    public void StopTimer()
+    {
+        activeTimer = false;
+    }
+
+    public void ResetTimer()
+    {
+        timeLeft = 99;
+        activeTimer = true;
+    }
 }

@@ -48,7 +48,7 @@ public class HealthBarTest : MonoBehaviour
         } 
     }
 
-    public void SetDamages(float value)
+    public void SetDamages(float damageAmount)
     {
         healthSlider.value = Mathf.Clamp01(healthSlider.value - value);
 
@@ -76,5 +76,12 @@ public class HealthBarTest : MonoBehaviour
             damageSlider.value = Mathf.MoveTowards(damageSlider.value, healthSlider.value, comboFadeSpeed * Time.deltaTime);
             yield return null;
         } 
+    }
+
+    public void ResetHealth()
+    {
+        healthScrollbar.size = 1f;
+        UpdateColor();
+        Debug.Log("Health reset!");
     }
 }
