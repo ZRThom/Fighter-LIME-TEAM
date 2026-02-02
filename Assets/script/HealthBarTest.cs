@@ -50,7 +50,7 @@ public class HealthBarTest : MonoBehaviour
 
     public void SetDamages(float damageAmount)
     {
-        healthSlider.value = Mathf.Clamp01(healthSlider.value - value);
+        healthSlider.value = Mathf.Clamp01(healthSlider.value - damageAmount);
 
         if (damageCoroutine != null) StopCoroutine(damageCoroutine);
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
@@ -80,8 +80,13 @@ public class HealthBarTest : MonoBehaviour
 
     public void ResetHealth()
     {
-        healthScrollbar.size = 1f;
-        UpdateColor();
+        healthSlider.value = 1f;
         Debug.Log("Health reset!");
+    }
+
+    public void ResetUltimate()
+    {
+        currentUltimate = 0f;
+        if (ultimateSlider != null) ultimateSlider.value = 0f;
     }
 }

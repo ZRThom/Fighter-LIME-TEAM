@@ -7,7 +7,7 @@ public class RoundManager : MonoBehaviour
     public HealthBarTest p1HealthScript; 
     public HealthBarTest p2HealthScript;
     public Timer timerScript;
-    public UltimateSystem p1UltimateScript;
+    // public UltimateSystem p1UltimateScript;
 
     [Header("Score Settings")]
     public int p1Wins = 0;
@@ -20,11 +20,11 @@ public class RoundManager : MonoBehaviour
     {
         if (!isRoundActive) return;
 
-        if (p1HealthScript.healthScrollbar.size <= 0)
+        if (p1HealthScript.healthSlider.value <= 0f)
         {
             EndRound(2);
         }
-        else if (p2HealthScript.healthScrollbar.size <= 0)
+        else if (p2HealthScript.healthSlider.value <= 0f)
         {
             EndRound(1); 
         }
@@ -38,8 +38,8 @@ public class RoundManager : MonoBehaviour
 
     void HandleTimeOut()
     {
-        if (p1HealthScript.healthScrollbar.size > p2HealthScript.healthScrollbar.size) EndRound(1);
-        else if (p2HealthScript.healthScrollbar.size > p1HealthScript.healthScrollbar.size) EndRound(2);
+        if (p1HealthScript.healthSlider.value > p2HealthScript.healthSlider.value) EndRound(1);
+        else if (p2HealthScript.healthSlider.value > p1HealthScript.healthSlider.value) EndRound(2);
         else EndRound(0);
     }
 
@@ -75,6 +75,10 @@ public class RoundManager : MonoBehaviour
     {
         p1HealthScript.ResetHealth(); 
         p2HealthScript.ResetHealth();
+
+        p1HealthScript.ResetUltimate();
+        p2HealthScript.ResetUltimate();
+        
         timerScript.ResetTimer();
         
         isRoundActive = true;
