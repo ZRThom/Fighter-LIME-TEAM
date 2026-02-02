@@ -13,6 +13,11 @@ public class PlayerMouvement : MonoBehaviour
     private Vector2 standingColliderSize;
     private Vector2 standingColliderOffset;
 
+    // Gestion du temps du bouclier
+    private float currentShieldTimer = 0f;
+    private float burnoutTimer = 0f;
+    private bool isBurnedOut = false;
+
     public void Init(PlayerConfig pc, PlayerInputHandler pi, PlayerState ps)
     {
         config = pc;
@@ -20,7 +25,6 @@ public class PlayerMouvement : MonoBehaviour
         state = ps;
 
         rb = GetComponent<Rigidbody2D>();
-        // Sécurité : on s'assure que la rotation est figée (même si fait dans l'inspecteur)
         rb.freezeRotation = true; 
         col = GetComponent<BoxCollider2D>();
         
@@ -39,53 +43,110 @@ public class PlayerMouvement : MonoBehaviour
 
         // --- 2. Mise à jour des états (Crouch & Shield) ---
         state.isCrouching = input.CrouchHeld && state.isGrounded;
-        state.isShielding = input.ShieldPressed; 
+
+        // Logique du bouclier
+        HandleShieldLogic();
 
         // --- 3. Déplacement Horizontal ---
-        // SI on est accroupi OU en train de parer (Shield) : ON NE BOUGE PAS
         if (state.isCrouching || state.isShielding)
         {
-            // On met la vitesse X à 0, mais on conserve la gravité (Y)
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
             state.isMoving = false;
         }
         else
         {
-            // SINON : Mouvement normal
             rb.linearVelocity = new Vector2(input.MoveInput.x * config.moveSpeed, rb.linearVelocity.y);
             state.isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
-
-            // Flip (Seulement autorisé si on peut bouger)
-            if ((input.MoveInput.x > 0 && !state.facingRight) || (input.MoveInput.x < 0 && state.facingRight))
-            {
-                state.facingRight = !state.facingRight;
-                Vector3 scale = transform.localScale;
-                scale.x *= -1f;
-                transform.localScale = scale;
-            }
         }
 
-        // --- 4. Saut ---
-        // On vérifie qu'on ne shield pas et qu'on ne crouch pas avant de sauter
+        // --- 4. GESTION DU FLIP (Rotation) ---
+        // On ne regarde plus l'Input, mais la position de l'ennemi
+        HandleFlip();
+
+        // --- 5. Saut ---
         if (input.JumpTriggered && state.isGrounded && !state.isCrouching && !state.isShielding)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, config.jumpForce);
             state.isGrounded = false;
         }
-        input.JumpTriggered = false; // Reset du trigger saut
+        input.JumpTriggered = false;
 
-        // --- 5. Gestion Collider Crouch/Stand ---
+        // --- 6. Gestion Collider Crouch/Stand ---
         if (state.isCrouching) ApplyCrouchCollider();
         else ApplyStandingCollider();
+    }
+
+    // Nouvelle fonction dédiée au retournement
+    void HandleFlip()
+    {
+        if (config.opponentTransform == null) return;
+
+        // On calcule la différence de position X entre l'ennemi et nous
+        float xDiff = config.opponentTransform.position.x - transform.position.x;
+
+        // Si l'ennemi est à droite (xDiff > 0) et qu'on regarde à gauche (!facingRight)
+        if (xDiff > 0 && !state.facingRight)
+        {
+            Flip();
+        }
+        // Si l'ennemi est à gauche (xDiff < 0) et qu'on regarde à droite (facingRight)
+        else if (xDiff < 0 && state.facingRight)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        state.facingRight = !state.facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1f;
+        transform.localScale = scale;
+    }
+
+    void HandleShieldLogic()
+    {
+        if (isBurnedOut)
+        {
+            state.isShielding = false;
+            burnoutTimer -= Time.deltaTime;
+            if (burnoutTimer <= 0)
+            {
+                isBurnedOut = false;
+                currentShieldTimer = 0f;
+            }
+            return;
+        }
+
+        if (input.ShieldPressed)
+        {
+            currentShieldTimer += Time.deltaTime;
+            if (currentShieldTimer >= config.maxShieldTime)
+            {
+                isBurnedOut = true;
+                state.isShielding = false;
+                burnoutTimer = config.shieldBurnOutCooldown;
+            }
+            else
+            {
+                state.isShielding = true;
+            }
+        }
+        else
+        {
+            state.isShielding = false;
+            if (currentShieldTimer > 0)
+            {
+                currentShieldTimer -= Time.deltaTime * 2f; 
+                if (currentShieldTimer < 0) currentShieldTimer = 0;
+            }
+        }
     }
 
     void ApplyCrouchCollider()
     {
         if (col == null) return;
-        
-        // Calcul pour garder les pieds au sol quand la hitbox rétrécit
         float bottomY = standingColliderOffset.y - standingColliderSize.y / 2f;
-        
         col.size = config.crouchColliderSize;
         col.offset = new Vector2(standingColliderOffset.x, bottomY + config.crouchColliderSize.y / 2f);
     }
