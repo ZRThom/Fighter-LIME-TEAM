@@ -904,13 +904,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ecd6c507e65e946931c35214a45a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2d
+  xMin: -10
+  xMax: 10
+  yMin: -5
+  yMax: 5
   player: {fileID: 127899073}
-  block: {fileID: 1495060490}
-  FollowSpeed: 1.5
+  player2: {fileID: 1495060490}
+  followSpeed: 2
   zoomSpeed: 2
   zoomMultiplier: 0
   minZoom: 3
   maxZoom: 11
+  offset: {x: 0, y: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

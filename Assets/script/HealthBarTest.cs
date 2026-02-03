@@ -48,9 +48,9 @@ public class HealthBarTest : MonoBehaviour
         } 
     }
 
-    public void SetDamages(float damageAmount)
+    public void SetDamages(float targetHealthNormalized)
     {
-        healthSlider.value = Mathf.Clamp01(healthSlider.value - damageAmount);
+        healthSlider.value = Mathf.Clamp01(targetHealthNormalized);
 
         if (damageCoroutine != null) StopCoroutine(damageCoroutine);
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
@@ -88,5 +88,11 @@ public class HealthBarTest : MonoBehaviour
     {
         currentUltimate = 0f;
         if (ultimateSlider != null) ultimateSlider.value = 0f;
+    }
+
+    public void SetHealth(float normalizedHealth)
+    {
+        healthSlider.value = Mathf.Clamp01(normalizedHealth);
+        damageSlider.value = healthSlider.value;
     }
 }

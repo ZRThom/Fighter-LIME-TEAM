@@ -9,13 +9,20 @@ public class HUDManager : MonoBehaviour
 {
     public static HUDManager instance;
 
-
     public GameObject DialogueHolder, ContinueButton;
     public TextMeshProUGUI NameDisplay, TextDisplay;
 
+    public HealthBarTest p1HUD;
+    public HealthBarTest p2HUD;
 
-    private void Awake()
+    void Awake()
     {
-    instance = this;
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
+
+    public HealthBarTest GetHUDForPlayer(int playerID)
+    {
+        return playerID == 1 ? p1HUD : p2HUD;
     }
 }
