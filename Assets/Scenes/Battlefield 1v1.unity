@@ -1297,6 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
+  playerID: 1
 --- !u!212 &1275800786 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
@@ -1845,6 +1846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
+  playerID: 2
 --- !u!212 &1558785921 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6522759040779672700, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
