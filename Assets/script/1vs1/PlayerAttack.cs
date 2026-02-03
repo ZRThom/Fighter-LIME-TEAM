@@ -8,8 +8,8 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPointCrouch;
 
     [Header("Réglages Impact")]
-    public float knockbackForce = 5f; // 👉 NOUVEAU : Force du recul (ajustable dans l'inspecteur)
-    public float knockbackLift = 2f;  // 👉 NOUVEAU : Petite force vers le haut pour décoller l'ennemi
+    public float knockbackForce = 5f;
+    public float knockbackLift = 2f;
 
     private Transform currentAttackPoint;
     private bool hasHitThisAttack;
@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
         }
         input.AttackTriggered = false;
 
-        // Attaque en cours
+        // Attack now
         if (state.isAttacking)
         {
             attackTimer -= Time.deltaTime;
@@ -132,29 +132,18 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in hits)
         {
-            // 1. Appliquer les Dégâts
             PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
             if (health == null) continue;
 
             health.TakeDamage(config.attackDamage);
 
-            // 2. 👉 APPLIQUER LE KNOCKBACK (RECUL)
             Rigidbody2D enemyRb = enemy.GetComponentInParent<Rigidbody2D>();
             
             if (enemyRb != null)
             {
-                // On détermine la direction du recul en fonction de où regarde le joueur
-                // Si facingRight est true, on pousse vers la droite (1), sinon gauche (-1)
                 float directionX = state.facingRight ? 1f : -1f;
-
-                // On crée un vecteur qui pousse en arrière et un tout petit peu en l'air
                 Vector2 knockbackDir = new Vector2(directionX * knockbackForce, knockbackLift);
-
-                // IMPORTANT : On reset la vitesse actuelle de l'ennemi pour que le choc soit net
-                // (Sinon, si l'ennemi court vers nous, le knockback peut s'annuler)
                 enemyRb.linearVelocity = Vector2.zero; 
-
-                // On ajoute la force "Impulse" (instantanée)
                 enemyRb.AddForce(knockbackDir, ForceMode2D.Impulse);
             }
 

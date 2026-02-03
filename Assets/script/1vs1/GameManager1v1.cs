@@ -25,7 +25,7 @@ public class GameManager1vs1 : MonoBehaviour
 
     void SpawnPlayers()
     {
-        // Joueur 1
+        // Player 1
         int index1 = selection.player1Choice;
         if (index1 >= 0 && index1 < characterPrefabs.Length)
         {
@@ -39,7 +39,7 @@ public class GameManager1vs1 : MonoBehaviour
             player1.name = "Player1";
         }
 
-        // Joueur 2
+        // Player 2
         int index2 = selection.player2Choice;
         if (index2 >= 0 && index2 < characterPrefabs.Length)
         {

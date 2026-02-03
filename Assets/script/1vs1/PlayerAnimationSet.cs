@@ -9,23 +9,23 @@ public class PlayerAnimationSet
     public string characterName;
     
     public Sprite characterIcon;
-    [Header("Prefab du personnage")]
+    [Header("Prefab Character")]
     public GameObject prefab;
 
-    [Header("<-- Animations Sprites -->>")]
+    [Header("Sprite Animation")]
 
-    [Header("Mouvement")]
+    [Header("Movement")]
     public Sprite[] idleSprites;
     public Sprite[] walkSprites;
     public Sprite[] jumpSprites;
     public Sprite[] crouchSprites;
 
-    [Header("Attaques")]
+    [Header("Attack")]
     public Sprite[] attackSprites;
     public Sprite[] attackAirSprites;
     public Sprite[] attackCrouchSprites;
 
-    [Header("Bouclier")]
+    [Header("Shield")]
     public Sprite[] shieldSprites;
     
 }

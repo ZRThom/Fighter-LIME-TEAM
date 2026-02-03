@@ -3,7 +3,6 @@ using UnityEngine.InputSystem; // Nécessaire pour le nouveau système
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    // --- NOUVEAU : Case à cocher dans l'inspecteur ---
     [Header("Contrôles")]
     public bool useController = false; 
 
@@ -24,7 +23,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         float h = 0f;
 
-        // --- JOUEUR 1 (Clavier : ZQSD / WASD) ---
         if (config.playerNumber == 1 && !useController)
         {
             if (Keyboard.current != null)
@@ -40,35 +38,26 @@ public class PlayerInputHandler : MonoBehaviour
                 else ShieldPressed = false;
             }
         }
-        // --- JOUEUR 2 ou MANETTE ---
         else
         {
-            // SI on veut utiliser la manette ET qu'une manette est connectée
             if (useController && Gamepad.current != null)
             {
                 var gamepad = Gamepad.current;
 
-                // 1. Mouvement (Stick Gauche)
                 h = gamepad.leftStick.x.ReadValue();
                 
-                // Zone morte pour éviter que ça bouge tout seul (si stick un peu vieux)
                 if (Mathf.Abs(h) < 0.1f) h = 0f;
 
-                // 2. Saut (Bouton Sud = A sur Xbox / Croix sur PS)
                 if (gamepad.buttonSouth.wasPressedThisFrame) JumpTriggered = true;
 
-                // 3. Crouch (Stick vers le bas ou Flèche Bas du D-Pad)
                 bool stickDown = gamepad.leftStick.y.ReadValue() < -0.5f;
                 bool dpadDown = gamepad.dpad.down.isPressed;
                 CrouchHeld = stickDown || dpadDown;
 
-                // 4. Attaque (Bouton Ouest = X sur Xbox / Carré sur PS)
                 if (gamepad.buttonWest.wasPressedThisFrame) AttackTriggered = true;
 
-                // 5. Bouclier (Gâchette Droite ou R1)
                 ShieldPressed = gamepad.rightShoulder.isPressed;
             }
-            // SINON : On utilise les flèches du clavier (Fallback)
             else if (Keyboard.current != null)
             {
                 if (Keyboard.current.leftArrowKey.isPressed) h = -1f;

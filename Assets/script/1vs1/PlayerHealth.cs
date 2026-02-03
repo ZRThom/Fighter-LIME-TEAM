@@ -41,7 +41,6 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} est mort !");
         gameObject.SetActive(false);
-        //OnDeath?.Invoke(); (not now)
     }
 
     public int GetCurrentHealth() => currentHealth;

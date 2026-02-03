@@ -16,7 +16,7 @@ public class Manequin : MonoBehaviour
 
     [Header("Texte Flottant")]
     public GameObject floatingTextPrefab; 
-    // Ajuste Y ici (par ex: 1.5 ou 2.0) pour que le texte apparaisse au-dessus de la tête
+    // Ajuste Y ici (par ex: 1.5 ou 2.0) head on top
     public Vector3 textOffset = new Vector3(0, 1.5f, 0); 
 
     void Start()
@@ -33,14 +33,12 @@ public class Manequin : MonoBehaviour
         health -= damageAmount;
         if (health < 0) health = 0;
 
-        // Lancer l'animation de coup
         if (targetRenderer != null && hitFrames.Length > 0)
         {
             StopAllCoroutines(); 
             StartCoroutine(PlayHitAnimation());
         }
 
-        // Faire apparaître le texte de dégâts
         ShowFloatingText(damageAmount);
     }
 
@@ -51,7 +49,6 @@ public class Manequin : MonoBehaviour
             targetRenderer.sprite = s;
             yield return new WaitForSeconds(hitFrameDuration);
         }
-
         if(normalSprite != null)
             targetRenderer.sprite = normalSprite;
     }
@@ -60,13 +57,9 @@ public class Manequin : MonoBehaviour
     {
         if (floatingTextPrefab != null)
         {
-            // Calcul de la position avec l'offset (hauteur)
             Vector3 finalPosition = transform.position + textOffset;
-            
             GameObject textObj = Instantiate(floatingTextPrefab, finalPosition, Quaternion.identity);
 
-            // Vérification et assignation des dégâts
-            // Assure-toi que ton script "FloatingText" a bien une méthode "SetDamage(int)"
             FloatingText textScript = textObj.GetComponent<FloatingText>();
             if (textScript != null)
             {
