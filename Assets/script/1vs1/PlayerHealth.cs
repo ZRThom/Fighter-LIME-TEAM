@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (hud != null)
         {
             float normalizedHealth = (float)currentHealth / maxHealth;
-            hud.SetDamages(normalizedHealth); // absurd bug fix 1:30 (03/02/2026) (exponential damage)
+            hud.SetDamages(normalizedHealth);
         }
         Debug.Log($"{gameObject.name} prend {damage} dégâts. Santé actuelle : {currentHealth}");
 
@@ -41,7 +41,6 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} est mort !");
         gameObject.SetActive(false);
-        //OnDeath?.Invoke(); (not now)
     }
 
     public int GetCurrentHealth() => currentHealth;

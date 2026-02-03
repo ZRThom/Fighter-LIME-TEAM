@@ -37,17 +37,17 @@ public class PlayerMouvement : MonoBehaviour
 
     public void HandleMovement()
     {
-        // --- 1. Ground Check ---
+        //  Ground Check 
         if (config.groundCheck != null)
             state.isGrounded = Physics2D.OverlapCircle(config.groundCheck.position, config.groundCheckRadius, config.groundLayer);
 
-        // --- 2. Mise à jour des états (Crouch & Shield) ---
+        //  Mise à jour des états (Crouch & Shield) 
         state.isCrouching = input.CrouchHeld && state.isGrounded;
 
         // Logique du bouclier
         HandleShieldLogic();
 
-        // --- 3. Déplacement Horizontal ---
+        //  Déplacement Horizontal 
         if (state.isCrouching || state.isShielding)
         {
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
@@ -59,11 +59,10 @@ public class PlayerMouvement : MonoBehaviour
             state.isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
         }
 
-        // --- 4. GESTION DU FLIP (Rotation) ---
-        // On ne regarde plus l'Input, mais la position de l'ennemi
+
         HandleFlip();
 
-        // --- 5. Saut ---
+        // Saut 
         if (input.JumpTriggered && state.isGrounded && !state.isCrouching && !state.isShielding)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, config.jumpForce);
@@ -71,25 +70,21 @@ public class PlayerMouvement : MonoBehaviour
         }
         input.JumpTriggered = false;
 
-        // --- 6. Gestion Collider Crouch/Stand ---
+        //  Gestion Collider Crouch/Stand 
         if (state.isCrouching) ApplyCrouchCollider();
         else ApplyStandingCollider();
     }
 
-    // Nouvelle fonction dédiée au retournement
     void HandleFlip()
     {
         if (config.opponentTransform == null) return;
 
-        // On calcule la différence de position X entre l'ennemi et nous
         float xDiff = config.opponentTransform.position.x - transform.position.x;
 
-        // Si l'ennemi est à droite (xDiff > 0) et qu'on regarde à gauche (!facingRight)
         if (xDiff > 0 && !state.facingRight)
         {
             Flip();
         }
-        // Si l'ennemi est à gauche (xDiff < 0) et qu'on regarde à droite (facingRight)
         else if (xDiff < 0 && state.facingRight)
         {
             Flip();

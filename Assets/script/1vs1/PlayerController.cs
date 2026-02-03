@@ -1,17 +1,16 @@
 using UnityEngine;
 
-// Notez le changement ici : typeof(PlayerInputHandler) au lieu de PlayerInput
 [RequireComponent(typeof(PlayerConfig), typeof(PlayerState), typeof(PlayerInputHandler))]
 [RequireComponent(typeof(PlayerMouvement), typeof(PlayerAttack))]
 public class PlayerController : MonoBehaviour
 {
     private PlayerConfig config;
     private PlayerState state;
-    private PlayerInputHandler input; // Changement de type ici
+    private PlayerInputHandler input;
     private PlayerMouvement mouvement;
     private PlayerAttack attack;
 
-    // Animation vars
+    
     private float animTimer;
     private int currentFrame;
     private Sprite[] currentAnimSet;
@@ -21,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         config = GetComponent<PlayerConfig>();
         state = GetComponent<PlayerState>();
-        input = GetComponent<PlayerInputHandler>(); // Changement ici
+        input = GetComponent<PlayerInputHandler>(); 
         mouvement = GetComponent<PlayerMouvement>();
         attack = GetComponent<PlayerAttack>();
 
