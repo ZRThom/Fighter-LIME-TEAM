@@ -588,6 +588,8 @@ MonoBehaviour:
   - {fileID: 117570593}
   player1Spawn: {fileID: 6938963788897376392, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
   player2Spawn: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!114 &311717945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db01215faaddc4498701412ac4b80d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneButton
-  targetScene: Battlefield 1v1
+  targetScene: versus_load
 --- !u!1001 &704840596
 PrefabInstance:
   m_ObjectHideFlags: 0
