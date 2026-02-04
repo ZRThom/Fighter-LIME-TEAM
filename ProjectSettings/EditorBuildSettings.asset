@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PLAY MENU.unity
     guid: c6b6720d0539947aab7b47ac66daba48
   - enabled: 1
-    path: Assets/Scenes/PANEL PLAY.unity
+    path: Assets/Scenes/PanelPLAY.unity
     guid: 576b9a22fc6bda548a93cef7e6325262
   - enabled: 1
     path: Assets/Scenes/Settings.unity
@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/RaphStealerWomens.unity
     guid: 38a29507342f64b368d092f138d584b4
   - enabled: 1
-    path: Assets/Scenes/ManiSachichou.unity
+    path: Assets/Scenes/EasterEgg3.unity
     guid: 70354ca1fb89c40a6abde694992ba27f
   - enabled: 1
     path: Assets/Scenes/Battlefield 1v1.unity
