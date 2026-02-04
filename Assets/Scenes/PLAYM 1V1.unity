@@ -131,8 +131,9 @@ GameObject:
   - component: {fileID: 117570597}
   - component: {fileID: 117570596}
   - component: {fileID: 117570595}
+  - component: {fileID: 117570598}
   m_Layer: 5
-  m_Name: SELECT MECHANT
+  m_Name: SELECT_INGENIEUR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,16 +202,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: BroadcastMessage
-        m_Mode: 5
+      - m_Target: {fileID: 117570598}
+        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
+        m_MethodName: SelectPlayer1
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: P1 pick MECHANT
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &117570596
@@ -251,6 +252,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117570593}
   m_CullTransparentMesh: 1
+--- !u!114 &117570598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117570593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b5e37a86875234ab1c5e12140dd289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
+  characterPrefab: {fileID: 8150902072001270897, guid: 9bc9366189ac65c4c9c0c3ff69fdd1c8, type: 3}
+  playerNumber: 2
 --- !u!1 &243744378
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,9 +349,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 624350303}
-        m_TargetAssemblyTypeName: SceneButton, Assembly-CSharp
-        m_MethodName: GoToNextScene
+      - m_Target: {fileID: 624350304}
+        m_TargetAssemblyTypeName: PlayButtonAll, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -405,30 +420,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311717943}
-  - component: {fileID: 311717942}
   - component: {fileID: 311717945}
-  - component: {fileID: 311717944}
   m_Layer: 0
-  m_Name: SceneManagerObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &311717942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311717941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f5229f9372922499af34fe9e3ea723, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
-  submitSound: {fileID: 8300000, guid: 649c50ea6ac1346209d1bb2391486d17, type: 3}
-  backSound: {fileID: 8300000, guid: 54a73e11d21ff4da7bc505af98b1160e, type: 3}
 --- !u!4 &311717943
 Transform:
   m_ObjectHideFlags: 0
@@ -444,26 +443,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1217132524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &311717944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311717941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a31a5317593ddb7498a1bd754d9ce0e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  selection: {fileID: 311717945}
-  characterPrefabs:
-  - {fileID: 1181628767}
-  - {fileID: 117570593}
-  player1Spawn: {fileID: 6938963788897376392, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
-  player2Spawn: {fileID: 3359064578736087919, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
 --- !u!114 &311717945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,11 +452,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 311717941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b5e37a86875234ab1c5e12140dd289, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e54bf6ff30717240b35913870bc2834, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
-  player1Choice: -1
-  player2Choice: -1
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  player1Prefab: {fileID: 4588606172857760097, guid: c4ebf94c550e9d2409b4e3e976a452bb, type: 3}
+  player2Prefab: {fileID: 8150902072001270897, guid: 9bc9366189ac65c4c9c0c3ff69fdd1c8, type: 3}
 --- !u!1001 &384483097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -690,6 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 624350302}
   - component: {fileID: 624350303}
+  - component: {fileID: 624350304}
   m_Layer: 0
   m_Name: SceneLoadManagement
   m_TagString: Untagged
@@ -719,12 +699,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624350301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9db01215faaddc4498701412ac4b80d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneButton
   targetScene: Battlefield 1v1
+--- !u!114 &624350304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624350301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a362e8efabd8a85409c59b9edaee07db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayButtonAll
+  targetSceneBase: Battlefield 1v1
 --- !u!1001 &704840596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1031,8 +1024,9 @@ GameObject:
   - component: {fileID: 1181628771}
   - component: {fileID: 1181628770}
   - component: {fileID: 1181628769}
+  - component: {fileID: 1181628772}
   m_Layer: 5
-  m_Name: SELECT INGENIEUR
+  m_Name: SELECT_MECHANT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1100,7 +1094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1181628770}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1181628772}
+        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
+        m_MethodName: SelectPlayer1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1181628770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,6 +1145,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181628767}
   m_CullTransparentMesh: 1
+--- !u!114 &1181628772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181628767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b5e37a86875234ab1c5e12140dd289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
+  characterPrefab: {fileID: 4588606172857760097, guid: c4ebf94c550e9d2409b4e3e976a452bb, type: 3}
+  playerNumber: 1
 --- !u!1 &1217132520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 311717942}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: PlayBackSound
         m_Mode: 1
@@ -1507,7 +1527,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 311717942}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadSceneByName
         m_Mode: 5
@@ -1694,8 +1714,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 835149056}
-  - {fileID: 1217132524}
   - {fileID: 1163430175}
+  - {fileID: 1217132524}
   - {fileID: 1533061857}
   - {fileID: 704840596}
   - {fileID: 1648390220}

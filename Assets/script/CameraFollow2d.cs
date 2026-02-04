@@ -7,8 +7,9 @@ public class CameraFollow2d : MonoBehaviour
     [SerializeField] float yMin = -5f;
     [SerializeField] float yMax = 5f;
 
-    [SerializeField] Transform player;
-    [SerializeField] Transform player2;
+    [Header("N'ASSIGNEZ RIEN")]
+    public Transform player;
+    public Transform player2;
     [SerializeField] float followSpeed = 2f;
     [SerializeField] float zoomSpeed = 2f;
     [SerializeField] float zoomMultiplier = 1f;

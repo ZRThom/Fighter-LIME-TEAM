@@ -2,19 +2,11 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public int player1Choice = -1;
-    public int player2Choice = -1;
+    public GameObject characterPrefab;
+    public int playerNumber = 1;
 
-    // Assigné aux boutons dans l'inspecteur
-    public void SelectPlayer1(int index)
+    public void SelectPlayer1()
     {
-        player1Choice = index;
-        Debug.Log("Player1 choisi : " + index);
-    }
-
-    public void SelectPlayer2(int index)
-    {
-        player2Choice = index;
-        Debug.Log("Player2 choisi : " + index);
+        GameManager.Instance.SelectPlayer(playerNumber, characterPrefab);
     }
 }
