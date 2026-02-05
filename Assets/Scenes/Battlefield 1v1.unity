@@ -632,7 +632,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
@@ -759,18 +758,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7ace46e43169a84aace5a44c005a4f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2d
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,6 +1322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   playerID: 1
+  currentHealth: 0
 --- !u!212 &1275800786 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
@@ -1884,6 +1872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   playerID: 2
+  currentHealth: 0
 --- !u!212 &1558785921 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6522759040779672700, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
@@ -1961,6 +1950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1990496401}
   - component: {fileID: 1990496400}
+  - component: {fileID: 1990496402}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2003,6 +1993,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990496402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990496399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f3a95c8245f44fb6490a7bb9ae64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  selection: {fileID: 0}
+  characterPrefabs: []
+  player1Spawn: {fileID: 1400388928}
+  player2Spawn: {fileID: 1032483339}
+  player1: {fileID: 1260503548}
+  player2: {fileID: 1503829554}
 --- !u!1001 &1218408697802177222
 PrefabInstance:
   m_ObjectHideFlags: 0

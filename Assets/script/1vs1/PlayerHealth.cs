@@ -5,9 +5,11 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int playerID = 1;
     private HealthBarTest hud;
-    private int currentHealth;
+    public int currentHealth;
 
     private PlayerState playerState;
+
+
 
     void Awake()
     {
