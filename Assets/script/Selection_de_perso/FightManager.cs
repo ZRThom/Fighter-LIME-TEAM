@@ -20,9 +20,13 @@ public class FightManager : MonoBehaviour
 
         GameObject leftPlayer = Instantiate(GameManager.Instance.firstSelectedPrefab, leftSpawn.position, Quaternion.identity);
         leftPlayer.name = "PlayerLeft";
+        var leftConfig = leftPlayer.GetComponent<PlayerConfig>();
+        leftConfig.playerNumber = 1;
 
         GameObject rightPlayer = Instantiate(GameManager.Instance.secondSelectedPrefab, rightSpawn.position, Quaternion.identity);
         rightPlayer.name = "PlayerRight";
+        var rightConfig = rightPlayer.GetComponent<PlayerConfig>();
+        rightConfig.playerNumber = 2;
 
         Vector3 scale = rightPlayer.transform.localScale;
         scale.x *= -1f;
