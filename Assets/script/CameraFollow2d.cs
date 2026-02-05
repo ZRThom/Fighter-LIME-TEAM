@@ -26,6 +26,7 @@ public class CameraFollow2d : MonoBehaviour
 
     void LateUpdate()
     {
+        if (player == null || player2 == null) return;
         // Calcul du midpoint entre les deux joueur 
         var midpoint = (player.position + player2.position) * 0.5f;
 
@@ -35,7 +36,7 @@ public class CameraFollow2d : MonoBehaviour
         // Position cible avec offset
         var targetPos = new Vector3(midpoint.x + offset.x, midpoint.y, cam.transform.position.z);
 
-        // 🔹 Limiter la caméra
+        // Limiter la caméra
         targetPos.x = Mathf.Clamp(targetPos.x, xMin, xMax);
         targetPos.y = Mathf.Clamp(targetPos.y, yMin, yMax);
 

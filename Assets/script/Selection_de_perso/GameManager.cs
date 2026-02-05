@@ -25,16 +25,16 @@ public class GameManagerSelect : MonoBehaviour
 
     public void SelectPlayer(int playerNumber, GameObject prefab)
     {
-        if (firstSelectedPrefab == null)
+        if (playerNumber == 1)
         {
             firstSelectedPrefab = prefab;
+            player1Prefab = prefab;
         }
-        else
+        else if (playerNumber == 2)   
         {
             secondSelectedPrefab = prefab;
+            player2Prefab = prefab;
         }
-        if (playerNumber == 1) player1Prefab = prefab;
-        else player2Prefab = prefab;
         Debug.Log($"Player {playerNumber} selected: {prefab.name}");
     }
 }

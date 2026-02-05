@@ -7,7 +7,7 @@ public class FightManager : MonoBehaviour
     public CameraFollow2d cameraFollow;
     void Start()
     {
-        SpawnPlayers();
+        Invoke(nameof(SpawnPlayers), 0.1f);
     }
 
     void SpawnPlayers()
