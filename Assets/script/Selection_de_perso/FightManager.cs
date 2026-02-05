@@ -24,6 +24,10 @@ public class FightManager : MonoBehaviour
         GameObject rightPlayer = Instantiate(GameManager.Instance.secondSelectedPrefab, rightSpawn.position, Quaternion.identity);
         rightPlayer.name = "PlayerRight";
 
+        Vector3 scale = rightPlayer.transform.localScale;
+        scale.x *= -1f;
+        rightPlayer.transform.localScale = scale;
+
         if (cameraFollow != null)
         {
             cameraFollow.player = leftPlayer.transform;
