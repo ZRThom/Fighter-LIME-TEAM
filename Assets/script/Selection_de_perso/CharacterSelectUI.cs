@@ -18,7 +18,7 @@ public class CharacterSelectUI : MonoBehaviour
             selectionMarkP1.SetActive(true);
             p1Selected = this;
 
-            GameManager.Instance.firstSelectedPrefab = characterPrefab;
+            GameManagerSelect.Instance.firstSelectedPrefab = characterPrefab;
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
@@ -26,7 +26,7 @@ public class CharacterSelectUI : MonoBehaviour
             selectionMarkP2.SetActive(true);
             p2Selected = this;
 
-            GameManager.Instance.secondSelectedPrefab = characterPrefab;
+            GameManagerSelect.Instance.secondSelectedPrefab = characterPrefab;
         }
         Debug.Log($"Click {eventData.button} on {characterPrefab.name}");
     }

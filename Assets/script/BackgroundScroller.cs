@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.UI; // Ajouté : Nécessaire pour le composant Image
 
 public class BackgroundScroller : MonoBehaviour

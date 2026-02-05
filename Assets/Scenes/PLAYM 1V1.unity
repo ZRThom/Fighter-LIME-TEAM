@@ -735,7 +735,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 624350302}
-  - component: {fileID: 624350303}
   - component: {fileID: 624350304}
   m_Layer: 0
   m_Name: SceneLoadManagement
@@ -759,19 +758,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1217132524}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &624350303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624350301}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db01215faaddc4498701412ac4b80d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneButton
-  targetScene: Battlefield 1v1
 --- !u!114 &624350304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,7 +1433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlobalCancel
   cancelAction: {fileID: 601366889}
-  backScene: PanelPLAY
+  backScene: PanelPlayer
 --- !u!114 &1356475449
 MonoBehaviour:
   m_ObjectHideFlags: 0

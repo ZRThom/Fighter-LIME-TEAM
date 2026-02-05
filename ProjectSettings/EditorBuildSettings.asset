@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/anger.unity
     guid: efbb30c3e4a759d42bd5594d5499a1d2
   - enabled: 1
-    path: Assets/Scenes/RaphStealerWomens.unity
+    path: Assets/Scenes/EasterEggRaph.unity
     guid: 38a29507342f64b368d092f138d584b4
   - enabled: 1
     path: Assets/Scenes/EasterEgg1.unity

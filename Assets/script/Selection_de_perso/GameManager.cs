@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManagerSelect : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManagerSelect Instance;
 
     [Header("Character Select")]
     public GameObject player1Prefab;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log($"Player1Prefab = {GameManager.Instance.player1Prefab?.name}, Player2Prefab = {GameManager.Instance.player2Prefab?.name}");
+        Debug.Log($"Player1Prefab = {GameManagerSelect.Instance.player1Prefab?.name}, Player2Prefab = {GameManagerSelect.Instance.player2Prefab?.name}");
     }
 
     public void SelectPlayer(int playerNumber, GameObject prefab)

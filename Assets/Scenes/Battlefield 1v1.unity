@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1400,7 +1401,7 @@ GameObject:
   - component: {fileID: 1990496401}
   - component: {fileID: 1990496402}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManagerSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

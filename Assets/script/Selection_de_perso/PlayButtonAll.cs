@@ -7,7 +7,7 @@ public class PlayButtonAll : MonoBehaviour
     public string loadingScene = "SceneLoading";
     public void Play()
     {
-    if (GameManager.Instance.firstSelectedPrefab == null || GameManager.Instance.secondSelectedPrefab == null)
+    if (GameManagerSelect.Instance.firstSelectedPrefab == null || GameManagerSelect.Instance.secondSelectedPrefab == null)
         {
             Debug.Log("Players not selected");
             return;

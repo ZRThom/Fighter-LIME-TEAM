@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private int roundtemp = 0;
     private bool isRoundActive = true;
 
+    private GameObject player1;
+    private GameObject player2;
 
     void endRound()
     {

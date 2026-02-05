@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private PlayerConfig config;
     private PlayerState state;
     private PlayerInputHandler input;
-    private PlayerInputHandler input;
     private PlayerMouvement mouvement;
     private PlayerAttack attack;
 
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
         config = GetComponent<PlayerConfig>();
         state = GetComponent<PlayerState>();
         input = GetComponent<PlayerInputHandler>(); 
-        input = GetComponent<PlayerInputHandler>();
         mouvement = GetComponent<PlayerMouvement>();
         attack = GetComponent<PlayerAttack>();
 
