@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 117570597}
   - component: {fileID: 117570596}
   - component: {fileID: 117570595}
-  - component: {fileID: 117570598}
   - component: {fileID: 117570599}
   - component: {fileID: 117570600}
   m_Layer: 5
@@ -204,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117570598}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
         m_MethodName: SelectPlayer1
         m_Mode: 1
@@ -254,20 +253,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117570593}
   m_CullTransparentMesh: 1
---- !u!114 &117570598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117570593}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b5e37a86875234ab1c5e12140dd289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
-  characterPrefab: {fileID: 8150902072001270897, guid: 9bc9366189ac65c4c9c0c3ff69fdd1c8, type: 3}
-  playerNumber: 2
 --- !u!114 &117570599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButtonAll
   targetSceneBase: Battlefield 1v1
+  loadingScene: SceneLoading
 --- !u!1001 &704840596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1140,7 +1126,6 @@ GameObject:
   - component: {fileID: 1181628771}
   - component: {fileID: 1181628770}
   - component: {fileID: 1181628769}
-  - component: {fileID: 1181628772}
   - component: {fileID: 1181628773}
   - component: {fileID: 1181628774}
   m_Layer: 5
@@ -1213,7 +1198,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1181628772}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
         m_MethodName: SelectPlayer1
         m_Mode: 1
@@ -1263,20 +1248,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181628767}
   m_CullTransparentMesh: 1
---- !u!114 &1181628772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181628767}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b5e37a86875234ab1c5e12140dd289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
-  characterPrefab: {fileID: 4588606172857760097, guid: c4ebf94c550e9d2409b4e3e976a452bb, type: 3}
-  playerNumber: 1
 --- !u!114 &1181628773
 MonoBehaviour:
   m_ObjectHideFlags: 0
