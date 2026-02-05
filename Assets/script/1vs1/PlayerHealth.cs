@@ -5,9 +5,11 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int playerID = 1;
     private HealthBarTest hud;
-    private int currentHealth;
+    public int currentHealth;
 
     private PlayerState playerState;
+
+
 
     void Awake()
     {
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         if (hud != null)
         {
             float normalizedHealth = (float)currentHealth / maxHealth;
-            hud.SetDamages(normalizedHealth); // absurd bug fix 1:30 (03/02/2026) (exponential damage)
+            hud.SetDamages(normalizedHealth);
         }
         Debug.Log($"{gameObject.name} prend {damage} dégâts. Santé actuelle : {currentHealth}");
 

@@ -147,7 +147,7 @@ public class PlayerAttack : MonoBehaviour
                 enemyRb.AddForce(knockbackDir, ForceMode2D.Impulse);
             }
 
-            break; // 1vs1
+            break; 
         }
     }
 
