@@ -5,12 +5,13 @@ public class CharacterSelectUI : MonoBehaviour
 {
     public GameObject selectionMarkP1;
     public GameObject selectionMarkP2;
-    
+    public GameObject characterPrefab;
     private static CharacterSelectUI p1Selected;
     private static CharacterSelectUI p2Selected;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(BaseEventData Data)
     {
+        PointerEventData eventData = (PointerEventData)Data;
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             if (p1Selected != null)
@@ -19,9 +20,9 @@ public class CharacterSelectUI : MonoBehaviour
             }
             selectionMarkP1.SetActive(true);
             p1Selected = this;
+            GameManager.Instance.firstSelectedPrefab = characterPrefab;
         }
-
-        if (eventData.button == PointerEventData.InputButton.Right)
+        else if (eventData.button == PointerEventData.InputButton.Right)
         {
             if (p2Selected != null)
             {
@@ -29,6 +30,8 @@ public class CharacterSelectUI : MonoBehaviour
             }
             selectionMarkP2.SetActive(true);
             p2Selected = this;
+            GameManager.Instance.firstSelectedPrefab = characterPrefab;
         }
+        Debug.Log($"Click {eventData.button} on {characterPrefab.name}");
     }
 }
