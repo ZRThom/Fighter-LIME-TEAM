@@ -360,7 +360,7 @@ MonoBehaviour:
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8
   attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   playerID: 1
+  currentHealth: 0
 --- !u!1 &6762832674122120329
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,4 +9,10 @@ public class SceneButton : MonoBehaviour
         SceneCompactLoader.sceneToLoad = targetScene;
         SceneManager.LoadScene("SceneLoading");
     }
+
+    public void GoToNextSceneBase()
+    {
+        SceneManager.LoadScene(targetScene);
+    }
+
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3374652585050777298}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Ennemie
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6064006169548359176}
   - component: {fileID: 5320383873543418650}
   - component: {fileID: 3089630405941154926}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ MonoBehaviour:
   groundCheckRadius: 0.12
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   visualRenderer: {fileID: 5730768986374407268}
   animSpeed: 0.1
   playerHitboxReduction: 1
@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   playerID: 2
+  currentHealth: 0
 --- !u!1 &9196643884150633136
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 515246554996754563}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -470,7 +471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
       propertyPath: m_TagString

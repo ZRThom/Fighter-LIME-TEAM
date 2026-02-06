@@ -9,14 +9,21 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerState playerState;
 
-
-
-    void Awake()
+    void Start()
     {
-        hud = HUDManager.instance.GetHUDForPlayer(playerID);
-        if (hud != null) hud.SetHealth(1f);
-        currentHealth = maxHealth;
         playerState = GetComponent<PlayerState>();
+        currentHealth = maxHealth;
+
+        if (HUDManager.instance != null)
+        {
+            hud = HUDManager.instance.GetHUDForPlayer(playerID);
+            if (hud != null) hud.SetHealth(1f);
+            else Debug.LogWarning($"HUD not found for player {playerID}");
+        }
+        else
+        {
+            Debug.LogWarning("HUDManager null");
+        }
     }
 
     public void TakeDamage(int damage)

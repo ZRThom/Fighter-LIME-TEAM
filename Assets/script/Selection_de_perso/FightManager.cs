@@ -22,15 +22,24 @@ public class FightManager : MonoBehaviour
         leftPlayer.name = "PlayerLeft";
         var leftConfig = leftPlayer.GetComponent<PlayerConfig>();
         leftConfig.playerNumber = 1;
+        var leftHealth = leftPlayer.GetComponent<PlayerHealth>();
+        if (leftHealth != null) leftHealth.playerID = 1;
 
         GameObject rightPlayer = Instantiate(GameManagerSelect.Instance.secondSelectedPrefab, rightSpawn.position, Quaternion.identity);
         rightPlayer.name = "PlayerRight";
         var rightConfig = rightPlayer.GetComponent<PlayerConfig>();
         rightConfig.playerNumber = 2;
+        var rightHealth = rightPlayer.GetComponent<PlayerHealth>();
+        if (rightHealth != null) rightHealth.playerID = 2;
 
-        Vector3 scale = rightPlayer.transform.localScale;
-        scale.x *= -1f;
-        rightPlayer.transform.localScale = scale;
+        // right player flip
+        // Vector3 scale = rightPlayer.transform.localScale;
+        // scale.x *= -1f;
+        // rightPlayer.transform.localScale = scale;
+
+        leftConfig.opponentTransform = rightPlayer.transform;
+        rightConfig.opponentTransform = leftPlayer.transform;
+
 
         if (cameraFollow != null)
         {

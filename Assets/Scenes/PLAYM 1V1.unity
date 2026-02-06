@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a362e8efabd8a85409c59b9edaee07db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButtonAll
-  targetSceneBase: Battlefield 1v1
+  targetSceneBase: versus_load
   loadingScene: SceneLoading
 --- !u!1001 &704840596
 PrefabInstance:

@@ -135,6 +135,8 @@ public class PlayerAttack : MonoBehaviour
             PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
             if (health == null) continue;
 
+            // avoid bug of similarity
+            if (health.playerID == config.playerNumber) continue;
             health.TakeDamage(config.attackDamage);
 
             Rigidbody2D enemyRb = enemy.GetComponentInParent<Rigidbody2D>();
