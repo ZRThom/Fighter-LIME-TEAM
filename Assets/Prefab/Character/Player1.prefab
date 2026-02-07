@@ -466,6 +466,7 @@ MonoBehaviour:
   maxHealth: 100
   playerID: 1
   currentHealth: 0
+  isDead: 0
 --- !u!1 &6762832674122120329
 GameObject:
   m_ObjectHideFlags: 0

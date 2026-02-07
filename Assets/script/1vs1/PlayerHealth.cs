@@ -57,4 +57,11 @@ public class PlayerHealth : MonoBehaviour
     {
         UnityEditor.Handles.Label(transform.position + Vector3.up * 1.5f, $"Health: {currentHealth}/{maxHealth}");
     }
+
+    public void ResetHealth()
+    {
+        gameObject.SetActive(true);
+        currentHealth = maxHealth;
+        if (hud != null) hud.SetHealth(1f);
+    }
 }

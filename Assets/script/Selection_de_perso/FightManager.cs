@@ -2,9 +2,23 @@ using UnityEngine;
 
 public class FightManager : MonoBehaviour
 {
+    public static FightManager Instance;
+
     public Transform leftSpawn; // left
     public Transform rightSpawn; // right
     public CameraFollow2d cameraFollow;
+
+    public Vector3 P1SpawnPos => leftSpawn.position;
+    public Vector3 P2SpawnPos => rightSpawn.position;
+
+    [HideInInspector] public GameObject player1;
+    [HideInInspector] public GameObject player2;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         Invoke(nameof(SpawnPlayers), 0.1f);
@@ -23,14 +37,14 @@ public class FightManager : MonoBehaviour
         var leftConfig = leftPlayer.GetComponent<PlayerConfig>();
         leftConfig.playerNumber = 1;
         var leftHealth = leftPlayer.GetComponent<PlayerHealth>();
-        if (leftHealth != null) leftHealth.playerID = 1;
+        if (leftHealth) leftHealth.playerID = 1;
 
         GameObject rightPlayer = Instantiate(GameManagerSelect.Instance.secondSelectedPrefab, rightSpawn.position, Quaternion.identity);
         rightPlayer.name = "PlayerRight";
         var rightConfig = rightPlayer.GetComponent<PlayerConfig>();
         rightConfig.playerNumber = 2;
         var rightHealth = rightPlayer.GetComponent<PlayerHealth>();
-        if (rightHealth != null) rightHealth.playerID = 2;
+        if (rightHealth) rightHealth.playerID = 2;
 
         // right player flip
         // Vector3 scale = rightPlayer.transform.localScale;
@@ -40,6 +54,8 @@ public class FightManager : MonoBehaviour
         leftConfig.opponentTransform = rightPlayer.transform;
         rightConfig.opponentTransform = leftPlayer.transform;
 
+        player1 = leftPlayer;
+        player2 = rightPlayer;
 
         if (cameraFollow != null)
         {

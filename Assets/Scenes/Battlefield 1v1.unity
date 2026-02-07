@@ -428,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 430789181}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.46, y: -0.37, z: 0}
+  m_LocalPosition: {x: -3.46, y: -1.3399999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,6 +587,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a19f95d8e070b840b190db2d27b6efb, type: 3}
+--- !u!114 &435093247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3404426527178502117, guid: 5a19f95d8e070b840b190db2d27b6efb, type: 3}
+  m_PrefabInstance: {fileID: 435093246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a04692b7cb87c845895138da946a8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+--- !u!114 &435093248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7518819536196276105, guid: 5a19f95d8e070b840b190db2d27b6efb, type: 3}
+  m_PrefabInstance: {fileID: 435093246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d8d81ee9681249a9bd5f7ca31ff5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarTest
+--- !u!114 &435093249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5564774195021751293, guid: 5a19f95d8e070b840b190db2d27b6efb, type: 3}
+  m_PrefabInstance: {fileID: 435093246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d8d81ee9681249a9bd5f7ca31ff5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarTest
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +807,7 @@ Transform:
   m_GameObject: {fileID: 659230204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.76, y: -0.31, z: 0}
+  m_LocalPosition: {x: 2.76, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -831,6 +864,69 @@ Transform:
   - {fileID: 1324121260}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1035705130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035705131}
+  - component: {fileID: 1035705132}
+  - component: {fileID: 1035705133}
+  m_Layer: 0
+  m_Name: RoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1035705131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035705130}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1196.553, y: 848.4767, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035705132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035705130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb6b9f35c63b5242a76dcc2a5fc9145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoundManager
+  p1HealthScript: {fileID: 435093249}
+  p2HealthScript: {fileID: 435093248}
+  timerScript: {fileID: 435093247}
+  p1Wins: 0
+  p2Wins: 0
+  roundsToWin: 2
+--- !u!114 &1035705133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035705130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f3a95c8245f44fb6490a7bb9ae64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1 &1248027105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1508,8 @@ MonoBehaviour:
   leftSpawn: {fileID: 430789182}
   rightSpawn: {fileID: 659230205}
   cameraFollow: {fileID: 519420034}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1426,3 +1524,4 @@ SceneRoots:
   - {fileID: 435093246}
   - {fileID: 430789182}
   - {fileID: 659230205}
+  - {fileID: 1035705131}
