@@ -19,6 +19,10 @@ public class PlayerConfig : MonoBehaviour
     public int attackDamage = 10;
     public LayerMask enemyLayers;
 
+    [Header("Rage")]
+    public float maxRage = 100f;
+    public float rageGainPerHit = 15f;
+
     [Header("Vitesse d'animation des attaques")]
     public float attackNormalSpeed = 0.16f;
     public float attackAirSpeed = 0.2f;

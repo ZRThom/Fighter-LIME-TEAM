@@ -8,6 +8,7 @@ public class PlayerState : MonoBehaviour
     public bool isCrouching;
     public bool isMoving;
     public bool isAttacking;
+    public bool isSpecialAttacking;
     public bool isShielding;
     public bool shieldBurnedOut;
 

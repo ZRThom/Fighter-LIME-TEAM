@@ -50,6 +50,8 @@ GameObject:
   - component: {fileID: 410126579840338816}
   - component: {fileID: 8933398413436499676}
   - component: {fileID: 1200486399679315419}
+  - component: {fileID: 1032003546616764566}
+  - component: {fileID: 3906743863546496044}
   m_Layer: 3
   m_Name: Player1
   m_TagString: Player
@@ -290,6 +292,8 @@ MonoBehaviour:
     - {fileID: 1898205550522619279, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
     - {fileID: 3297026338139073979, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
     - {fileID: 1595139745244555583, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
+    ragePortraitSprite: {fileID: -8011329051448921951, guid: fc36648ecbe606d4c9aab7de6c3ebb26, type: 3}
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
@@ -354,6 +358,8 @@ MonoBehaviour:
     - {fileID: -2231614442715963138, guid: 3ffcba9f60734c9409ead2a28de78ae5, type: 3}
     shieldSprites:
     - {fileID: 3933385961449525492, guid: 105c40d159f9fc0458787090a3c74da2, type: 3}
+    rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
+    ragePortraitSprite: {fileID: -8011329051448921951, guid: fc36648ecbe606d4c9aab7de6c3ebb26, type: 3}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 1.5
@@ -361,6 +367,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
+  maxRage: 100
+  rageGainPerHit: 15
   attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
@@ -466,7 +474,30 @@ MonoBehaviour:
   maxHealth: 100
   playerID: 1
   currentHealth: 0
-  isDead: 0
+--- !u!114 &1032003546616764566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588606172857760097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0b7f46b2657b6408dfcd8062ce0771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRage
+--- !u!114 &3906743863546496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588606172857760097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7479a3d7ba22b14bbcd8846a77c9423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpecial
 --- !u!1 &6762832674122120329
 GameObject:
   m_ObjectHideFlags: 0

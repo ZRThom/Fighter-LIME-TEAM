@@ -139,6 +139,12 @@ public class PlayerAttack : MonoBehaviour
             if (health.playerID == config.playerNumber) continue;
             health.TakeDamage(config.attackDamage);
 
+            PlayerRage myRage = GetComponent<PlayerRage>();
+            if (myRage != null)
+            {
+                myRage.AddRage(config.rageGainPerHit);
+            }
+
             Rigidbody2D enemyRb = enemy.GetComponentInParent<Rigidbody2D>();
             
             if (enemyRb != null)
