@@ -294,6 +294,22 @@ MonoBehaviour:
     - {fileID: 1595139745244555583, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
     rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
     ragePortraitSprite: {fileID: -7241198711382726039, guid: cf42dbeb93687b648a9aa1cb52474515, type: 3}
+    rageAttackSprites:
+    - {fileID: -3639256906345808755, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 8715952789011760967, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 246869818746146324, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -393369951434776208, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 2449930580666074711, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 7515529536273968768, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -3187807926994714556, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -9180965842449675276, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -4151057186118657657, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 8666065074665449094, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 30
+    rageHitEffect: 1
+    rageEffectPrefab: {fileID: 1344149852152345120, guid: 43cb206ce316ad940bf685acb57e1a65, type: 3}
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 8150902072001270897}
@@ -379,6 +395,22 @@ MonoBehaviour:
     - {fileID: 8402151772854349255, guid: 105c40d159f9fc0458787090a3c74da2, type: 3}
     rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
     ragePortraitSprite: {fileID: -7241198711382726039, guid: cf42dbeb93687b648a9aa1cb52474515, type: 3}
+    rageAttackSprites:
+    - {fileID: -3639256906345808755, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 8715952789011760967, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 246869818746146324, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -393369951434776208, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 2449930580666074711, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 7515529536273968768, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -3187807926994714556, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -9180965842449675276, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -4151057186118657657, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 8666065074665449094, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 30
+    rageHitEffect: 1
+    rageEffectPrefab: {fileID: 1344149852152345120, guid: 43cb206ce316ad940bf685acb57e1a65, type: 3}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
@@ -420,6 +452,7 @@ MonoBehaviour:
   isCrouching: 0
   isMoving: 0
   isAttacking: 0
+  isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
   shieldTimer: 0

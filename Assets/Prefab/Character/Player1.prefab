@@ -294,6 +294,18 @@ MonoBehaviour:
     - {fileID: 1595139745244555583, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
     rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
     ragePortraitSprite: {fileID: -8011329051448921951, guid: fc36648ecbe606d4c9aab7de6c3ebb26, type: 3}
+    rageAttackSprites:
+    - {fileID: -6680148398223360912, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -1675713370081409587, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -988945823898108205, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: 4190117334029904932, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: 2288489399018642673, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -8904632479598115028, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 30
+    rageHitEffect: 2
+    rageEffectPrefab: {fileID: -2253911629886400664, guid: c9c21b12bbe17364692532332d74ccbd, type: 3}
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
@@ -360,6 +372,18 @@ MonoBehaviour:
     - {fileID: 3933385961449525492, guid: 105c40d159f9fc0458787090a3c74da2, type: 3}
     rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
     ragePortraitSprite: {fileID: -8011329051448921951, guid: fc36648ecbe606d4c9aab7de6c3ebb26, type: 3}
+    rageAttackSprites:
+    - {fileID: -6680148398223360912, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -1675713370081409587, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -988945823898108205, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: 4190117334029904932, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: 2288489399018642673, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -8904632479598115028, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 30
+    rageHitEffect: 2
+    rageEffectPrefab: {fileID: -2253911629886400664, guid: c9c21b12bbe17364692532332d74ccbd, type: 3}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 1.5
@@ -401,6 +425,7 @@ MonoBehaviour:
   isCrouching: 0
   isMoving: 0
   isAttacking: 0
+  isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
   shieldTimer: 0

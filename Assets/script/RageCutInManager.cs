@@ -115,7 +115,7 @@ public class RageCutInManager : MonoBehaviour
         }
 
         float WaitBeforeFadeOut = Mathf.Max(0f, backgroundDuration - fadeDuration);
-        yield return WaitRealtime(backgroundDuration);
+        yield return WaitRealtime(WaitBeforeFadeOut);
 
         // fade out
         if (backgroundCanvasGroup != null)

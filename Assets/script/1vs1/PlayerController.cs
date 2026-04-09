@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         SwitchAnim(target, config.animSpeed);
     }
 
-    public SetSpecialAnim(Sprite[] sprites, float speed)
+    public void SetSpecialAnim(Sprite[] sprites, float speed)
     {
         currentAnimSet = sprites;
         currentFrame = 0;
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleSpecialAnimation()
     {
-        SwitchAnim(currentAnimData, specialAnimSpeed);
+        SwitchAnim(currentAnimSet, specialAnimSpeed);
     }
 
     public void SetAttackAnim(Sprite[] sprites, float speed)

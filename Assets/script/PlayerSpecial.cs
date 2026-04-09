@@ -42,7 +42,7 @@ public class PlayerSpecial : MonoBehaviour
             }
             return;
         }
-        if (input.SpecialTrigger)
+        if (!input.SpecialTrigger)
         {
             return;
         }
@@ -58,7 +58,7 @@ public class PlayerSpecial : MonoBehaviour
             return;
         }
 
-        if (RageCutInmanager.Instance == null)
+        if (RageCutInManager.Instance == null)
         {
             return;
         }
@@ -117,7 +117,7 @@ public class PlayerSpecial : MonoBehaviour
         {
             point = transform;
         }
-        Collider2D[] hits = Physics2D.OverlapeCircleAll(point.position, config.attackRange, config.ennemyLayers);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(point.position, config.attackRange, config.enemyLayers);
 
         foreach (Collider2D enemy in hits)
         {
@@ -146,26 +146,38 @@ public class PlayerSpecial : MonoBehaviour
             switch (currentSpecialData.rageHitEffect)
             {
                 case RageHitEffectType.Beam:
-                {
-                    GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
-                    RageBeaù beam = obj.GetComponent<RageBeam>();
-                    if (beam != null)
                     {
-                        beam.Play(state.facingRight, enemyTarget.position.y);
-                    }
-                    else
-                    {
-                        obj.transform.position = enemyTarget.position;
-                    }
-                    break;
+                        GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
+                        RageBeamLine beam = obj.GetComponent<RageBeamLine>();
+                        if (beam != null)
+                        {
+                            beam.Play(state.facingRight, enemyTarget.position.y);
+                        }
+                        else
+                        {
+                            obj.transform.position = enemyTarget.position;
+                        }
+                        break;
 
-                }
+                    }
                 
                 case RageHitEffectType.Lightning:
                     {
-                        
+                        Instantiate(currentSpecialData.rageEffectPrefab, enemyTarget.position, Quaternion.identity);
+                        break;
                     }
             }
         }
+    }
+
+    PlayerAnimationSet GetCurrentAnimData()
+    {
+        if (config.characterAnimations == null || config.characterAnimations.Length == 0)
+        {
+            return null;
+        }
+
+        int index = Mathf.Clamp(config.playerCharacterIndex, 0, config.characterAnimations.Length - 1);
+        return config.characterAnimations[index];
     }
 }
