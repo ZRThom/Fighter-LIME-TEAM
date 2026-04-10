@@ -37,4 +37,5 @@ public class PlayerAnimationSet
     public int rageDamage = 30;
     public RageHitEffectType rageHitEffect = RageHitEffectType.None;
     public GameObject rageEffectPrefab;
+    public Vector3 rageEffectScale = Vector3.one;
 }

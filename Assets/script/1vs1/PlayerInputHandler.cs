@@ -66,7 +66,7 @@ public class PlayerInputHandler : MonoBehaviour
                 if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) attack = true;
                 if (Keyboard.current.eKey.isPressed) shield = true;
 
-                if (Keyboard.current.yKey.wasPressedThisFrame) special = true;
+                if (Keyboard.current.tKey.wasPressedThisFrame) special = true;
             }
             // --- JOUEUR 2 : Flèches ---
             else
@@ -81,7 +81,7 @@ public class PlayerInputHandler : MonoBehaviour
                 
                 if (Keyboard.current.rightCtrlKey.isPressed) shield = true; 
 
-                if (Keyboard.current.tKey.wasPressedThisFrame) special = true;
+                if (Keyboard.current.yKey.wasPressedThisFrame) special = true;
             }
         }
 

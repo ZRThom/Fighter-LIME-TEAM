@@ -131,45 +131,57 @@ public class PlayerSpecial : MonoBehaviour
             {
                 continue;
             }
+            // ordre pr pas que les rage effect deconne (stock pos / effect / degat)
+            Vector3 hitPos = enemy.bounds.center;
+            TriggerSpecialEffect(hitPos);
             health.TakeDamage(currentSpecialData.rageDamage);
-            Transform enemyRoot = health.transform;
-            TriggerSpecialEffect(enemyRoot);
-
             break;
         }
 
-        void TriggerSpecialEffect(Transform enemyTarget)
+        void TriggerSpecialEffect(Vector3 effectPosition)
         {
             if (currentSpecialData == null) return;
             if (currentSpecialData.rageEffectPrefab == null) return;
 
+            // select rafe effect
             switch (currentSpecialData.rageHitEffect)
             {
                 case RageHitEffectType.Beam:
                     {
+                        Debug.Log("Beam launched");
                         GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
                         RageBeamLine beam = obj.GetComponent<RageBeamLine>();
                         if (beam != null)
                         {
-                            beam.Play(state.facingRight, enemyTarget.position.y);
+                            beam.Play(state.facingRight, effectPosition.y);
                         }
                         else
                         {
-                            obj.transform.position = enemyTarget.position;
+                            obj.transform.position = effectPosition;
                         }
                         break;
-
                     }
                 
                 case RageHitEffectType.Lightning:
                     {
-                        Instantiate(currentSpecialData.rageEffectPrefab, enemyTarget.position, Quaternion.identity);
+                        Debug.Log("Lightning launched");
+                        Vector3 spawnPos = effectPosition + Vector3.up * 0.5f;
+                        spawnPos.z = 0f;
+                        GameObject fx = Instantiate(currentSpecialData.rageEffectPrefab, spawnPos, Quaternion.identity);
+                        fx.transform.localScale = currentSpecialData.rageEffectScale;
+                        SpriteRenderer sr = fx.GetComponent<SpriteRenderer>();
+                        if (sr != null)
+                        {
+                            sr.sortingLayerName = "FX";
+                            sr.sortingOrder = 200;
+                        }
                         break;
                     }
             }
         }
     }
 
+    // prend tableau charactAnim... + index du perso et retourne les donnée du perso
     PlayerAnimationSet GetCurrentAnimData()
     {
         if (config.characterAnimations == null || config.characterAnimations.Length == 0)
