@@ -9,14 +9,26 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerState playerState;
 
-
-
     void Awake()
     {
-        hud = HUDManager.instance.GetHUDForPlayer(playerID);
-        if (hud != null) hud.SetHealth(1f);
+        // On ne garde ici que ce qui est interne au personnage
         currentHealth = maxHealth;
         playerState = GetComponent<PlayerState>();
+    }
+
+    void Start()
+    {
+        // On attend le Start pour chercher le HUD, 
+        // comme ça on est sûr que HUDManager.instance existe !
+        if (HUDManager.instance != null)
+        {
+            hud = HUDManager.instance.GetHUDForPlayer(playerID);
+            if (hud != null) hud.SetHealth(1f);
+        }
+        else
+        {
+            Debug.LogWarning("HUDManager instance non trouvée au Start !");
+        }
     }
 
     public void TakeDamage(int damage)
@@ -33,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
             float normalizedHealth = (float)currentHealth / maxHealth;
             hud.SetDamages(normalizedHealth);
         }
-        Debug.Log($"{gameObject.name} prend {damage} dégâts. Santé actuelle : {currentHealth}");
 
         if (currentHealth == 0)
             Die();
@@ -46,8 +57,5 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public int GetCurrentHealth() => currentHealth;
-    void OnDrawGizmosSelected()
-    {
-        UnityEditor.Handles.Label(transform.position + Vector3.up * 1.5f, $"Health: {currentHealth}/{maxHealth}");
-    }
 }
+
