@@ -7,7 +7,6 @@ public class CameraFollow2d : MonoBehaviour
     [SerializeField] float yMin = -5f;
     [SerializeField] float yMax = 5f;
 
-    // Passés en public pour que le GameManager puisse les assigner
     public Transform player;
     public Transform player2;
     
@@ -27,7 +26,6 @@ public class CameraFollow2d : MonoBehaviour
 
     void LateUpdate()
     {
-        // 🔹 SÉCURITÉ : Si les joueurs ne sont pas encore apparus, on ne fait rien !
         if (player == null || player2 == null) return;
 
         // Calcul du midpoint entre les deux joueurs 

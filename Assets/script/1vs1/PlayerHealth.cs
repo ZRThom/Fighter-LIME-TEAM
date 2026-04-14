@@ -11,15 +11,12 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        // On ne garde ici que ce qui est interne au personnage
         currentHealth = maxHealth;
         playerState = GetComponent<PlayerState>();
     }
 
     void Start()
     {
-        // On attend le Start pour chercher le HUD, 
-        // comme ça on est sûr que HUDManager.instance existe !
         if (HUDManager.instance != null)
         {
             hud = HUDManager.instance.GetHUDForPlayer(playerID);

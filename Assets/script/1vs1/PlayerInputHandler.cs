@@ -91,3 +91,5 @@ public class PlayerInputHandler : MonoBehaviour
         CrouchHeld = crouch;
     }
 }
+// Tous les comandes J1 : QS + E (shield) + clic gauche (attack) + espace (jump)
+// Tous les commandes J2 : Flèches + RCTRL (shield) + clic droit (attack) + haut ou RSHIFT (jump)

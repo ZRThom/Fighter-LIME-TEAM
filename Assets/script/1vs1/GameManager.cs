@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnPlayers()
     {
-        // --- JOUEUR 1 ---
+        //  JOUEUR 1 
         int index1 = selection.player1Choice;
         if (index1 >= 0 && index1 < characterPrefabs.Length)
         {
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
             player1.name = "Player1";
         }
 
-        // --- JOUEUR 2 ---
+        // JOUEUR 2 
         int index2 = selection.player2Choice;
         if (index2 >= 0 && index2 < characterPrefabs.Length)
         {
@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
             player2.name = "Player2";
         }
 
-        // --- CONFIGURATION DYNAMIQUE ---
+        //  CONFIGURATION J
         ConfigurerJoueurs();
 
-        // --- LIAISON CAMÉRA ---
+        // LIAISON CAMÉRA 
         CameraFollow2d scriptCamera = Camera.main.GetComponent<CameraFollow2d>();
         if (scriptCamera != null)
         {
@@ -128,15 +128,12 @@ public class GameManager : MonoBehaviour
 
     void resetRound()
     {
-        // Remise à zéro des positions
         player1.transform.position = player1Spawn.position;
         player2.transform.position = player2Spawn.position;
 
-        // Remise à zéro des PV
         player1.GetComponent<PlayerHealth>().currentHealth = player1.GetComponent<PlayerHealth>().maxHealth;
         player2.GetComponent<PlayerHealth>().currentHealth = player2.GetComponent<PlayerHealth>().maxHealth;
         
-        // Réactivation (si Die() les a désactivés)
         player1.SetActive(true);
         player2.SetActive(true);
 
