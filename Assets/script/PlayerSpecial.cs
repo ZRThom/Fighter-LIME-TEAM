@@ -177,6 +177,24 @@ public class PlayerSpecial : MonoBehaviour
                         }
                         break;
                     }
+                
+                case RageHitEffectType.Rain:
+                    {
+                        Debug.Log("Rain launched");
+                        GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
+                        RageRain rain = obj.GetComponent<RageRain>();
+                        bool fromRight = transform.position.x > effectPosition.x;
+
+                        if (rain != null)
+                        {
+                            rain.Play(fromRight);
+                        }
+                        else
+                        {
+                            obj.transform.position = effectPosition;
+                        }
+                        break;
+                    }
             }
         }
     }

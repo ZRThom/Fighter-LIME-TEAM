@@ -308,8 +308,9 @@ MonoBehaviour:
     rageAttackSpeed: 0.1
     rageHitPercent: 0.5
     rageDamage: 30
-    rageHitEffect: 1
-    rageEffectPrefab: {fileID: 1344149852152345120, guid: 43cb206ce316ad940bf685acb57e1a65, type: 3}
+    rageHitEffect: 3
+    rageEffectPrefab: {fileID: 3025700644437683485, guid: ed7fd4779be4f354baac997a1c90653e, type: 3}
+    rageEffectScale: {x: 1, y: 1, z: 1}
   - characterName: Kevin
     characterIcon: {fileID: 0}
     prefab: {fileID: 8150902072001270897}
@@ -409,8 +410,9 @@ MonoBehaviour:
     rageAttackSpeed: 0.1
     rageHitPercent: 0.5
     rageDamage: 30
-    rageHitEffect: 1
-    rageEffectPrefab: {fileID: 1344149852152345120, guid: 43cb206ce316ad940bf685acb57e1a65, type: 3}
+    rageHitEffect: 3
+    rageEffectPrefab: {fileID: 3025700644437683485, guid: ed7fd4779be4f354baac997a1c90653e, type: 3}
+    rageEffectScale: {x: 1, y: 1, z: 1}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5

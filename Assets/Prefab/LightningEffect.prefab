@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 207522133736966658}
   - component: {fileID: 2075684993054830213}
   m_Layer: 0
-  m_Name: Lightning
+  m_Name: LightningEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

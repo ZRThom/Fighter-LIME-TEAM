@@ -25,7 +25,7 @@ TagManager:
   - 'Pushbox         '
   - 'Hurtbox         '
   - 'Hitbox          '
-  - 
+  - FX
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 419404823
+    locked: 0
+  - name: FX
+    uniqueID: 2594889991
     locked: 0
   m_RenderingLayers:
   - Default
