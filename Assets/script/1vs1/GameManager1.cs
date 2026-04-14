@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private int p2Score = 0;
     private bool isRoundActive = true;
 
-    void Start()
+    void Start() // test mis avril
     {
         StartCoroutine(Init());
     }
