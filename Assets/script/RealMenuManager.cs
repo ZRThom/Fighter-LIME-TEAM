@@ -124,6 +124,8 @@ public class RealMenuManager : MonoBehaviour
     public void PanelProfilPerso1()
     {
         panelPerso1.SetActive(true);
+        panelProfil.SetActive(false);
+        panelMenu.SetActive(false);
     }
 
     public void PanelProfilPerso1Back()
@@ -136,6 +138,8 @@ public class RealMenuManager : MonoBehaviour
     public void PanelProfilPerso2()
     {
         panelPerso2.SetActive(true);
+        panelProfil.SetActive(false);
+        panelMenu.SetActive(false);
     }
 
     public void PanelProfilPerso2Back()
@@ -148,6 +152,8 @@ public class RealMenuManager : MonoBehaviour
     public void PanelProfilPerso3()
     {
         panelPerso3.SetActive(true);
+        panelProfil.SetActive(false);
+        panelMenu.SetActive(false);
     }
 
     public void PanelProfilPerso3Back()
@@ -160,6 +166,8 @@ public class RealMenuManager : MonoBehaviour
     public void PanelProfilPerso4()
     {
         panelPerso4.SetActive(true);
+        panelProfil.SetActive(false);
+        panelMenu.SetActive(false);
     }
 
     public void PanelProfilPerso4Back()
@@ -172,6 +180,8 @@ public class RealMenuManager : MonoBehaviour
     public void PanelProfilPerso5()
     {
         panelPerso5.SetActive(true);
+        panelProfil.SetActive(false);
+        panelMenu.SetActive(false);
     }
 
     public void PanelProfilPerso5Back()
