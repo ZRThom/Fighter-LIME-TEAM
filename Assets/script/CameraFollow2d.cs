@@ -15,7 +15,7 @@ public class CameraFollow2d : MonoBehaviour
     [SerializeField] float zoomMultiplier = 1f;
     [SerializeField] float minZoom = 3f;
     [SerializeField] float maxZoom = 11f;
-    [SerializeField] Vector2 offset = new Vector2(0, 2f); // Décalage vertical
+    [SerializeField] Vector2 offset = new Vector2(0, 2f);
 
     Camera cam;
 
@@ -46,7 +46,6 @@ public class CameraFollow2d : MonoBehaviour
             targetPos,
             followSpeed * Time.deltaTime
         );
-
 
         // Calcul de la distance pour zoomer
         var dist = Vector2.Distance(player.position, player2.position);

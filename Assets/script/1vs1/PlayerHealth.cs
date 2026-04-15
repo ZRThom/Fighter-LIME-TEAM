@@ -40,7 +40,6 @@ public class PlayerHealth : MonoBehaviour
             float normalizedHealth = (float)currentHealth / maxHealth;
             hud.SetDamages(normalizedHealth);
         }
-        Debug.Log($"{gameObject.name} prend {damage} dégâts. Santé actuelle : {currentHealth}");
 
         if (currentHealth == 0)
             Die();
@@ -65,3 +64,4 @@ public class PlayerHealth : MonoBehaviour
         if (hud != null) hud.SetHealth(1f);
     }
 }
+
