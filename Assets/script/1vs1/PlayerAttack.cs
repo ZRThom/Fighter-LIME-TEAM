@@ -8,8 +8,8 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPointCrouch;
 
     [Header("Réglages Impact")]
-    public float knockbackForce = 5f; 
-    public float knockbackLift = 2f;  
+    public float knockbackForce = 5f;
+    public float knockbackLift = 2f;
 
     private Transform currentAttackPoint;
     private bool hasHitThisAttack;
@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
         }
         input.AttackTriggered = false;
 
-        // Attaque en cours
+        // Attack now
         if (state.isAttacking)
         {
             attackTimer -= Time.deltaTime;
@@ -135,20 +135,23 @@ public class PlayerAttack : MonoBehaviour
             PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
             if (health == null) continue;
 
+            // avoid bug of similarity
+            if (health.playerID == config.playerNumber) continue;
             health.TakeDamage(config.attackDamage);
+
+            PlayerRage myRage = GetComponent<PlayerRage>();
+            if (myRage != null)
+            {
+                myRage.AddRage(config.rageGainPerHit);
+            }
 
             Rigidbody2D enemyRb = enemy.GetComponentInParent<Rigidbody2D>();
             
             if (enemyRb != null)
             {
-               
                 float directionX = state.facingRight ? 1f : -1f;
-
                 Vector2 knockbackDir = new Vector2(directionX * knockbackForce, knockbackLift);
-
-
                 enemyRb.linearVelocity = Vector2.zero; 
-
                 enemyRb.AddForce(knockbackDir, ForceMode2D.Impulse);
             }
 

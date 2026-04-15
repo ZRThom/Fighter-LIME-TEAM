@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMENU.unity
     guid: 5c0e322ef8fe445a39bcd879a5c31634
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PLAY MENU.unity
     guid: c6b6720d0539947aab7b47ac66daba48
-  - enabled: 1
-    path: Assets/Scenes/PANEL PLAY.unity
+  - enabled: 0
+    path: Assets/Scenes/PanelPLAY.unity
     guid: 576b9a22fc6bda548a93cef7e6325262
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Settings.unity
     guid: 87ca80acd38489b48ae1b461f28040e7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/About-Menu.unity
     guid: 554ca0f932b9840ec96c1322516900c1
   - enabled: 1
     path: Assets/Scenes/PLAYM 1V1.unity
     guid: 09406916ecfe24e45af7025d414c5077
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/blob.unity
     guid: f3703d3c7859cd647950573fcb2dc966
   - enabled: 1
@@ -32,31 +32,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battlefield TEST.unity
     guid: 8ba368ceb2f6ea24bb9441ee0a464221
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shop.unity
     guid: 5796eb31012df4514b28aa4a6b7e53e8
   - enabled: 1
     path: Assets/Scenes/Profil.unity
     guid: 02672b81b67670846b73d34a41ff0ee4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/anger.unity
     guid: efbb30c3e4a759d42bd5594d5499a1d2
-  - enabled: 1
-    path: Assets/Scenes/RaphStealerWomens.unity
+  - enabled: 0
+    path: Assets/Scenes/EasterEggRaph.unity
     guid: 38a29507342f64b368d092f138d584b4
-  - enabled: 1
-    path: Assets/Scenes/prisonner.unity
-    guid: 918b2642d3145e34789f3d8082379f1c
-  - enabled: 1
-    path: Assets/Scenes/jojo.unity
-    guid: 4135a2c541e09dc4cafec5033fb1a99c
-  - enabled: 1
-    path: Assets/Scenes/rickroll.unity
-    guid: 45e456f824c7d074692672c7b57a41a7
-  - enabled: 1
-    path: Assets/Scenes/teamart.unity
+  - enabled: 0
+    path: Assets/Scenes/EasterEgg1.unity
     guid: 70354ca1fb89c40a6abde694992ba27f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ingenio.unity
     guid: 5ca15c0ddc1366d429bd4c86accd8f09
   - enabled: 1

@@ -64,6 +64,9 @@ public class RoundManager : MonoBehaviour
         if (p1Wins >= roundsToWin || p2Wins >= roundsToWin)
         {
             Debug.Log("GAME OVER!");
+
+            // reset rage fin match
+            foreach (PlayerRage rage in FindObjectsOfType<PlayerRage>()) rage.ResetForMatch();
         }
         else
         {
@@ -75,9 +78,6 @@ public class RoundManager : MonoBehaviour
     {
         p1HealthScript.ResetHealth(); 
         p2HealthScript.ResetHealth();
-
-        p1HealthScript.ResetUltimate();
-        p2HealthScript.ResetUltimate();
         
         timerScript.ResetTimer();
         

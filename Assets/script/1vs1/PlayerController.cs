@@ -1,7 +1,9 @@
 using UnityEngine;
 
+//  note : typeof(PlayerInputHandler) au lieu de PlayerInput
 [RequireComponent(typeof(PlayerConfig), typeof(PlayerState), typeof(PlayerInputHandler))]
-[RequireComponent(typeof(PlayerMouvement), typeof(PlayerAttack))]
+[RequireComponent(typeof(PlayerMouvement), typeof(PlayerAttack), typeof(PlayerRage))]
+[RequireComponent(typeof(PlayerSpecial))]
 public class PlayerController : MonoBehaviour
 {
     private PlayerConfig config;
@@ -9,7 +11,8 @@ public class PlayerController : MonoBehaviour
     private PlayerInputHandler input;
     private PlayerMouvement mouvement;
     private PlayerAttack attack;
-
+    private PlayerSpecial special;
+    private float specialAnimSpeed;
     
     private float animTimer;
     private int currentFrame;
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<PlayerInputHandler>(); 
         mouvement = GetComponent<PlayerMouvement>();
         attack = GetComponent<PlayerAttack>();
+        special = GetComponent<PlayerSpecial>();
 
         if (config.visualRenderer == null)
             config.visualRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -37,6 +41,7 @@ public class PlayerController : MonoBehaviour
         input.Init(config);
         mouvement.Init(config, input, state);
         attack.Init(config, input, state, this);
+        special.Init(config, input, state, this);
     }
 
     void Update()
@@ -44,8 +49,10 @@ public class PlayerController : MonoBehaviour
         input.ReadInputs();
         mouvement.HandleMovement();
         attack.HandleCombat();
+        special.HandleSpecial();
 
         if (state.isShielding) HandleShieldAnimation();
+        else if (state.isSpecialAttacking) HandleSpecialAnimation();
         else if (!state.isAttacking) HandleManualAnimation();
         else HandleAttackAnimation();
     }
@@ -64,6 +71,19 @@ public class PlayerController : MonoBehaviour
             target = currentAnimData.walkSprites;
 
         SwitchAnim(target, config.animSpeed);
+    }
+
+    public void SetSpecialAnim(Sprite[] sprites, float speed)
+    {
+        currentAnimSet = sprites;
+        currentFrame = 0;
+        animTimer = 0f;
+        specialAnimSpeed = speed;
+    }
+
+    void HandleSpecialAnimation()
+    {
+        SwitchAnim(currentAnimSet, specialAnimSpeed);
     }
 
     public void SetAttackAnim(Sprite[] sprites, float speed)

@@ -5,10 +5,8 @@ public class PlayerConfig : MonoBehaviour
     [Header("Réglages Joueur")]
     public int playerNumber = 1;
 
-  
-    [Tooltip("Glisse le Transform du personnage adverse ici")]
+    [Tooltip("drag n drop  Transform du personnage adverse ici")]
     public Transform opponentTransform; 
-    // -----------------------------------------------------
 
     public int playerCharacterIndex = 0;
     public PlayerAnimationSet[] characterAnimations;
@@ -20,6 +18,10 @@ public class PlayerConfig : MonoBehaviour
     public float attackRange = 1.5f;
     public int attackDamage = 10;
     public LayerMask enemyLayers;
+
+    [Header("Rage")]
+    public float maxRage = 100f;
+    public float rageGainPerHit = 15f;
 
     [Header("Vitesse d'animation des attaques")]
     public float attackNormalSpeed = 0.16f;

@@ -12,8 +12,13 @@ public class HUDManager : MonoBehaviour
     public GameObject DialogueHolder, ContinueButton;
     public TextMeshProUGUI NameDisplay, TextDisplay;
 
+    [Header("HealthBar HUD")]
     public HealthBarTest p1HUD;
     public HealthBarTest p2HUD;
+
+    [Header("Rage HUD")]
+    public RageBarUI p1RageHUD;
+    public RageBarUI p2RageHUD;
 
     void Awake()
     {
@@ -24,5 +29,10 @@ public class HUDManager : MonoBehaviour
     public HealthBarTest GetHUDForPlayer(int playerID)
     {
         return playerID == 1 ? p1HUD : p2HUD;
+    }
+
+    public RageBarUI GetRageHUDForPlayer(int playerID)
+    {
+        return playerID == 1 ? p1RageHUD : p2RageHUD;
     }
 }

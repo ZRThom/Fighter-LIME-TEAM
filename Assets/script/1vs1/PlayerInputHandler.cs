@@ -12,12 +12,34 @@ public class PlayerInputHandler : MonoBehaviour
     public bool ShieldPressed { get; private set; }
     public bool CrouchHeld { get; private set; }
 
+    public bool SpecialTrigger { get; set; }
+
     private PlayerConfig config;
 
     public void Init(PlayerConfig pc)
     {
         config = pc;
     }
+
+    // check pr eviter les input en memoire
+    //void Update()
+    //{
+    //    if (RageCutInManager.Instance != null && RageCutInManager.Instance.IsPlaying)
+    //    {
+    //        input.ClearInputs();
+    //        
+    //    }
+    //}
+    
+    //public void ClearInputs()
+    //{
+    //    MoveInput = Vector2.zero;
+    //    JumpTriggered = false;
+    //    AttackTriggered = false;
+    //    ShieldPressed = false;
+    //    CrouchHeld = false;
+    //    SpecialTrigger = false;
+    //}
 
     public void ReadInputs()
     {
@@ -26,6 +48,8 @@ public class PlayerInputHandler : MonoBehaviour
         bool attack = false;
         bool shield = false;
         bool crouch = false;
+
+        bool special = false;
 
 
         if (Keyboard.current != null)
@@ -41,6 +65,8 @@ public class PlayerInputHandler : MonoBehaviour
 
                 if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) attack = true;
                 if (Keyboard.current.eKey.isPressed) shield = true;
+
+                if (Keyboard.current.tKey.wasPressedThisFrame) special = true;
             }
             // --- JOUEUR 2 : Flèches ---
             else
@@ -52,8 +78,10 @@ public class PlayerInputHandler : MonoBehaviour
                 if (Keyboard.current.downArrowKey.isPressed) crouch = true;
 
                 if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame) attack = true;
+                
+                if (Keyboard.current.rightCtrlKey.isPressed) shield = true; 
 
-                if (Keyboard.current.rightCtrlKey.isPressed) shield = true;
+                if (Keyboard.current.yKey.wasPressedThisFrame) special = true;
             }
         }
 
@@ -73,7 +101,8 @@ public class PlayerInputHandler : MonoBehaviour
                 if (myGamepad.buttonSouth.wasPressedThisFrame) jump = true;
                 if (myGamepad.buttonWest.wasPressedThisFrame) attack = true;
                 if (myGamepad.rightShoulder.isPressed) shield = true;
-
+                if (myGamepad.buttonNorth.wasPressedThisFrame) special = true;
+                
                 // Crouch
                 bool stickDown = myGamepad.leftStick.y.ReadValue() < -0.5f;
                 bool dpadDown = myGamepad.dpad.down.isPressed;
@@ -86,7 +115,8 @@ public class PlayerInputHandler : MonoBehaviour
 
         if (jump) JumpTriggered = true;
         if (attack) AttackTriggered = true;
-
+        if (special) SpecialTrigger = true;
+        
         ShieldPressed = shield;
         CrouchHeld = crouch;
     }

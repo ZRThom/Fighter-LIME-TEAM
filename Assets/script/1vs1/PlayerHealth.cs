@@ -9,22 +9,20 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerState playerState;
 
-    void Awake()
-    {
-        currentHealth = maxHealth;
-        playerState = GetComponent<PlayerState>();
-    }
-
     void Start()
     {
+        playerState = GetComponent<PlayerState>();
+        currentHealth = maxHealth;
+
         if (HUDManager.instance != null)
         {
             hud = HUDManager.instance.GetHUDForPlayer(playerID);
             if (hud != null) hud.SetHealth(1f);
+            else Debug.LogWarning($"HUD not found for player {playerID}");
         }
         else
         {
-            Debug.LogWarning("HUDManager instance non trouvée au Start !");
+            Debug.LogWarning("HUDManager null");
         }
     }
 
@@ -54,5 +52,16 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public int GetCurrentHealth() => currentHealth;
+    void OnDrawGizmosSelected()
+    {
+        UnityEditor.Handles.Label(transform.position + Vector3.up * 1.5f, $"Health: {currentHealth}/{maxHealth}");
+    }
+
+    public void ResetHealth()
+    {
+        gameObject.SetActive(true);
+        currentHealth = maxHealth;
+        if (hud != null) hud.SetHealth(1f);
+    }
 }
 
