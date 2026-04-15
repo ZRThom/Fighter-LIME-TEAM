@@ -137,65 +137,65 @@ public class PlayerSpecial : MonoBehaviour
             health.TakeDamage(currentSpecialData.rageDamage);
             break;
         }
+    }
 
-        void TriggerSpecialEffect(Vector3 effectPosition)
+    void TriggerSpecialEffect(Vector3 effectPosition)
+    {
+        if (currentSpecialData == null) return;
+        if (currentSpecialData.rageEffectPrefab == null) return;
+
+        // select rafe effect
+        switch (currentSpecialData.rageHitEffect)
         {
-            if (currentSpecialData == null) return;
-            if (currentSpecialData.rageEffectPrefab == null) return;
+            case RageHitEffectType.Beam:
+                {
+                    Debug.Log("Beam launched");
+                    GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
+                    RageBeamLine beam = obj.GetComponent<RageBeamLine>();
+                    if (beam != null)
+                    {
+                        beam.Play(state.facingRight, effectPosition.y);
+                    }
+                    else
+                    {
+                        obj.transform.position = effectPosition;
+                    }
+                    break;
+                }
+            
+            case RageHitEffectType.Lightning:
+                {
+                    Debug.Log("Lightning launched");
+                    Vector3 spawnPos = effectPosition + Vector3.up * 0.5f;
+                    spawnPos.z = 0f;
+                    GameObject fx = Instantiate(currentSpecialData.rageEffectPrefab, spawnPos, Quaternion.identity);
+                    fx.transform.localScale = currentSpecialData.rageEffectScale;
+                    SpriteRenderer sr = fx.GetComponent<SpriteRenderer>();
+                    if (sr != null)
+                    {
+                        sr.sortingLayerName = "FX";
+                        sr.sortingOrder = 200;
+                    }
+                    break;
+                }
+            
+            case RageHitEffectType.Rain:
+                {
+                    Debug.Log("Rain launched");
+                    GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
+                    RageRain rain = obj.GetComponent<RageRain>();
+                    bool fromRight = transform.position.x > effectPosition.x;
 
-            // select rafe effect
-            switch (currentSpecialData.rageHitEffect)
-            {
-                case RageHitEffectType.Beam:
+                    if (rain != null)
                     {
-                        Debug.Log("Beam launched");
-                        GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
-                        RageBeamLine beam = obj.GetComponent<RageBeamLine>();
-                        if (beam != null)
-                        {
-                            beam.Play(state.facingRight, effectPosition.y);
-                        }
-                        else
-                        {
-                            obj.transform.position = effectPosition;
-                        }
-                        break;
+                        rain.Play(fromRight);
                     }
-                
-                case RageHitEffectType.Lightning:
+                    else
                     {
-                        Debug.Log("Lightning launched");
-                        Vector3 spawnPos = effectPosition + Vector3.up * 0.5f;
-                        spawnPos.z = 0f;
-                        GameObject fx = Instantiate(currentSpecialData.rageEffectPrefab, spawnPos, Quaternion.identity);
-                        fx.transform.localScale = currentSpecialData.rageEffectScale;
-                        SpriteRenderer sr = fx.GetComponent<SpriteRenderer>();
-                        if (sr != null)
-                        {
-                            sr.sortingLayerName = "FX";
-                            sr.sortingOrder = 200;
-                        }
-                        break;
+                        obj.transform.position = effectPosition;
                     }
-                
-                case RageHitEffectType.Rain:
-                    {
-                        Debug.Log("Rain launched");
-                        GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab);
-                        RageRain rain = obj.GetComponent<RageRain>();
-                        bool fromRight = transform.position.x > effectPosition.x;
-
-                        if (rain != null)
-                        {
-                            rain.Play(fromRight);
-                        }
-                        else
-                        {
-                            obj.transform.position = effectPosition;
-                        }
-                        break;
-                    }
-            }
+                    break;
+                }
         }
     }
 
