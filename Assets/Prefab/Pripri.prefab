@@ -254,7 +254,7 @@ MonoBehaviour:
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   maxRage: 100
   rageGainPerHit: 15
   attackNormalSpeed: 0.05
@@ -396,7 +396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2450227834450677451}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Ennemie
   m_Icon: {fileID: 0}
