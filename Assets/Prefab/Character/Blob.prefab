@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1933046388922387656}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 356130911857432058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01696, y: 0.19757, z: 0}
+  m_LocalPosition: {x: 0.0205, y: 0.1877, z: 0}
   m_LocalScale: {x: 0.30322325, y: 0.34877232, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3911469104961679833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Ennemie
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 606699337205459424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.108, y: 0.303, z: 0}
+  m_LocalPosition: {x: 0.1518, y: 0.3058, z: 0}
   m_LocalScale: {x: 0.20833, y: 0.15833, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 2812438386439372096}
   - component: {fileID: 6093435960812737097}
   - component: {fileID: 4467750970414816311}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Blob
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.029461466, y: 0.32914466}
+  m_Offset: {x: 0.044740178, y: 0.3268749}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5882353, y: -0.6923077}
@@ -178,7 +178,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.17529683, y: 0.28910688}
+  m_Size: {x: 0.15353687, y: 0.28456724}
   m_EdgeRadius: 0
 --- !u!114 &1088955109032370743
 MonoBehaviour:
@@ -282,14 +282,14 @@ MonoBehaviour:
     rageDamage: 40
     rageHitEffect: 3
     rageEffectPrefab: {fileID: 3025700644437683485, guid: ed7fd4779be4f354baac997a1c90653e, type: 3}
-    rageEffectScale: {x: 1, y: 1, z: 1}
+    rageEffectScale: {x: 1, y: 2, z: 1}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   maxRage: 100
   rageGainPerHit: 15
   attackNormalSpeed: 0.05
@@ -433,6 +433,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: de4c384dfb5de50479722e13865a24fa, type: 3}
       propertyPath: m_Name
       value: Sprite-09_necromancer_steam_idle_sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: de4c384dfb5de50479722e13865a24fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: de4c384dfb5de50479722e13865a24fa, type: 3}
       propertyPath: m_Enabled

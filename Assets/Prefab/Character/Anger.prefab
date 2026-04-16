@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6355977725914529893}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 3468715831446204759}
   - component: {fileID: 1883766879879343057}
   - component: {fileID: 1143832657895474847}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Anger
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.30490613, y: 0.34123355}
+  m_Offset: {x: -0.30490613, y: 0.36110234}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -206,7 +206,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4464917, y: 1.6833607}
+  m_Size: {x: 1.4464917, y: 1.7230983}
   m_EdgeRadius: 0
 --- !u!114 &4695537462766557909
 MonoBehaviour:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f94c276f2d86f14f977e9554356baa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
-  playerNumber: 0
+  playerNumber: 1
   opponentTransform: {fileID: 0}
   playerCharacterIndex: 0
   characterAnimations:
@@ -455,7 +455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760386265000143643}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
       propertyPath: m_TagString

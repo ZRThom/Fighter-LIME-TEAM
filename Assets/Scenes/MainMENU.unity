@@ -9601,7 +9601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
   selectionMarkP1: {fileID: 1610156240}
   selectionMarkP2: {fileID: 1865322967}
-  characterPrefab: {fileID: 8150902072001270897, guid: 9bc9366189ac65c4c9c0c3ff69fdd1c8, type: 3}
+  characterPrefab: {fileID: 2436490214716693051, guid: c6364ad84b29949489c9ec7411e5a7fc, type: 3}
 --- !u!114 &819927460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16413,8 +16413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e54bf6ff30717240b35913870bc2834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  player1Prefab: {fileID: 4588606172857760097, guid: c4ebf94c550e9d2409b4e3e976a452bb, type: 3}
-  player2Prefab: {fileID: 4588606172857760097, guid: c4ebf94c550e9d2409b4e3e976a452bb, type: 3}
+  player1Prefab: {fileID: 5077581533744391883, guid: 38024c08986ddfb479547391e15e21a7, type: 3}
+  player2Prefab: {fileID: 2436490214716693051, guid: c6364ad84b29949489c9ec7411e5a7fc, type: 3}
   firstSelectedPrefab: {fileID: 0}
   secondSelectedPrefab: {fileID: 0}
 --- !u!1 &1483759696
@@ -20434,7 +20434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
   selectionMarkP1: {fileID: 2011812417}
   selectionMarkP2: {fileID: 1990539989}
-  characterPrefab: {fileID: 4588606172857760097, guid: c4ebf94c550e9d2409b4e3e976a452bb, type: 3}
+  characterPrefab: {fileID: 5077581533744391883, guid: 38024c08986ddfb479547391e15e21a7, type: 3}
 --- !u!114 &1876555398
 MonoBehaviour:
   m_ObjectHideFlags: 0

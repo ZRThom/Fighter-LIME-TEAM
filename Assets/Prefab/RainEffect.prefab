@@ -4908,8 +4908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RageRain
   extraX: -4
-  extraY: 1
-  horizontalSpeed: 10
+  extraY: 0
+  horizontalSpeed: 15
   verticalspeed: -25
   sortingLayerName: FX
   sortingOrder: 100

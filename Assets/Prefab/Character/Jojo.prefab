@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5548845346197159495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackPoint
   m_TagString: Ennemie
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3324214060892743681}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.108, y: 0.303, z: 0}
+  m_LocalPosition: {x: 0.1515, y: 0.0954, z: 0}
   m_LocalScale: {x: 0.20833, y: 0.15833, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 7560032059235416652}
   - component: {fileID: 6149858712635702768}
   - component: {fileID: 1916751338786781874}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jojo
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.021150611, y: 0.33723325}
+  m_Offset: {x: -0.0043685436, y: 0.1406302}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5882353, y: -0.6923077}
@@ -147,7 +147,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.22516195, y: 0.30528402}
+  m_Size: {x: 0.1907849, y: 0.28257903}
   m_EdgeRadius: 0
 --- !u!114 &3127731662762426074
 MonoBehaviour:
@@ -253,7 +253,7 @@ MonoBehaviour:
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   maxRage: 100
   rageGainPerHit: 15
   attackNormalSpeed: 0.05
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2090956707938946285}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ Transform:
   m_GameObject: {fileID: 6697322697252720381}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01696, y: 0.19757, z: 0}
+  m_LocalPosition: {x: -0.019, y: -0.0007, z: 0}
   m_LocalScale: {x: 0.30322325, y: 0.34877232, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,6 +428,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 97babfad33a13af46bc020e167c0ba1b, type: 3}
       propertyPath: m_Name
       value: Sprite-11_JOJO_steam_idle_sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 97babfad33a13af46bc020e167c0ba1b, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1160356261127867848, guid: 97babfad33a13af46bc020e167c0ba1b, type: 3}
       propertyPath: m_Enabled
