@@ -282,7 +282,7 @@ MonoBehaviour:
     rageDamage: 40
     rageHitEffect: 3
     rageEffectPrefab: {fileID: 3025700644437683485, guid: ed7fd4779be4f354baac997a1c90653e, type: 3}
-    rageEffectScale: {x: 1, y: 2, z: 1}
+    rageEffectScale: {x: 1, y: 1, z: 1}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
