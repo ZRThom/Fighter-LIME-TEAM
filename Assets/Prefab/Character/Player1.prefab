@@ -226,7 +226,7 @@ MonoBehaviour:
   characterAnimations:
   - characterName: Pablo
     characterIcon: {fileID: 0}
-    prefab: {fileID: 3752425733137578650, guid: 9e084884b84c9794ebaaba460b6e6611, type: 3}
+    prefab: {fileID: 4588606172857760097}
     idleSprites:
     - {fileID: 3469704248156425608, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
     - {fileID: 4820723138321302619, guid: 9058edb455980aa49a3cd46efa5ab2a3, type: 3}
@@ -309,7 +309,7 @@ MonoBehaviour:
     rageEffectScale: {x: 3.5, y: 3.5, z: 3.5}
   - characterName: Kevin
     characterIcon: {fileID: 0}
-    prefab: {fileID: 1873875390410165072, guid: b0cd809f064001c4f940fec034d5358e, type: 3}
+    prefab: {fileID: 4588606172857760097}
     idleSprites:
     - {fileID: 8570025691734315002, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}
     - {fileID: 3398685364442365152, guid: cd57759c0a7743b4c8a4fe8101ed1661, type: 3}

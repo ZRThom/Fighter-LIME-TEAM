@@ -50,6 +50,8 @@ GameObject:
   - component: {fileID: 2754553033327593849}
   - component: {fileID: 5314708097962690573}
   - component: {fileID: 3468715831446204759}
+  - component: {fileID: 1883766879879343057}
+  - component: {fileID: 1143832657895474847}
   m_Layer: 0
   m_Name: Anger
   m_TagString: Player
@@ -290,6 +292,21 @@ MonoBehaviour:
     - {fileID: 1898205550522619279, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
     - {fileID: 3297026338139073979, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
     - {fileID: 1595139745244555583, guid: c6c225c29d598b94f955eee4492b593f, type: 3}
+    rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
+    ragePortraitSprite: {fileID: -8011329051448921951, guid: fc36648ecbe606d4c9aab7de6c3ebb26, type: 3}
+    rageAttackSprites:
+    - {fileID: -6680148398223360912, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -1675713370081409587, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -988945823898108205, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: 4190117334029904932, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: 2288489399018642673, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    - {fileID: -8904632479598115028, guid: f97aaed6b2afcb140a4a9a278a612b8f, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 40
+    rageHitEffect: 2
+    rageEffectPrefab: {fileID: 4032253467768310583, guid: ef437a3f0bc4e72468a99b3a04249cdf, type: 3}
+    rageEffectScale: {x: 3.5, y: 3.5, z: 3.5}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 1.5
@@ -297,6 +314,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+  maxRage: 100
+  rageGainPerHit: 15
   attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
@@ -329,6 +348,7 @@ MonoBehaviour:
   isCrouching: 0
   isMoving: 0
   isAttacking: 0
+  isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
   shieldTimer: 0
@@ -402,6 +422,30 @@ MonoBehaviour:
   maxHealth: 100
   playerID: 1
   currentHealth: 0
+--- !u!114 &1883766879879343057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077581533744391883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0b7f46b2657b6408dfcd8062ce0771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRage
+--- !u!114 &1143832657895474847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077581533744391883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7479a3d7ba22b14bbcd8846a77c9423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpecial
 --- !u!1 &5510293723898375567
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: 8106604541273232892}
   - component: {fileID: 5630543702901222607}
   - component: {fileID: 306548931153737441}
+  - component: {fileID: 7122124312635002767}
+  - component: {fileID: 5969866117608086770}
   m_Layer: 0
   m_Name: Ingenieur
   m_TagString: Player
@@ -246,6 +248,25 @@ MonoBehaviour:
     - {fileID: -6133972560127271970, guid: 105c40d159f9fc0458787090a3c74da2, type: 3}
     - {fileID: 2497271067236426661, guid: 105c40d159f9fc0458787090a3c74da2, type: 3}
     - {fileID: 8402151772854349255, guid: 105c40d159f9fc0458787090a3c74da2, type: 3}
+    rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
+    ragePortraitSprite: {fileID: -7241198711382726039, guid: cf42dbeb93687b648a9aa1cb52474515, type: 3}
+    rageAttackSprites:
+    - {fileID: -3639256906345808755, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 8715952789011760967, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 246869818746146324, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -393369951434776208, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 2449930580666074711, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 7515529536273968768, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -3187807926994714556, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -9180965842449675276, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: -4151057186118657657, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    - {fileID: 8666065074665449094, guid: 2a1caa05096c7c04cbeb783b1d4c4d4c, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 40
+    rageHitEffect: 1
+    rageEffectPrefab: {fileID: 1344149852152345120, guid: 43cb206ce316ad940bf685acb57e1a65, type: 3}
+    rageEffectScale: {x: 1, y: 1, z: 1}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
@@ -253,6 +274,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 0
+  maxRage: 100
+  rageGainPerHit: 15
   attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
@@ -285,6 +308,7 @@ MonoBehaviour:
   isCrouching: 0
   isMoving: 0
   isAttacking: 0
+  isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
   shieldTimer: 0
@@ -358,6 +382,30 @@ MonoBehaviour:
   maxHealth: 100
   playerID: 2
   currentHealth: 0
+--- !u!114 &7122124312635002767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436490214716693051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0b7f46b2657b6408dfcd8062ce0771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRage
+--- !u!114 &5969866117608086770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436490214716693051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7479a3d7ba22b14bbcd8846a77c9423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpecial
 --- !u!1 &4869810921564910240
 GameObject:
   m_ObjectHideFlags: 0

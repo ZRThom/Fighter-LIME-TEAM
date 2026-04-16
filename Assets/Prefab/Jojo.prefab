@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: 7139362630815333360}
   - component: {fileID: 722886131000979441}
   - component: {fileID: 7560032059235416652}
+  - component: {fileID: 6149858712635702768}
+  - component: {fileID: 1916751338786781874}
   m_Layer: 0
   m_Name: Jojo
   m_TagString: Player
@@ -232,6 +234,19 @@ MonoBehaviour:
     - {fileID: 1829095775825030504, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
     - {fileID: 5802284014764365195, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
     - {fileID: 765893769486980979, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
+    rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
+    ragePortraitSprite: {fileID: -3312811306403947149, guid: 51c944b3d3c23e062a69a0d201eb9e7d, type: 3}
+    rageAttackSprites:
+    - {fileID: 4294542269153865964, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
+    - {fileID: -4413429232886164994, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
+    - {fileID: 1829095775825030504, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
+    - {fileID: 765893769486980979, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
+    rageAttackSpeed: 0.1
+    rageHitPercent: 0.5
+    rageDamage: 40
+    rageHitEffect: 2
+    rageEffectPrefab: {fileID: 4032253467768310583, guid: ef437a3f0bc4e72468a99b3a04249cdf, type: 3}
+    rageEffectScale: {x: 3.5, y: 3.5, z: 3.5}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
@@ -239,6 +254,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 0
+  maxRage: 100
+  rageGainPerHit: 15
   attackNormalSpeed: 0.05
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
@@ -271,6 +288,7 @@ MonoBehaviour:
   isCrouching: 0
   isMoving: 0
   isAttacking: 0
+  isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
   shieldTimer: 0
@@ -344,6 +362,30 @@ MonoBehaviour:
   maxHealth: 100
   playerID: 2
   currentHealth: 0
+--- !u!114 &6149858712635702768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5288267862035165445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0b7f46b2657b6408dfcd8062ce0771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerRage
+--- !u!114 &1916751338786781874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5288267862035165445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7479a3d7ba22b14bbcd8846a77c9423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpecial
 --- !u!1 &6697322697252720381
 GameObject:
   m_ObjectHideFlags: 0
