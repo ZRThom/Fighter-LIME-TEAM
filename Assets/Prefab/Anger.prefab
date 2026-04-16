@@ -313,7 +313,7 @@ MonoBehaviour:
   attackDamage: 10
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8
   maxRage: 100
   rageGainPerHit: 15
   attackNormalSpeed: 0.05

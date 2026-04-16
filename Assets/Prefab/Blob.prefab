@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f94c276f2d86f14f977e9554356baa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
-  playerNumber: 1
+  playerNumber: 0
   opponentTransform: {fileID: 0}
   playerCharacterIndex: 0
   characterAnimations:
