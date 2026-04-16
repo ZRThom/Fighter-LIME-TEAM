@@ -137,7 +137,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.029461466, y: 0.32914466}
+  m_Offset: {x: 0.010170937, y: 0.320938}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5882353, y: -0.6923077}
@@ -147,7 +147,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.17529683, y: 0.28910688}
+  m_Size: {x: 0.14305785, y: 0.26175138}
   m_EdgeRadius: 0
 --- !u!114 &1701803089992481076
 MonoBehaviour:
@@ -239,15 +239,20 @@ MonoBehaviour:
     - {fileID: 7233754054070447589, guid: e54aa2a74608185499e10b9b440c09b3, type: 3}
     - {fileID: 4377969949084975280, guid: e54aa2a74608185499e10b9b440c09b3, type: 3}
     - {fileID: 5711878415128773028, guid: e54aa2a74608185499e10b9b440c09b3, type: 3}
-    rageBackgroundController: {fileID: 0}
-    ragePortraitSprite: {fileID: 0}
-    rageAttackSprites: []
-    rageAttackSpeed: 0
+    rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
+    ragePortraitSprite: {fileID: 6704144654244923049, guid: 1236a487479b100418715b1dfe7f4b11, type: 3}
+    rageAttackSprites:
+    - {fileID: 4943840587867194561, guid: 23c794c6435656f4d8587dbbf0195550, type: 3}
+    - {fileID: 6183772822826324395, guid: 23c794c6435656f4d8587dbbf0195550, type: 3}
+    - {fileID: -3245692969454527980, guid: 23c794c6435656f4d8587dbbf0195550, type: 3}
+    - {fileID: 8796772433679033206, guid: 23c794c6435656f4d8587dbbf0195550, type: 3}
+    - {fileID: -2724843115774948732, guid: 23c794c6435656f4d8587dbbf0195550, type: 3}
+    rageAttackSpeed: 0.1
     rageHitPercent: 0
-    rageDamage: 0
-    rageHitEffect: 0
-    rageEffectPrefab: {fileID: 0}
-    rageEffectScale: {x: 0, y: 0, z: 0}
+    rageDamage: 40
+    rageHitEffect: 1
+    rageEffectPrefab: {fileID: 1344149852152345120, guid: 43cb206ce316ad940bf685acb57e1a65, type: 3}
+    rageEffectScale: {x: 1, y: 1, z: 1}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5

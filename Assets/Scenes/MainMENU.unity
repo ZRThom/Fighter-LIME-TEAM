@@ -16990,7 +16990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
   selectionMarkP1: {fileID: 1464409114}
   selectionMarkP2: {fileID: 1927668818}
-  characterPrefab: {fileID: 5288267862035165445, guid: f6f1bd12cccb46a43b3d5a651a4f338c, type: 3}
+  characterPrefab: {fileID: 2436490214716693051, guid: bb34dc66e9488e544b427ca5852d1f7e, type: 3}
 --- !u!114 &1545911628
 MonoBehaviour:
   m_ObjectHideFlags: 0
