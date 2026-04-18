@@ -3,5 +3,6 @@ public enum RageHitEffectType
     None,
     Beam,
     Lightning,
-    Rain
+    Rain,
+    Shockwave
 }

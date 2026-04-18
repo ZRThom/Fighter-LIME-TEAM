@@ -195,6 +195,25 @@ public class PlayerSpecial : MonoBehaviour
                         }
                         break;
                     }
+                
+                case RageHitEffectType.Shockwave:
+                    {
+                        Debug.Log("Shockwave launched");
+                        SpawnShockwave(effectPosition, currentSpecialData.rageEffectScale);
+                        SpawnShockwave(effectPosition, currentSpecialData.rageEffectScale / 5f);
+                        void SpawnShockwave(Vector3 pos, Vector3 endScale)
+                        {
+                            GameObject obj = Instantiate(currentSpecialData.rageEffectPrefab, pos, Quaternion.identity);
+                            
+                            RageShockwave shockwave = obj.GetComponent<RageShockwave>();
+                            if (shockwave != null)
+                            {
+                                shockwave.Play(pos, endScale);
+                            }
+                        }
+                        
+                        break;
+                    }
             }
         }
     }
