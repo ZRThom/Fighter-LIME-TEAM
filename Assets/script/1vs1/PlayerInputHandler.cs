@@ -6,6 +6,7 @@ public class PlayerInputHandler : MonoBehaviour
     [Header("Configuration")]
     public bool allowController = true;
 
+    public bool InputsEnabled { get; private set; } = true;
     public Vector2 MoveInput { get; private set; }
     public bool JumpTriggered { get; set; }
     public bool AttackTriggered { get; set; }
@@ -22,27 +23,30 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     // check pr eviter les input en memoire
-    //void Update()
-    //{
-    //    if (RageCutInManager.Instance != null && RageCutInManager.Instance.IsPlaying)
-    //    {
-    //        input.ClearInputs();
-    //        
-    //    }
-    //}
+    public void SetInputsEnabled(bool enabled)
+    {
+        InputsEnabled = enabled;
+        if (!enabled) ClearInputs();
+    }
     
-    //public void ClearInputs()
-    //{
-    //    MoveInput = Vector2.zero;
-    //    JumpTriggered = false;
-    //    AttackTriggered = false;
-    //    ShieldPressed = false;
-    //    CrouchHeld = false;
-    //    SpecialTrigger = false;
-    //}
+    public void ClearInputs()
+    {
+        MoveInput = Vector2.zero;
+        JumpTriggered = false;
+        AttackTriggered = false;
+        ShieldPressed = false;
+        CrouchHeld = false;
+        SpecialTrigger = false;
+    }
 
     public void ReadInputs()
     {
+        if (!InputsEnabled)
+        {
+            ClearInputs();
+            return;
+        }
+
         float h = 0f;
         bool jump = false;
         bool attack = false;
