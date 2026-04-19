@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [Header("Bibliothèque de Sons")]
-    [SerializeField] private AudioClip submitSound; // Ton son 'Validé'
-    [SerializeField] private AudioClip backSound;   // Ton son 'Retour'
+    [SerializeField] private AudioClip submitSound; 
+    [SerializeField] private AudioClip backSound;   
 
     public void PlaySubmitSound()
     {
