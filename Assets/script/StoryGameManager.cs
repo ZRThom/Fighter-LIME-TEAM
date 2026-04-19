@@ -101,8 +101,22 @@ public class StoryGameManager : MonoBehaviour
 
     public void ResetPositions()
     {
-        if (p1 != null) p1.gameObject.SetActive(true);
-        if (p2 != null) p2.gameObject.SetActive(true);
+        if (p1 != null)
+        {
+            p1.gameObject.SetActive(true);
+            p1.ResetHealth();
+
+            PlayerRage p1Rage = p1.GetComponent<PlayerRage>();
+            if (p1Rage != null) p1Rage.ResetForMatch();
+        }
+        if (p2 != null)
+        {
+            p2.gameObject.SetActive(true);
+            p2.ResetHealth();
+
+            PlayerRage p2Rage = p2.GetComponent<PlayerRage>();
+            if (p2Rage != null) p2Rage.ResetForMatch();
+        }
 
         if (p1 != null && p1SpawnPos != null) p1.transform.position = p1SpawnPos.position;
         if (p2 != null && p2SpawnPos != null) p2.transform.position = p2SpawnPos.position;

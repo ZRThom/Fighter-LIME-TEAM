@@ -16,9 +16,24 @@ public class RoundManager : MonoBehaviour
 
     private bool isRoundActive = true;
 
+    void Start()
+    {
+        isRoundActive = true;
+        Time.timeScale = 1f; 
+        if (p1HealthScript != null) p1HealthScript.ResetHealth();
+        if (p2HealthScript != null) p2HealthScript.ResetHealth();
+        if (timerScript != null) timerScript.ResetTimer();
+    }
+
     void Update()
     {
         if (!isRoundActive) return;
+
+        if (p1HealthScript == null || p2HealthScript == null || timerScript == null)
+        {
+            Debug.LogWarning("RoundManager: Les barres de vie ou le timer manquent dans l'inspecteur !");
+            return;
+        }
 
         if (p1HealthScript.healthSlider.value <= 0f)
         {

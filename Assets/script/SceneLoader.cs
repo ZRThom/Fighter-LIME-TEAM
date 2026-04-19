@@ -20,6 +20,8 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadSceneByName(string sceneName)
     {
+        Time.timeScale = 1f; 
+
         if (!string.IsNullOrEmpty(sceneName))
         {
             SceneManager.LoadScene(sceneName);
