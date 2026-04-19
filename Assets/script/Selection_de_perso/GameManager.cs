@@ -9,6 +9,8 @@ public class GameManagerSelect : MonoBehaviour
     public GameObject player2Prefab;
     public GameObject firstSelectedPrefab;
     public GameObject secondSelectedPrefab;
+    [Header("Map Select")]
+    public GameObject selectMapPrefab;
     void Awake()
     {
         if (Instance == null)
@@ -36,5 +38,11 @@ public class GameManagerSelect : MonoBehaviour
             player2Prefab = prefab;
         }
         Debug.Log($"Player {playerNumber} selected: {prefab.name}");
+    }
+
+    public void SelectMap(GameObject mapPrefab)
+    {
+        selectMapPrefab = mapPrefab;
+        Debug.Log($"Map selected : {mapPrefab.name}");
     }
 }

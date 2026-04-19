@@ -1,10 +1,11 @@
 using UnityEngine;
+using System.Collections;
 
 public class FightManager : MonoBehaviour
 {
     public static FightManager Instance;
 
-    public Transform leftSpawn; // left
+    public Transform leftSpawn; //left
     public Transform rightSpawn; // right
     public CameraFollow2d cameraFollow;
 
@@ -24,7 +25,7 @@ public class FightManager : MonoBehaviour
         Invoke(nameof(SpawnPlayers), 0.1f);
     }
 
-    void SpawnPlayers()
+    public void SpawnPlayers()
     {
         if (GameManagerSelect.Instance.firstSelectedPrefab == null || GameManagerSelect.Instance.secondSelectedPrefab == null)
         {
