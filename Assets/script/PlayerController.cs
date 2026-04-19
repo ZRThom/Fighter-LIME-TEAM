@@ -102,6 +102,7 @@ public class PlayerController2D : MonoBehaviour
         }
 
         float x = Input.GetAxisRaw("Horizontal");
+
         isMoving = Mathf.Abs(x) > 0.1f;
 
         HandleCrouch();
