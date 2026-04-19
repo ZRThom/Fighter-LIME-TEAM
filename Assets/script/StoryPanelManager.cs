@@ -25,8 +25,8 @@ public class StoryPanelManager : MonoBehaviour
     
     void Start()
     {
-        // Par défaut au lancement de la scène, on affiche le Lore (ou ce que tu préfères)
-        OpenLorePanel();
+        
+        OpenVersusBoss1();
     }
 
     public void HideAllPanels()
