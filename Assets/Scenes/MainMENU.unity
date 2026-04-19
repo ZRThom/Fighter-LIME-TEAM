@@ -17882,6 +17882,19 @@ MonoBehaviour:
   player2Prefab: {fileID: 2436490214716693051, guid: c6364ad84b29949489c9ec7411e5a7fc, type: 3}
   firstSelectedPrefab: {fileID: 0}
   secondSelectedPrefab: {fileID: 0}
+  firstSelectedName: 
+  secondSelectedName: 
+  characterNames:
+  - characterPrefab: {fileID: 5077581533744391883, guid: 38024c08986ddfb479547391e15e21a7, type: 3}
+    displayName: Anger
+  - characterPrefab: {fileID: 2436490214716693051, guid: c6364ad84b29949489c9ec7411e5a7fc, type: 3}
+    displayName: Ingenio
+  - characterPrefab: {fileID: 8817952671848854763, guid: bfe2996ce640e40469255888cd2eceec, type: 3}
+    displayName: Blob
+  - characterPrefab: {fileID: 2436490214716693051, guid: bb34dc66e9488e544b427ca5852d1f7e, type: 3}
+    displayName: Prisoner
+  - characterPrefab: {fileID: 5288267862035165445, guid: f6f1bd12cccb46a43b3d5a651a4f338c, type: 3}
+    displayName: Jojo
   selectMapPrefab: {fileID: 0}
 --- !u!1 &1483759696
 GameObject:
