@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RealMenuManager : MonoBehaviour
 {
+    public static bool openStoryPanelOnLoad = false;
+
     [Header("panel de base")]
     public GameObject panelMenu;
     public GameObject panelPlay;
@@ -27,6 +29,11 @@ public class RealMenuManager : MonoBehaviour
     void Start()
     {
         OpenMainMenu();
+        if (openStoryPanelOnLoad)
+        {
+            openStoryPanelOnLoad = false;
+            PanelPlayStory();
+        }
     }
 
     void HideAllPanels()

@@ -11,6 +11,12 @@ public class StoryGameManager : MonoBehaviour
     public Transform p1SpawnPos;
     public Transform p2SpawnPos;
 
+    [Header("UI Story")]
+    public StoryPanelManager panelManager;
+
+    [Tooltip("Indique quel boss on affronte (1, 2, 3 ou 4)")]
+    public int bossLevel = 1;
+
     private RoundManager roundManager;
     private int currentP1Wins;
     private int currentP2Wins;
@@ -45,6 +51,14 @@ public class StoryGameManager : MonoBehaviour
             {
                 StartCoroutine(WaitAndResetPositions());
             }
+            else if (currentP1Wins >= roundManager.roundsToWin)
+            {
+                StartCoroutine(WaitAndShowPanel(true));
+            }
+            else if (currentP2Wins >= roundManager.roundsToWin)
+            {
+                StartCoroutine(WaitAndShowPanel(false));
+            }
         }
     }
 
@@ -52,6 +66,37 @@ public class StoryGameManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(2f);
         ResetPositions();
+    }
+
+    IEnumerator WaitAndShowPanel(bool p1Won)
+    {
+        yield return new WaitForSecondsRealtime(2.5f);
+        
+        if (panelManager != null)
+        {
+            if (p1Won)
+            {
+                // Victoire du Joueur 1 : Affiche le panel "W" correspondant au boss
+                if (bossLevel == 1) panelManager.OpenW1();
+                else if (bossLevel == 2) panelManager.OpenW2();
+                else if (bossLevel == 3) panelManager.OpenW3();
+                else if (bossLevel == 4) panelManager.OpenW4();
+            }
+            else
+            {
+                // Défaite du Joueur 1 : Affiche le panel "L" correspondant au boss
+                if (bossLevel == 1) panelManager.OpenL1();
+                else if (bossLevel == 2) panelManager.OpenL2();
+                else if (bossLevel == 3) panelManager.OpenL3();
+                else if (bossLevel == 4) panelManager.OpenL4();
+            }
+            
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Debug.LogError("ERREUR StoryGameManager : La case 'Panel Manager' est vide dans l'inspecteur ! N'oublie pas d'y glisser ton objet contenant StoryPanelManager.");
+        }
     }
 
     public void ResetPositions()

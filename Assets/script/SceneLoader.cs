@@ -42,4 +42,13 @@ public class SceneLoader : MonoBehaviour
     {
         Debug.Log("Scene debug");
     }
+
+    public void ReturnToMainMenuStory()
+    {
+        
+        Time.timeScale = 1f;
+        
+        RealMenuManager.openStoryPanelOnLoad = true;
+        LoadSceneByName("MainMenu");
+    }
 }

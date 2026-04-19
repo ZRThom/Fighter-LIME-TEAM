@@ -63,7 +63,7 @@ public class RoundManager : MonoBehaviour
 
         if (p1Wins >= roundsToWin || p2Wins >= roundsToWin)
         {
-            Debug.Log("GAME OVER!");
+            Debug.Log("FIN DU MATCH !");
 
             // reset rage fin match
             foreach (PlayerRage rage in FindObjectsOfType<PlayerRage>()) rage.ResetForMatch();

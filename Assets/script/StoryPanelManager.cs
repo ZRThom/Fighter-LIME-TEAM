@@ -14,11 +14,17 @@ public class StoryPanelManager : MonoBehaviour
     public GameObject VersusBOSSS3;
     public GameObject VersusBOSSS4;
 
-    [Header("WL Panels")]
-    public GameObject wl1;
-    public GameObject wl2;
-    public GameObject wl3;
-    public GameObject wl4;
+    [Header("W Panels")]
+    public GameObject w1;
+    public GameObject w2;
+    public GameObject w3;
+    public GameObject w4;
+
+    [Header("L Panels")]
+    public GameObject l1;
+    public GameObject l2;
+    public GameObject l3;
+    public GameObject l4;
 
     [Header("Lore Panel")]
     public GameObject LorePanel;
@@ -41,10 +47,15 @@ public class StoryPanelManager : MonoBehaviour
         if (VersusBOSSS3 != null) VersusBOSSS3.SetActive(false);
         if (VersusBOSSS4 != null) VersusBOSSS4.SetActive(false);
 
-        if (wl1 != null) wl1.SetActive(false);
-        if (wl2 != null) wl2.SetActive(false);
-        if (wl3 != null) wl3.SetActive(false);
-        if (wl4 != null) wl4.SetActive(false);
+        if (w1 != null) w1.SetActive(false);
+        if (w2 != null) w2.SetActive(false);
+        if (w3 != null) w3.SetActive(false);
+        if (w4 != null) w4.SetActive(false);
+
+        if (l1 != null) l1.SetActive(false);
+        if (l2 != null) l2.SetActive(false);
+        if (l3 != null) l3.SetActive(false);
+        if (l4 != null) l4.SetActive(false);
 
         if (LorePanel != null) LorePanel.SetActive(false);
     }
@@ -100,25 +111,47 @@ public class StoryPanelManager : MonoBehaviour
         if (VersusBOSSS4 != null) VersusBOSSS4.SetActive(true);
     }
 
-    // --- WL Panels ---
-    public void OpenWL1()
+    // --- W Panels (Victoire) ---
+    public void OpenW1()
     {
         HideAllPanels();
-        if (wl1 != null) wl1.SetActive(true);
+        if (w1 != null) w1.SetActive(true);
     }
-    public void OpenWL2()
+    public void OpenW2()
     {
         HideAllPanels();
-        if (wl2 != null) wl2.SetActive(true);
+        if (w2 != null) w2.SetActive(true);
     }
-    public void OpenWL3()
+    public void OpenW3()
     {
         HideAllPanels();
-        if (wl3 != null) wl3.SetActive(true);
+        if (w3 != null) w3.SetActive(true);
     }
-    public void OpenWL4()
+    public void OpenW4()
     {
         HideAllPanels();
-        if (wl4 != null) wl4.SetActive(true);
+        if (w4 != null) w4.SetActive(true);
+    }
+
+    // --- L Panels (Défaite) ---
+    public void OpenL1()
+    {
+        HideAllPanels();
+        if (l1 != null) l1.SetActive(true);
+    }
+    public void OpenL2()
+    {
+        HideAllPanels();
+        if (l2 != null) l2.SetActive(true);
+    }
+    public void OpenL3()
+    {
+        HideAllPanels();
+        if (l3 != null) l3.SetActive(true);
+    }
+    public void OpenL4()
+    {
+        HideAllPanels();
+        if (l4 != null) l4.SetActive(true);
     }
 }
