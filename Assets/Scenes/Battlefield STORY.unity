@@ -10066,6 +10066,63 @@ SpriteShapeRenderer:
     m_Center: {x: 0.00027251244, y: -0.0002721548, z: 0}
     m_Extent: {x: 2.589231, y: 1.250067, z: 0}
   m_SpriteSortPoint: 0
+--- !u!1 &1809971580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809971581}
+  - component: {fileID: 1809971582}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1809971581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809971580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 943.049, y: 1428.1774, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809971582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809971580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33b0e812668162edbdcf49de5a278e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoryPanelManager
+  Boss1: {fileID: 355246059}
+  Boss2: {fileID: 256582567}
+  Boss3: {fileID: 2128868718}
+  Boss4: {fileID: 1643918787}
+  VersusBOSS1: {fileID: 1924978185}
+  VersusBOSSS2: {fileID: 2091774904}
+  VersusBOSSS3: {fileID: 1085645781}
+  VersusBOSSS4: {fileID: 829059562}
+  wl1: {fileID: 283270822}
+  wl2: {fileID: 424208615}
+  wl3: {fileID: 1188659396}
+  wl4: {fileID: 1544533188}
+  LorePanel: {fileID: 705980158}
 --- !u!1 &1818191057
 GameObject:
   m_ObjectHideFlags: 0
@@ -12693,6 +12750,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 8032362088661822000}
   - {fileID: 309349987226827044}
+  - {fileID: 1809971581}
   - {fileID: 355246060}
   - {fileID: 256582568}
   - {fileID: 2128868719}
