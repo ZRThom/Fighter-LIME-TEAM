@@ -62,6 +62,7 @@ public class PlayerController2D : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D col;
+    private PlayerState playerState;
 
     private float animTimer;
     private int currentFrame;
@@ -74,14 +75,32 @@ public class PlayerController2D : MonoBehaviour
     private bool isAttacking;
     private bool attackOnCooldown;
 
+    [Header("---- REGLAGES JOUEUR & IA ----")]
+    [Tooltip("Désactiver pour P2 et P3 sinon le script va s'auto-détruire (Singleton)")]
+    public bool isPlayer1 = true;
+    public Transform aiTarget;
+    public float aiAgroRange = 10f;
+    public float aiAttackRangeDist = 1.2f;
+    private float aiActionCooldown = 0f;
+
+    private float hInput;
+    private bool runInput;
+    private bool jumpInput;
+    private bool attackInput;
+    private bool crouchInput;
+
     private void Awake()
     {
-        if (instance != null && instance != this) Destroy(this.gameObject);
-        else instance = this;
+        if (isPlayer1)
+        {
+            if (instance != null && instance != this) Destroy(this.gameObject);
+            else instance = this;
+        }
     }
 
     void Start()
     {
+        playerState = GetComponent<PlayerState>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         if (visualRenderer == null)
@@ -101,26 +120,37 @@ public class PlayerController2D : MonoBehaviour
             return;
         }
 
-        float x = Input.GetAxisRaw("Horizontal");
+        if (playerState != null && playerState.isAI)
+        {
+            ProcessAILogic();
+        }
+        else
+        {
+            hInput = Input.GetAxisRaw("Horizontal");
+            runInput = Input.GetKey(runKey);
+            jumpInput = Input.GetKeyDown(jumpKey);
+            attackInput = Input.GetKeyDown(attackKey);
+            crouchInput = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
+        }
 
-        isMoving = Mathf.Abs(x) > 0.1f;
+        isMoving = Mathf.Abs(hInput) > 0.1f;
 
-        HandleCrouch();
-        isRunning = Input.GetKey(runKey) && !isCrouching && isMoving;
+        HandleCrouch(crouchInput);
+        isRunning = runInput && !isCrouching && isMoving;
 
         float currentSpeed = isCrouching ? crouchSpeed : isRunning ? runSpeed : walkSpeed;
-        rb.linearVelocity = new Vector2(x * currentSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(hInput * currentSpeed, rb.linearVelocity.y);
 
-        if (Input.GetKeyDown(jumpKey) && Grounded && !isCrouching)
+        if (jumpInput && Grounded && !isCrouching)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
-        if (x > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (x < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (hInput > 0) transform.localScale = new Vector3(1, 1, 1);
+        else if (hInput < 0) transform.localScale = new Vector3(-1, 1, 1);
 
         if (!isAttacking)
             HandleManualAnimation();
 
-        if (Input.GetKeyDown(attackKey) && !isAttacking && !attackOnCooldown)
+        if (attackInput && !isAttacking && !attackOnCooldown)
             StartCoroutine(PerformAttackSequence());
     }
 
@@ -155,6 +185,64 @@ public class PlayerController2D : MonoBehaviour
         attackOnCooldown = false;
     }
 
+    void ProcessAILogic()
+    {
+        hInput = 0f;
+        runInput = false;
+        jumpInput = false;
+        attackInput = false;
+        crouchInput = false;
+
+        if (aiTarget == null)
+        {
+            PlayerHealth[] players = FindObjectsOfType<PlayerHealth>();
+            foreach (PlayerHealth p in players)
+            {
+                if (p.gameObject != this.gameObject)
+                {
+                    aiTarget = p.transform;
+                    break;
+                }
+            }
+            if (aiTarget == null) return;
+        }
+
+        aiActionCooldown -= Time.deltaTime;
+        float distance = Vector2.Distance(transform.position, aiTarget.position);
+        float directionX = aiTarget.position.x - transform.position.x;
+        float directionY = aiTarget.position.y - transform.position.y;
+
+        if (distance < aiAgroRange)
+        {
+            // Mouvement vers le joueur
+            if (Mathf.Abs(directionX) > aiAttackRangeDist)
+            {
+                hInput = Mathf.Sign(directionX);
+                if (Mathf.Abs(directionX) > aiAttackRangeDist * 2.5f) runInput = true;
+            }
+            else
+            {
+                // A portée d'attaque
+                hInput = 0f;
+                if (directionX > 0) transform.localScale = new Vector3(1, 1, 1);
+                else if (directionX < 0) transform.localScale = new Vector3(-1, 1, 1);
+
+                if (aiActionCooldown <= 0f && !isAttacking && !attackOnCooldown)
+                {
+                    attackInput = true;
+                    aiActionCooldown = Random.Range(0.4f, 1.2f); // Eviter de spammer les attaques
+                }
+            }
+
+            // Saut basique si le joueur est plus haut
+            if (directionY > 1.5f && Grounded && aiActionCooldown <= 0f)
+            {
+                jumpInput = true;
+                aiActionCooldown = 0.5f;
+            }
+        }
+    }
+
     void DetectAttackHit(List<GameObject> enemiesHitList)
     {
         Transform point = groundAttackPoint;
@@ -176,11 +264,30 @@ public class PlayerController2D : MonoBehaviour
         {
             if (enemiesHitList.Contains(hit.gameObject)) continue;
 
+            // ---- DÉGÂTS RÉELS JOUEUR (HealthBar, HUD, Knockback) ----
+            PlayerHealth ph = hit.GetComponentInParent<PlayerHealth>();
+            if (ph != null && hit.gameObject != this.gameObject) 
+            {
+                ph.TakeDamage(attackDamage);
+                enemiesHitList.Add(hit.gameObject);
+
+                // Gain de Rage si on touche
+                PlayerRage myRage = GetComponent<PlayerRage>();
+                if (myRage != null) myRage.AddRage(10f); // Modifie cette valeur selon ton équilibrage
+
+                Rigidbody2D ennemiRB = hit.GetComponentInParent<Rigidbody2D>();
+                if (ennemiRB != null)
+                {
+                    float direction = transform.localScale.x > 0 ? 1 : -1;
+                    ennemiRB.AddForce(new Vector2(direction * knockbackForce, knockbackForce * 0.3f), ForceMode2D.Impulse);
+                }
+            }
+
+            // ---- DÉGÂTS ENTRAINEMENT (Mannequin) ----
             Manequin m = hit.GetComponent<Manequin>();
             if (m != null)
             {
                 m.TakeDamage(attackDamage);
-
                 enemiesHitList.Add(hit.gameObject);
 
                 Rigidbody2D ennemiRB = hit.GetComponent<Rigidbody2D>();
@@ -218,10 +325,8 @@ public class PlayerController2D : MonoBehaviour
         visualRenderer.sprite = currentAnimSet[currentFrame];
     }
 
-    void HandleCrouch()
+    void HandleCrouch(bool crouchInput)
     {
-        bool crouchInput = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
-
         if (Grounded && crouchInput)
         {
             if (!isCrouching)

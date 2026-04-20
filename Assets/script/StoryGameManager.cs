@@ -3,18 +3,18 @@ using System.Collections;
 
 public class StoryGameManager : MonoBehaviour
 {
-    [Header("Joueurs ")]
+    [Header("Players")]
     public PlayerHealth p1;
-    public PlayerHealth p2;
+    public PlayerHealth p3; // AI is P3 to avoid affecting 1v1 mode
 
-    [Header("Points d'apparition ")]
+    [Header("Spawn Points")]
     public Transform p1SpawnPos;
-    public Transform p2SpawnPos;
+    public Transform p3SpawnPos;
 
-    [Header("UI Story")]
+    [Header("Story UI")]
     public StoryPanelManager panelManager;
 
-    [Tooltip("Indique quel boss on affronte (1, 2, 3 ou 4)")]
+    [Tooltip("Indicates which boss is faced (1, 2, 3, or 4)")]
     public int bossLevel = 1;
 
     private RoundManager roundManager;
@@ -32,7 +32,7 @@ public class StoryGameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Attention : Aucun RoundManager trouvé dans la scène !");
+            Debug.LogWarning("Warning: No RoundManager found in the scene!");
         }
 
         ResetPositions();
@@ -76,7 +76,7 @@ public class StoryGameManager : MonoBehaviour
         {
             if (p1Won)
             {
-                // Victoire du Joueur 1 : Affiche le panel "W" correspondant au boss
+                // Player 1 Victory: Show corresponding 'W' panel
                 if (bossLevel == 1) panelManager.OpenW1();
                 else if (bossLevel == 2) panelManager.OpenW2();
                 else if (bossLevel == 3) panelManager.OpenW3();
@@ -84,7 +84,7 @@ public class StoryGameManager : MonoBehaviour
             }
             else
             {
-                // Défaite du Joueur 1 : Affiche le panel "L" correspondant au boss
+                // Player 1 Defeat: Show corresponding 'L' panel
                 if (bossLevel == 1) panelManager.OpenL1();
                 else if (bossLevel == 2) panelManager.OpenL2();
                 else if (bossLevel == 3) panelManager.OpenL3();
@@ -95,7 +95,7 @@ public class StoryGameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("ERREUR StoryGameManager : La case 'Panel Manager' est vide dans l'inspecteur ! N'oublie pas d'y glisser ton objet contenant StoryPanelManager.");
+            Debug.LogError("StoryGameManager Error: 'Panel Manager' is empty in the inspector!");
         }
     }
 
@@ -109,28 +109,32 @@ public class StoryGameManager : MonoBehaviour
             PlayerRage p1Rage = p1.GetComponent<PlayerRage>();
             if (p1Rage != null) p1Rage.ResetForMatch();
         }
-        if (p2 != null)
+        if (p3 != null)
         {
-            p2.gameObject.SetActive(true);
-            p2.ResetHealth();
+            p3.gameObject.SetActive(true);
+            p3.ResetHealth();
 
-            PlayerRage p2Rage = p2.GetComponent<PlayerRage>();
-            if (p2Rage != null) p2Rage.ResetForMatch();
+            PlayerRage p3Rage = p3.GetComponent<PlayerRage>();
+            if (p3Rage != null) p3Rage.ResetForMatch();
+
+            // Ensure Player 3 is set as AI
+            PlayerState p3State = p3.GetComponent<PlayerState>();
+            if (p3State != null) p3State.isAI = true;
         }
 
         if (p1 != null && p1SpawnPos != null) p1.transform.position = p1SpawnPos.position;
-        if (p2 != null && p2SpawnPos != null) p2.transform.position = p2SpawnPos.position;
+        if (p3 != null && p3SpawnPos != null) p3.transform.position = p3SpawnPos.position;
 
         if (p1 != null)
         {
             var rb1 = p1.GetComponent<Rigidbody2D>();
             if (rb1) rb1.linearVelocity = Vector2.zero;
         }
-        if (p2 != null)
+        if (p3 != null)
         {
-            var rb2 = p2.GetComponent<Rigidbody2D>();
-            if (rb2) rb2.linearVelocity = Vector2.zero;
+            var rb3 = p3.GetComponent<Rigidbody2D>();
+            if (rb3) rb3.linearVelocity = Vector2.zero;
         }
-        Debug.Log("StoryGameManager : Positions réinitialisées.");
+        Debug.Log("StoryGameManager: Positions reset.");
     }
 }

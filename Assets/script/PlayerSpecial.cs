@@ -127,11 +127,14 @@ public class PlayerSpecial : MonoBehaviour
                 continue;
             }
 
+            // Absolute safety: cannot hit oneself
+            if (health.gameObject == this.gameObject) continue;
+
             if (health.playerID == config.playerNumber)
             {
                 continue;
             }
-            // ordre pr pas que les rage effect deconne (stock pos / effect / degat)
+            // Order to prevent rage effect bugs (store pos / effect / damage)
             Vector3 hitPos = enemy.bounds.center;
             TriggerSpecialEffect(hitPos);
             health.TakeDamage(currentSpecialData.rageDamage);
@@ -143,7 +146,7 @@ public class PlayerSpecial : MonoBehaviour
             if (currentSpecialData == null) return;
             if (currentSpecialData.rageEffectPrefab == null) return;
 
-            // select rafe effect
+            // Select rage effect
             switch (currentSpecialData.rageHitEffect)
             {
                 case RageHitEffectType.Beam:
@@ -218,7 +221,7 @@ public class PlayerSpecial : MonoBehaviour
         }
     }
 
-    // prend tableau charactAnim... + index du perso et retourne les donnée du perso
+    // Takes the characterAnim array + character index and returns the character data
     PlayerAnimationSet GetCurrentAnimData()
     {
         if (config.characterAnimations == null || config.characterAnimations.Length == 0)

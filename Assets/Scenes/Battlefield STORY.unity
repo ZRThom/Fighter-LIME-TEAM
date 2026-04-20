@@ -4077,6 +4077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &313055664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4097,6 +4099,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 0
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &313055665
@@ -7163,6 +7166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &577802918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7183,6 +7188,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 0
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &577802919
@@ -11377,9 +11383,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryGameManager
   p1: {fileID: 1829795603}
-  p2: {fileID: 1002759373}
+  p3: {fileID: 1002759373}
   p1SpawnPos: {fileID: 15456205}
-  p2SpawnPos: {fileID: 1682311768}
+  p3SpawnPos: {fileID: 0}
   panelManager: {fileID: 1809971582}
   bossLevel: 2
 --- !u!114 &920887289
@@ -12804,6 +12810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &1002759378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12824,6 +12832,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 1
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &1002759379
@@ -14137,7 +14146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4357593463846201017, guid: db9fd0525e2420f4ab2f1e202319e36f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4428559358060274310, guid: db9fd0525e2420f4ab2f1e202319e36f, type: 3}
       propertyPath: m_Pivot.x
@@ -15714,6 +15723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &1241165487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15734,6 +15745,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 1
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &1241165488
@@ -16274,9 +16286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryGameManager
   p1: {fileID: 1996971695}
-  p2: {fileID: 1241165482}
+  p3: {fileID: 1241165482}
   p1SpawnPos: {fileID: 528146044}
-  p2SpawnPos: {fileID: 1016746761}
+  p3SpawnPos: {fileID: 0}
   panelManager: {fileID: 1809971582}
   bossLevel: 3
 --- !u!114 &1286978896
@@ -21454,6 +21466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &1782853685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21474,6 +21488,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 1
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &1782853686
@@ -21488,7 +21503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f94c276f2d86f14f977e9554356baa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfig
-  playerNumber: 2
+  playerNumber: 3
   opponentTransform: {fileID: 0}
   playerCharacterIndex: 0
   characterAnimations:
@@ -22543,6 +22558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &1829795608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22563,6 +22580,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 0
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &1829795609
@@ -25261,6 +25279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &1979184836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25281,6 +25301,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 1
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &1979184837
@@ -26074,6 +26095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &1996971700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26094,6 +26117,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 0
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &1996971701
@@ -27209,9 +27233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryGameManager
   p1: {fileID: 313055659}
-  p2: {fileID: 1979184831}
+  p3: {fileID: 1979184831}
   p1SpawnPos: {fileID: 0}
-  p2SpawnPos: {fileID: 0}
+  p3SpawnPos: {fileID: 0}
   panelManager: {fileID: 1809971582}
   bossLevel: 4
 --- !u!114 &2031121786
@@ -28507,9 +28531,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryGameManager
   p1: {fileID: 577802913}
-  p2: {fileID: 1782853680}
+  p3: {fileID: 1782853680}
   p1SpawnPos: {fileID: 1426570491}
-  p2SpawnPos: {fileID: 189065809}
+  p3SpawnPos: {fileID: 189065809}
   panelManager: {fileID: 1809971582}
   bossLevel: 1
 --- !u!114 &7071724280822556848
