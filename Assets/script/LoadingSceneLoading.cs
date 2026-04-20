@@ -10,6 +10,7 @@ public class LoadingSceneLoading : MonoBehaviour
     public float waitTime = 2f;
     void Start()
     {
+        Time.timeScale = 1f; 
         StartCoroutine(LoadingRoutine());
     }
 

@@ -11,6 +11,7 @@ public class PlayerState : MonoBehaviour
     public bool isSpecialAttacking;
     public bool isShielding;
     public bool shieldBurnedOut;
+    public bool isAI = false;
 
     [HideInInspector] public float shieldTimer;
     [HideInInspector] public float shieldCooldownTimer;

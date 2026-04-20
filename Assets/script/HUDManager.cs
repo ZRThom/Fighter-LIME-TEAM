@@ -7,7 +7,18 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
-    public static HUDManager instance;
+    private static HUDManager _instance;
+    public static HUDManager instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<HUDManager>();
+            }
+            return _instance;
+        }
+    }
 
     public GameObject DialogueHolder, ContinueButton;
     public TextMeshProUGUI NameDisplay, TextDisplay;
@@ -22,8 +33,20 @@ public class HUDManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
+        if (_instance != null && _instance != this)
+        {
+                if (_instance.gameObject.activeInHierarchy)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+        }
+        _instance = this;
+    }
+
+    void OnEnable()
+    {
+        _instance = this;
     }
 
     public HealthBarTest GetHUDForPlayer(int playerID)

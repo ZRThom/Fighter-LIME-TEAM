@@ -22,8 +22,9 @@ public class HealthBarTest : MonoBehaviour
     private float currentUltimate = 0f;
     void Start()
     {
-        healthSlider.value = 1f;
-        healthSlider.value = 1f;
+        if (healthSlider != null) healthSlider.value = 1f;
+        if (damageSlider != null) damageSlider.value = 1f;
+
         if (ultimateSlider != null)
         {
             ultimateSlider.minValue = 0f;
@@ -52,16 +53,23 @@ public class HealthBarTest : MonoBehaviour
     {
         healthSlider.value = Mathf.Clamp01(targetHealthNormalized);
 
-        if (damageCoroutine != null) StopCoroutine(damageCoroutine);
-        if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-        damageCoroutine = StartCoroutine(DamageCombo());
-        fadeCoroutine = StartCoroutine(FadeDamageBar());
+        if (gameObject.activeInHierarchy)
+        {
+            if (damageCoroutine != null) StopCoroutine(damageCoroutine);
+            if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
+            damageCoroutine = StartCoroutine(DamageCombo());
+            fadeCoroutine = StartCoroutine(FadeDamageBar());
+        }
+        else
+        {
+            if (damageSlider != null) damageSlider.value = healthSlider.value;
+        }
     }
 
     IEnumerator DamageCombo()
     {
         yield return new WaitForSeconds(damageDelay);
-        while (damageSlider.value > healthSlider.value)
+        while (damageSlider != null && healthSlider != null && damageSlider.value > healthSlider.value)
         {
             damageSlider.value = Mathf.MoveTowards(damageSlider.value, healthSlider.value, damageSpeed * Time.deltaTime);
             yield return null;
@@ -71,7 +79,7 @@ public class HealthBarTest : MonoBehaviour
     IEnumerator FadeDamageBar()
     {
         yield return new WaitForSeconds(comboFadeDelay);
-        while (damageSlider.value > healthSlider.value)
+        while (damageSlider != null && healthSlider != null && damageSlider.value > healthSlider.value)
         {
             damageSlider.value = Mathf.MoveTowards(damageSlider.value, healthSlider.value, comboFadeSpeed * Time.deltaTime);
             yield return null;
@@ -80,7 +88,8 @@ public class HealthBarTest : MonoBehaviour
 
     public void ResetHealth()
     {
-        healthSlider.value = 1f;
+        if (healthSlider != null) healthSlider.value = 1f;
+        if (damageSlider != null) damageSlider.value = 1f;
         Debug.Log("Health reset!");
     }
 

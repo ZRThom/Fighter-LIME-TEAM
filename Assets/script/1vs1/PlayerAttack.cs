@@ -135,6 +135,9 @@ public class PlayerAttack : MonoBehaviour
             PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
             if (health == null) continue;
 
+            // Sécurité absolue : on ne peut pas se frapper soi-même
+            if (health.gameObject == this.gameObject) continue;
+
             // avoid bug of similarity
             if (health.playerID == config.playerNumber) continue;
             health.TakeDamage(config.attackDamage);
