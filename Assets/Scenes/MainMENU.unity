@@ -7068,35 +7068,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SCRUM MASTER & DEVELOPMENT
-
-    Kyllian
-
-
-    DEVELOPMENT & LEVEL DESIGN
-
-    Thomas
-
-
-    DEVELOPMENT
-    - PARAMETER SYSTEMS
-
-    Johann
-
-
-    DEVELOPMENT - MARKETPLACE & INTERFACE
-
-    Iles
-
-
-    DEVELOPMENT
-    - MECHANICS & HITBOXES
-
-    Lucas
-
-
-
-'
+  m_text: "SCRUM MASTER \nKyllian\n\nLEVEL DESIGN & 1V1 MODE\nThomas\n\nDEVELOPMENT
+    - PARAMETER SYSTEMS\nJohann\n\nDEVELOPMENT - MARKETPLACE & INTERFACE\nIles\n\nDEVELOPMENT
+    - MECHANICS & HITBOXES\nLucas\n\nDEVELOPMENT - STORY-MODE \nKyllian\n\nLORE &
+    SPRITES\nKyllian\nThomas\nJohann\nIles\n\n\n\n\n\nTHANKS FOR PLAYING!\n \n-TEAM
+    LIME By ESIEE-IT\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -17285,7 +17261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1457985136
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21038,7 +21014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1810366047
 MonoBehaviour:
   m_ObjectHideFlags: 0
