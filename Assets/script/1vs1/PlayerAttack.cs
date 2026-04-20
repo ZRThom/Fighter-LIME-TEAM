@@ -133,14 +133,22 @@ public class PlayerAttack : MonoBehaviour
         foreach (Collider2D enemy in hits)
         {
             PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
-            if (health == null) continue;
+            Manequin manequin = enemy.GetComponentInParent<Manequin>();
 
-            // Sécurité absolue : on ne peut pas se frapper soi-même
-            if (health.gameObject == this.gameObject) continue;
+            if (health == null && manequin == null) continue;
 
-            // avoid bug of similarity
-            if (health.playerID == config.playerNumber) continue;
-            health.TakeDamage(config.attackDamage);
+            if (health != null)
+            {
+                if (health.gameObject == this.gameObject) continue;
+
+                if (health.playerID == config.playerNumber) continue;
+                health.TakeDamage(config.attackDamage);
+            }
+            
+            if (manequin != null)
+            {
+                manequin.TakeDamage(config.attackDamage);
+            }
 
             PlayerRage myRage = GetComponent<PlayerRage>();
             if (myRage != null)
@@ -164,6 +172,10 @@ public class PlayerAttack : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        
+        if (config == null) config = GetComponent<PlayerConfig>();
+        if (config == null) return;
+
         Gizmos.color = Color.red;
         if (attackPoint != null) Gizmos.DrawWireSphere(attackPoint.position, config.attackRange);
         if (attackPointAir != null) Gizmos.DrawWireSphere(attackPointAir.position, config.attackRange);

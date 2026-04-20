@@ -122,22 +122,25 @@ public class PlayerSpecial : MonoBehaviour
         foreach (Collider2D enemy in hits)
         {
             PlayerHealth health = enemy.GetComponentInParent<PlayerHealth>();
-            if (health == null)
+            Manequin manequin = enemy.GetComponentInParent<Manequin>();
+
+            if (health == null && manequin == null) continue;
+
+            if (health != null)
             {
-                continue;
+                if (health.gameObject == this.gameObject) continue;
+
+                if (health.playerID == config.playerNumber) continue;
+                health.TakeDamage(currentSpecialData.rageDamage);
+            }
+            
+            if (manequin != null)
+            {
+                manequin.TakeDamage(currentSpecialData.rageDamage);
             }
 
-            // Absolute safety: cannot hit oneself
-            if (health.gameObject == this.gameObject) continue;
-
-            if (health.playerID == config.playerNumber)
-            {
-                continue;
-            }
-            // Order to prevent rage effect bugs (store pos / effect / damage)
             Vector3 hitPos = enemy.bounds.center;
             TriggerSpecialEffect(hitPos);
-            health.TakeDamage(currentSpecialData.rageDamage);
             break;
         }
 
@@ -146,7 +149,6 @@ public class PlayerSpecial : MonoBehaviour
             if (currentSpecialData == null) return;
             if (currentSpecialData.rageEffectPrefab == null) return;
 
-            // Select rage effect
             switch (currentSpecialData.rageHitEffect)
             {
                 case RageHitEffectType.Beam:

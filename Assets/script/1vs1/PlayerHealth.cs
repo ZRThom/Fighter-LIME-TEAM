@@ -34,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
+        if (GetComponent<Manequin>() != null) return;
+
         currentHealth = Mathf.Max(currentHealth - damage, 0);
         if (hud != null)
         {
@@ -64,4 +66,3 @@ public class PlayerHealth : MonoBehaviour
         if (hud != null) hud.SetHealth(1f);
     }
 }
-
