@@ -16288,7 +16288,7 @@ MonoBehaviour:
   p1: {fileID: 1996971695}
   p3: {fileID: 1241165482}
   p1SpawnPos: {fileID: 528146044}
-  p3SpawnPos: {fileID: 0}
+  p3SpawnPos: {fileID: 1016746761}
   panelManager: {fileID: 1809971582}
   bossLevel: 3
 --- !u!114 &1286978896
@@ -27234,8 +27234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoryGameManager
   p1: {fileID: 313055659}
   p3: {fileID: 1979184831}
-  p1SpawnPos: {fileID: 0}
-  p3SpawnPos: {fileID: 0}
+  p1SpawnPos: {fileID: 1133698620}
+  p3SpawnPos: {fileID: 178822765}
   panelManager: {fileID: 1809971582}
   bossLevel: 4
 --- !u!114 &2031121786
