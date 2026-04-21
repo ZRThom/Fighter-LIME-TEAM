@@ -306,7 +306,7 @@ MonoBehaviour:
     rageDamage: 40
     rageHitEffect: 2
     rageEffectPrefab: {fileID: 4032253467768310583, guid: ef437a3f0bc4e72468a99b3a04249cdf, type: 3}
-    rageEffectScale: {x: 3.5, y: 3.5, z: 3.5}
+    rageEffectScale: {x: 5, y: 5, z: 5}
   moveSpeed: 3
   jumpForce: 5
   attackRange: 1.5
@@ -351,6 +351,7 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 0
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &7127555646218219362
@@ -366,6 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &850917913869377847
 MonoBehaviour:
   m_ObjectHideFlags: 0

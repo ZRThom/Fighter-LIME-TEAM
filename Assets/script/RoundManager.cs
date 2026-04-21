@@ -38,16 +38,20 @@ public class RoundManager : MonoBehaviour
         if (p1HealthScript.healthSlider.value <= 0f)
         {
             EndRound(2);
+            return;
         }
-        else if (p2HealthScript.healthSlider.value <= 0f)
+        
+        if (p2HealthScript.healthSlider.value <= 0f)
         {
-            EndRound(1); 
+            EndRound(1);
+            return;
         }
 
 
         if (timerScript.timeLeft <= 0)
         {
             HandleTimeOut();
+            return;
         }
     }
 
@@ -60,6 +64,7 @@ public class RoundManager : MonoBehaviour
 
     public void EndRound(int winner)
     {
+        if (!isRoundActive) return;
         isRoundActive = false;
         timerScript.StopTimer(); 
 

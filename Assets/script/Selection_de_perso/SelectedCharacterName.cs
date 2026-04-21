@@ -12,13 +12,7 @@ public class SelectedCharacterName : MonoBehaviour
             Debug.LogError("GameManagerSelect pas la");
             return;
         }
-        if (player1NameText != null)
-        {
-            player1NameText.text = GameManagerSelect.Instance.firstSelectedName;
-        }
-        if (player2NameText != null)
-        {
-            player2NameText.text = GameManagerSelect.Instance.secondSelectedName;
-        }
+        if (player1NameText != null) player1NameText.text = GameManagerSelect.Instance.firstSelectedName;
+        if (player2NameText != null) player2NameText.text = GameManagerSelect.Instance.secondSelectedName;
     }
 }

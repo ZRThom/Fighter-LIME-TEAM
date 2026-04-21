@@ -28,6 +28,7 @@ public class GameManagerSelect : MonoBehaviour
 
     [Header("Map Select")]
     public GameObject selectMapPrefab;
+    public bool openCharacterPanelOnMenuLoad = false;
     void Awake()
     {
         if (Instance == null)
