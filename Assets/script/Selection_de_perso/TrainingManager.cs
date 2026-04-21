@@ -22,6 +22,12 @@ public class TrainingManager : MonoBehaviour
     void Start()
     {
         Invoke(nameof(SpawnPlayer), 0.1f);
+        
+        Timer timer = FindObjectOfType<Timer>();
+        if (timer != null)
+        {
+            timer.isTraining = true;
+        }
     }
 
     public void SpawnPlayer()
