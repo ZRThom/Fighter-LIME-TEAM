@@ -30,8 +30,6 @@ public class Manequin : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        if (health < 0) health = 0;
 
         if (targetRenderer != null && hitFrames.Length > 0)
         {

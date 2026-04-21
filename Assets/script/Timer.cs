@@ -7,9 +7,19 @@ public class Timer : MonoBehaviour
     public TMP_Text timerCountText; 
 
     private bool activeTimer = true;
+    public bool isTraining = false;
 
     void Update()
     {
+        if (isTraining)
+        {
+            if (timerCountText != null)
+            {
+                timerCountText.text = "∞";
+            }
+            return;
+        }
+
         if (activeTimer)
         {
             if (timeLeft > 0)
