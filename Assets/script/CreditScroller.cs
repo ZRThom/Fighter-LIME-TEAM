@@ -9,21 +9,33 @@ public class CreditScroller : MonoBehaviour
     public float stopYPosition = 5000f; 
 
     private Transform objectTransform;
+    private Vector3 startPosition;
+    private bool isScrolling = true;
 
-    void Start()
+    void Awake()
     {
         objectTransform = GetComponent<Transform>();
+        startPosition = objectTransform.position;
+    }
+
+    void OnEnable()
+    {
+        if (objectTransform != null)
+        {
+            objectTransform.position = startPosition;
+            isScrolling = true;
+        }
     }
 
     void Update()
     {
+        if (!isScrolling) return;
+
         objectTransform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
 
         if (objectTransform.position.y > stopYPosition)
         {
-            enabled = false;
-            
-            // Destroy(gameObject);
+            isScrolling = false;
         }
     }
 }
