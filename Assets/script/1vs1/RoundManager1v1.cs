@@ -16,6 +16,8 @@ public class RoundManager1v1 : MonoBehaviour
     [SerializeField] private int p2Wins = 0;
     [SerializeField] private int roundsToWin = 2;
 
+    [SerializeField] private FightCountDownUI countDownUI;
+
     [Header("KO")]
     [SerializeField] private GameObject koRoot;
     [SerializeField] private CanvasGroup koCanvasGroup;
@@ -56,7 +58,8 @@ public class RoundManager1v1 : MonoBehaviour
         
         if (p1HealthScript != null) p1HealthScript.ResetHealth();
         if (p2HealthScript != null) p2HealthScript.ResetHealth();
-        if (timerScript != null) timerScript.ResetTimer();
+        if (timerScript != null) timerScript.StopTimer();
+        StartCoroutine(BeginMatchAfterPlayersSpawn());
 
         if (koRoot != null) koRoot.SetActive(false);
         if (winPanel != null) winPanel.SetActive(false);
@@ -150,9 +153,18 @@ public class RoundManager1v1 : MonoBehaviour
 
         if (winPanel != null) winPanel.SetActive(false);
 
-        ResetNewRound();
-        isRoundActive = true;
         isEndingRound = false;
+        ResetNewRound();
+        yield break;
+    }
+
+    private IEnumerator BeginMatchAfterPlayersSpawn()
+    {
+        yield return new WaitUntil(() => FightManager.Instance != null && FightManager.Instance.player1 != null && FightManager.Instance.player2 != null);
+
+        yield return null;
+
+        StartCoroutine(StartRoundCountdown());
     }
 
     private IEnumerator PlayKoEffect()
@@ -192,6 +204,23 @@ public class RoundManager1v1 : MonoBehaviour
         koRoot.SetActive(false);
     }
 
+    private IEnumerator StartRoundCountdown()
+    {
+        isRoundActive = false;
+
+        if (FightManager.Instance != null) FightManager.Instance.SetPlayersControl(false);
+        if (timerScript != null) timerScript.StopTimer();
+        if (countDownUI != null)
+        {
+            countDownUI.PlayCountdown();
+            yield return new WaitForSeconds(countDownUI.TotalDuration);
+        }
+        if (FightManager.Instance != null) FightManager.Instance.SetPlayersControl(true);
+        if (timerScript != null) timerScript.ResetTimer();
+
+        isRoundActive = true;
+    }
+
     private void ResetNewRound()
     {
         if (FightManager.Instance != null) FightManager.Instance.ResetPlayersForNewRound();
@@ -199,7 +228,7 @@ public class RoundManager1v1 : MonoBehaviour
         if (p1HealthScript != null) p1HealthScript.ResetHealth(); 
         if (p2HealthScript != null) p2HealthScript.ResetHealth();
         
-        if (timerScript != null) timerScript.ResetTimer();
+        StartCoroutine(StartRoundCountdown());
     }
 
     private void ShowWinnerPanel(int winner)
@@ -209,7 +238,7 @@ public class RoundManager1v1 : MonoBehaviour
         if (winText != null)
         {
             if (winner == 0) winText.text = "égalité"; // egalite
-            else winText.text = GetWinnerDisplayName(winner) + " a gagné ce round!";
+            else winText.text = GetWinnerDisplayName(winner) + " remporte ce round!";
         }
     }
 
