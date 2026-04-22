@@ -26,6 +26,18 @@ public class PlayerAnimationSet
     [Header("Shield")]
     public Sprite[] shieldSprites;
 
+    [Header("Hit react")]
+    public Sprite[] hitSprites;
+    public float hitSpeed = 0.08f;
+
+    [Header("Death")]
+    public Sprite[] seathSprites;
+    public float deathSpeed = 0.12f;
+
+    [Header("Death standing")]
+    public Sprite[] deathGroundSprites;
+    public float deathStandingSpeed = 0.2f;
+
     [Header("Rage cut")]
     public RuntimeAnimatorController rageBackgroundController;
     public Sprite ragePortraitSprite;
