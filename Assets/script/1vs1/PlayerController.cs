@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
         attack.HandleCombat();
         special.HandleSpecial();
 
+        if (state.animationLocked) return;
+
         if (state.isShielding) HandleShieldAnimation();
         else if (state.isSpecialAttacking) HandleSpecialAnimation();
         else if (!state.isAttacking) HandleManualAnimation();

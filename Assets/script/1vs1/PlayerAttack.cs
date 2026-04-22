@@ -32,6 +32,14 @@ public class PlayerAttack : MonoBehaviour
 
     public void HandleCombat()
     {
+        if (state == null || state.isDead || state.isHit || state.animationLocked)
+        {
+            if (input != null) input.AttackTriggered = false;
+
+            state.isAttacking = false;
+            return;
+        }
+
         HandleShield();
 
         // Start Attack
@@ -39,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
         {
             StartAttackLogic();
         }
+
         input.AttackTriggered = false;
 
         // Attack now

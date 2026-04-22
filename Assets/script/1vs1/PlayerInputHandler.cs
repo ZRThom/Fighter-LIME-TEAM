@@ -56,15 +56,16 @@ public class PlayerInputHandler : MonoBehaviour
         // === AI INTEGRATION ===
         // If the character is flagged as an AI in its PlayerState, we bypass the 
         // keyboard/gamepad reading and directly execute the AI "brain".
-        if (state != null && state.isAI)
+
+        if (!InputsEnabled || (state != null && (state.isDead || state.isHit)))
         {
-            ProcessAILogic();
+            ClearInputs();
             return;
         }
 
-        if (!InputsEnabled)
+        if (state != null && state.isAI)
         {
-            ClearInputs();
+            ProcessAILogic();
             return;
         }
 
@@ -151,6 +152,12 @@ public class PlayerInputHandler : MonoBehaviour
         bool shield = false;
         bool crouch = false;
         bool special = false;
+
+        if (state == null || state.isDead || state.isHit)
+        {
+            ClearInputs();
+            return;
+        }
 
         // 1. TARGETING: Find opponent if null.
         if (config.opponentTransform == null)

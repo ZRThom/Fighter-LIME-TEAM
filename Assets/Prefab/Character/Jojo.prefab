@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 7139362630815333360}
   - component: {fileID: 722886131000979441}
   - component: {fileID: 7560032059235416652}
+  - component: {fileID: -2759564934025656180}
   - component: {fileID: 6149858712635702768}
   - component: {fileID: 1916751338786781874}
   m_Layer: 3
@@ -234,6 +235,28 @@ MonoBehaviour:
     - {fileID: 1829095775825030504, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
     - {fileID: 5802284014764365195, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
     - {fileID: 765893769486980979, guid: 4a0c1b61ce32374499353da2e388ae6c, type: 3}
+    hitSprites:
+    - {fileID: -2981668794378647295, guid: 2a6102b692d9f780bb96a74455edbf8b, type: 3}
+    - {fileID: -3550553437125006008, guid: 2a6102b692d9f780bb96a74455edbf8b, type: 3}
+    - {fileID: -1786814186567415964, guid: 2a6102b692d9f780bb96a74455edbf8b, type: 3}
+    - {fileID: 7684220606884424130, guid: 2a6102b692d9f780bb96a74455edbf8b, type: 3}
+    - {fileID: -50815880657819292, guid: 2a6102b692d9f780bb96a74455edbf8b, type: 3}
+    hitSpeed: 0.08
+    deathSprites:
+    - {fileID: -3784630972149981534, guid: bb0f9a94f85f0b0e1ba705daf64c3e93, type: 3}
+    - {fileID: 1782364080653659818, guid: bb0f9a94f85f0b0e1ba705daf64c3e93, type: 3}
+    - {fileID: -2049750162817866179, guid: bb0f9a94f85f0b0e1ba705daf64c3e93, type: 3}
+    - {fileID: 3838280072675639376, guid: bb0f9a94f85f0b0e1ba705daf64c3e93, type: 3}
+    - {fileID: 9137052154063755243, guid: bb0f9a94f85f0b0e1ba705daf64c3e93, type: 3}
+    - {fileID: 5669670457289659484, guid: bb0f9a94f85f0b0e1ba705daf64c3e93, type: 3}
+    deathSpeed: 0.12
+    deathGroundSprites:
+    - {fileID: 7400813888555501748, guid: 14369f512c99edb81a8b5184e849851c, type: 3}
+    - {fileID: -7566346778266923723, guid: 14369f512c99edb81a8b5184e849851c, type: 3}
+    - {fileID: 7927958381417427854, guid: 14369f512c99edb81a8b5184e849851c, type: 3}
+    - {fileID: -8333217134731629092, guid: 14369f512c99edb81a8b5184e849851c, type: 3}
+    - {fileID: -416635919206400531, guid: 14369f512c99edb81a8b5184e849851c, type: 3}
+    deathStandingSpeed: 0.2
     rageBackgroundController: {fileID: 9100000, guid: 40880262ef955eb419cff9e7b6826f33, type: 2}
     ragePortraitSprite: {fileID: -3312811306403947149, guid: 51c944b3d3c23e062a69a0d201eb9e7d, type: 3}
     rageAttackSprites:
@@ -291,6 +314,10 @@ MonoBehaviour:
   isSpecialAttacking: 0
   isShielding: 0
   shieldBurnedOut: 0
+  isAI: 0
+  isHit: 0
+  isDead: 0
+  animationLocked: 0
   shieldTimer: 0
   shieldCooldownTimer: 0
 --- !u!114 &2589003009053639372
@@ -306,6 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   allowController: 1
+  aiAgroRange: 10
+  aiAttackRangeDist: 1.5
 --- !u!114 &3523170693142398167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +391,18 @@ MonoBehaviour:
   maxHealth: 100
   playerID: 2
   currentHealth: 0
+--- !u!114 &-2759564934025656180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5288267862035165445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132d61b812ecbf47932489d2959751f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHitReact
 --- !u!114 &6149858712635702768
 MonoBehaviour:
   m_ObjectHideFlags: 0

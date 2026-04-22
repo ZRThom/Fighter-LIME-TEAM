@@ -31,7 +31,7 @@ public class PlayerAnimationSet
     public float hitSpeed = 0.08f;
 
     [Header("Death")]
-    public Sprite[] seathSprites;
+    public Sprite[] deathSprites;
     public float deathSpeed = 0.12f;
 
     [Header("Death standing")]

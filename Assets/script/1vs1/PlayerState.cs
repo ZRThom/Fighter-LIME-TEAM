@@ -13,6 +13,10 @@ public class PlayerState : MonoBehaviour
     public bool shieldBurnedOut;
     public bool isAI = false;
 
+    [HideInInspector] public bool isHit;
+    [HideInInspector] public bool isDead;
+    [HideInInspector] public bool animationLocked;
+
     [HideInInspector] public float shieldTimer;
     [HideInInspector] public float shieldCooldownTimer;
 }

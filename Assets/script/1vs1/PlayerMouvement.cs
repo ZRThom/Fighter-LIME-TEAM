@@ -37,6 +37,16 @@ public class PlayerMouvement : MonoBehaviour
 
     public void HandleMovement()
     {
+        // check car bug (override si necessaire au niveau des hit / death)
+        if (state.isDead || state.isHit)
+        {
+            if (rb != null) rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            state.isMoving = false;
+            return;
+        }
+
+
+        
         //  Ground Check 
         if (config.groundCheck != null)
             state.isGrounded = Physics2D.OverlapCircle(config.groundCheck.position, config.groundCheckRadius, config.groundLayer);

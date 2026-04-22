@@ -27,6 +27,17 @@ public class PlayerSpecial : MonoBehaviour
 
     public void HandleSpecial()
     {
+        //check pr eviter le special pendant hit / death
+        if (state == null) return;
+        if (state.isDead || state.isHit)
+        {
+            input.SpecialTrigger = false;
+            state.isSpecialAttacking = false;
+            return;
+        }
+
+
+
         if (state.isSpecialAttacking)
         {
             specialTimer -= Time.deltaTime;
@@ -42,60 +53,46 @@ public class PlayerSpecial : MonoBehaviour
             }
             return;
         }
-        if (!input.SpecialTrigger)
-        {
-            return;
-        }
+
+        if (!input.SpecialTrigger) return;
+
         input.SpecialTrigger = false;
 
-        if (state.isAttacking || state.isShielding || state.isSpecialAttacking)
-        {
-            return;
-        }
-
-        if (rage == null || !rage.IsFull)
-        {
-            return;
-        }
-
-        if (RageCutInManager.Instance == null)
-        {
-            return;
-        }
+        if (state.isAttacking || state.isShielding || state.isSpecialAttacking || state.animationLocked) return;
+        if (rage == null || !rage.IsFull) return;
+        if (RageCutInManager.Instance == null) return;
 
         PlayerAnimationSet data = GetCurrentAnimData();
-        if (data == null)
-        {
-            return;
-        }
 
-        if (data.rageAttackSprites == null || data.rageAttackSprites.Length == 0)
-        {
-            return;
-        }
+        if (data == null) return;
+        if (data.rageAttackSprites == null || data.rageAttackSprites.Length == 0) return;
+
         StartCoroutine(SpecialSequence(data));
     }
 
     IEnumerator SpecialSequence(PlayerAnimationSet data)
     {
         currentSpecialData = data;
+
         bool launched = RageCutInManager.Instance.PlayCutIn(config.playerNumber, data.rageBackgroundController, data.ragePortraitSprite);
-        if (!launched)
-        {
-            yield break;
-        }
+        if (!launched) yield break;
+
         rage.ConsumeFullRage();
 
         while (RageCutInManager.Instance != null && RageCutInManager.Instance.IsPlaying)
         {
+            if (state == null || state.isDead || state.isHit || state.animationLocked) yield break;
             yield return null;
         }
 
+        if (state == null || state.isDead || state.isHit || state.animationLocked) yield break;
         StartSpecialAttack(data);
     }
 
     void StartSpecialAttack(PlayerAnimationSet data)
     {
+        if (state == null || state.isDead || state.isHit || state.animationLocked) return;
+        
         state.isAttacking = false;
         state.isShielding = false;
         state.isSpecialAttacking = true;
@@ -109,14 +106,10 @@ public class PlayerSpecial : MonoBehaviour
     void PerformSpecialHit()
     {
         Transform point = null;
-        if (attack != null && attack.attackPoint != null)
-        {
-            point = attack.attackPoint;
-        }
-        else
-        {
-            point = transform;
-        }
+
+        if (attack != null && attack.attackPoint != null)point = attack.attackPoint;
+        else point = transform;
+        
         Collider2D[] hits = Physics2D.OverlapCircleAll(point.position, config.attackRange, config.enemyLayers);
 
         foreach (Collider2D enemy in hits)
@@ -134,11 +127,8 @@ public class PlayerSpecial : MonoBehaviour
                 health.TakeDamage(currentSpecialData.rageDamage);
             }
             
-            if (manequin != null)
-            {
-                manequin.TakeDamage(currentSpecialData.rageDamage);
-            }
-
+            if (manequin != null) manequin.TakeDamage(currentSpecialData.rageDamage);
+            
             Vector3 hitPos = enemy.bounds.center;
             TriggerSpecialEffect(hitPos);
             break;

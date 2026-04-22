@@ -18920,6 +18920,7 @@ MonoBehaviour:
   - characterPrefab: {fileID: 5288267862035165445, guid: f6f1bd12cccb46a43b3d5a651a4f338c, type: 3}
     displayName: Jojo
   selectMapPrefab: {fileID: 0}
+  openCharacterPanelOnMenuLoad: 0
 --- !u!1 &1483759696
 GameObject:
   m_ObjectHideFlags: 0
