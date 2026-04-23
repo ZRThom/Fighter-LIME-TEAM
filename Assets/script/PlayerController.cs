@@ -114,9 +114,11 @@ public class PlayerController2D : MonoBehaviour
     {
         Grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        if (!CanMove)
+        if (!CanMove || (playerState != null && (playerState.isHit || playerState.isDead)))
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            isAttacking = false;
+            if (rb != null)
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             return;
         }
 
@@ -150,7 +152,7 @@ public class PlayerController2D : MonoBehaviour
         if (!isAttacking)
             HandleManualAnimation();
 
-        if (attackInput && !isAttacking && !attackOnCooldown)
+        if (attackInput && !isAttacking && !attackOnCooldown && CanAttack)
             StartCoroutine(PerformAttackSequence());
     }
 
@@ -170,6 +172,13 @@ public class PlayerController2D : MonoBehaviour
 
         foreach (var frame in selectedAttack)
         {
+            // Interrompre l'attaque en cours si on se fait toucher ou tuer
+            if (playerState != null && (playerState.isHit || playerState.isDead))
+            {
+                isAttacking = false;
+                yield break;
+            }
+
             visualRenderer.sprite = frame;
             
             // On envoie la liste à la fonction de détection

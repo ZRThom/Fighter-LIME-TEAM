@@ -64,7 +64,7 @@ public class StoryGameManager : MonoBehaviour
 
     IEnumerator WaitAndResetPositions()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return null;
         ResetPositions();
     }
 
