@@ -12,6 +12,9 @@ public class TrainingManager : MonoBehaviour
     [Header("Camera")]
     public CameraFollow2d cameraFollow;
 
+    [Header("Audio")]
+    public AudioClip trainingMusic;
+
     [HideInInspector] public GameObject player1;
 
     void Awake()
@@ -27,6 +30,11 @@ public class TrainingManager : MonoBehaviour
         if (timer != null)
         {
             timer.isTraining = true;
+        }
+        
+        if (trainingMusic != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayMusic(trainingMusic);
         }
     }
 

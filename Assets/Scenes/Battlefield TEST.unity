@@ -761,6 +761,7 @@ MonoBehaviour:
   playerSpawnPoint: {fileID: 191970595}
   dummyTransform: {fileID: 1495060490}
   cameraFollow: {fileID: 519420034}
+  trainingMusic: {fileID: 8300000, guid: f6e7884adf7ba974b9a76201fb896249, type: 3}
   player1: {fileID: 0}
 --- !u!4 &816203987
 Transform:
