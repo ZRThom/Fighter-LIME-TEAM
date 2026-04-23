@@ -38,7 +38,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayMusic(AudioClip newClip)
+    {
+        if (musicSource != null && newClip != null)
+        {
+            if (musicSource.clip == newClip && musicSource.isPlaying) return;
+            musicSource.Stop();
+            musicSource.clip = newClip;
+            musicSource.Play();
+        }
+    }
     
+    public void PlayDefaultMusic()
+    {
+        PlayMusic(background);
+    }
+
  private void Start()
  {
     musicSource.clip = background;

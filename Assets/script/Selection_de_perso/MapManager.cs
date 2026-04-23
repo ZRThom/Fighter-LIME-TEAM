@@ -45,5 +45,10 @@ public class MapManager : MonoBehaviour
             FightManager.Instance.leftSpawn = currentStage.leftSpawn;
             FightManager.Instance.rightSpawn = currentStage.rightSpawn;
         }
+
+        if (currentStage != null && currentStage.mapMusic != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayMusic(currentStage.mapMusic);
+        }
     }
 }

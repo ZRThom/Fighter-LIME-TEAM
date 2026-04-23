@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRefs
   leftSpawn: {fileID: 793963601405136464}
   rightSpawn: {fileID: 2145416063511651372}
+  mapMusic: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
 --- !u!1 &6745558895629562233
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +644,18 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 031b44a3eead94707beaa1b13cc9901b, type: 3}
       propertyPath: m_Name
       value: Sprite-02_entrainement_background_official
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 031b44a3eead94707beaa1b13cc9901b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.076762185
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 031b44a3eead94707beaa1b13cc9901b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.076762185
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 031b44a3eead94707beaa1b13cc9901b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6509434
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 031b44a3eead94707beaa1b13cc9901b, type: 3}
       propertyPath: m_LocalScale.x

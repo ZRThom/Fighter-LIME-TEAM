@@ -68,6 +68,11 @@ public class RealMenuManager : MonoBehaviour
     {
         HideAllPanels();
         panelMenu.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
 
     // play
