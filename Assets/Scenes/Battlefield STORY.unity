@@ -2044,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRefs
   leftSpawn: {fileID: 15456205}
   rightSpawn: {fileID: 1682311768}
+  mapMusic: {fileID: 0}
 --- !u!1 &135001102
 GameObject:
   m_ObjectHideFlags: 0
@@ -18678,6 +18679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRefs
   leftSpawn: {fileID: 528146044}
   rightSpawn: {fileID: 1016746761}
+  mapMusic: {fileID: 0}
 --- !u!1 &1366083681
 GameObject:
   m_ObjectHideFlags: 0
@@ -26024,6 +26026,10 @@ MonoBehaviour:
   Boss2: {fileID: 574611892}
   Boss3: {fileID: 446289189}
   Boss4: {fileID: 1082935239}
+  musicBoss1: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
+  musicBoss2: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicBoss3: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicBoss4: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
   VersusBOSS1: {fileID: 1924978185}
   VersusBOSSS2: {fileID: 2091774904}
   VersusBOSSS3: {fileID: 1085645781}
@@ -31370,6 +31376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRefs
   leftSpawn: {fileID: 1426570491}
   rightSpawn: {fileID: 189065809}
+  mapMusic: {fileID: 0}
 --- !u!1 &2075151276
 GameObject:
   m_ObjectHideFlags: 0
@@ -31691,6 +31698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRefs
   leftSpawn: {fileID: 1133698620}
   rightSpawn: {fileID: 178822765}
+  mapMusic: {fileID: 0}
 --- !u!1 &2109822744
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class RealMenuManager : MonoBehaviour
     public GameObject panelProfil;
 
     public GameObject panelRaph;
+    public AudioClip musicRaph;
 
 
     [Header("panel sous panelPlay")]
@@ -26,6 +27,11 @@ public class RealMenuManager : MonoBehaviour
     public GameObject panelPerso3;
     public GameObject panelPerso4;
     public GameObject panelPerso5;
+    public AudioClip musicPerso1;
+    public AudioClip musicPerso2;
+    public AudioClip musicPerso3;
+    public AudioClip musicPerso4;
+    public AudioClip musicPersoKiffeur;
 
     void Start()
     {
@@ -127,6 +133,11 @@ public class RealMenuManager : MonoBehaviour
     {
         HideAllPanels();
         panelRaph.SetActive(true);
+        
+        if (AudioManager.instance != null && musicRaph != null)
+        {
+            AudioManager.instance.PlayMusic(musicRaph);
+        }
     }
 
     public void PanelRaphBack()
@@ -146,6 +157,11 @@ public class RealMenuManager : MonoBehaviour
         panelPerso1.SetActive(true);
         panelProfil.SetActive(false);
         panelMenu.SetActive(false);
+        
+        if (AudioManager.instance != null && musicPerso1 != null)
+        {
+            AudioManager.instance.PlayMusic(musicPerso1);
+        }
     }
 
     public void PanelProfilPerso1Back()
@@ -160,6 +176,11 @@ public class RealMenuManager : MonoBehaviour
         panelPerso2.SetActive(true);
         panelProfil.SetActive(false);
         panelMenu.SetActive(false);
+        
+        if (AudioManager.instance != null && musicPerso2 != null)
+        {
+            AudioManager.instance.PlayMusic(musicPerso2);
+        }
     }
 
     public void PanelProfilPerso2Back()
@@ -174,6 +195,11 @@ public class RealMenuManager : MonoBehaviour
         panelPerso3.SetActive(true);
         panelProfil.SetActive(false);
         panelMenu.SetActive(false);
+        
+        if (AudioManager.instance != null && musicPerso3 != null)
+        {
+            AudioManager.instance.PlayMusic(musicPerso3);
+        }
     }
 
     public void PanelProfilPerso3Back()
@@ -188,6 +214,11 @@ public class RealMenuManager : MonoBehaviour
         panelPerso4.SetActive(true);
         panelProfil.SetActive(false);
         panelMenu.SetActive(false);
+        
+        if (AudioManager.instance != null && musicPerso4 != null)
+        {
+            AudioManager.instance.PlayMusic(musicPerso4);
+        }
     }
 
     public void PanelProfilPerso4Back()
@@ -202,6 +233,11 @@ public class RealMenuManager : MonoBehaviour
         panelPerso5.SetActive(true);
         panelProfil.SetActive(false);
         panelMenu.SetActive(false);
+        
+        if (AudioManager.instance != null && musicPersoKiffeur != null)
+        {
+            AudioManager.instance.PlayMusic(musicPersoKiffeur);
+        }
     }
 
     public void PanelProfilPerso5Back()

@@ -24885,6 +24885,7 @@ MonoBehaviour:
   panelCredits: {fileID: 1457985135}
   panelProfil: {fileID: 354792249}
   panelRaph: {fileID: 1882477170}
+  musicRaph: {fileID: 0}
   panelPlay1v1: {fileID: 1704452848}
   panelPlayTraining: {fileID: 1195591553}
   panelPlayStory: {fileID: 653171193}
@@ -24893,6 +24894,11 @@ MonoBehaviour:
   panelPerso3: {fileID: 1657866469}
   panelPerso4: {fileID: 1277027753}
   panelPerso5: {fileID: 514080568}
+  musicPerso1: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
+  musicPerso2: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicPerso3: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
+  musicPerso4: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicPersoKiffeur: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
 --- !u!1 &1974671645
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,12 @@ public class StoryPanelManager : MonoBehaviour
     public GameObject Boss3;
     public GameObject Boss4;
     
+    [Header("Boss Music")]
+    public AudioClip musicBoss1;
+    public AudioClip musicBoss2;
+    public AudioClip musicBoss3;
+    public AudioClip musicBoss4;
+
     [Header("Versus Panels")]
     public GameObject VersusBOSS1;
     public GameObject VersusBOSSS2;
@@ -65,6 +71,11 @@ public class StoryPanelManager : MonoBehaviour
     {
         HideAllPanels();
         if (LorePanel != null) LorePanel.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
 
     // --- Boss Panels ---
@@ -72,21 +83,41 @@ public class StoryPanelManager : MonoBehaviour
     {
         HideAllPanels();
         if (Boss1 != null) Boss1.SetActive(true);
+        
+        if (AudioManager.instance != null && musicBoss1 != null)
+        {
+            AudioManager.instance.PlayMusic(musicBoss1);
+        }
     }
     public void OpenBoss2()
     {
         HideAllPanels();
         if (Boss2 != null) Boss2.SetActive(true);
+        
+        if (AudioManager.instance != null && musicBoss2 != null)
+        {
+            AudioManager.instance.PlayMusic(musicBoss2);
+        }
     }
     public void OpenBoss3()
     {
         HideAllPanels();
         if (Boss3 != null) Boss3.SetActive(true);
+        
+        if (AudioManager.instance != null && musicBoss3 != null)
+        {
+            AudioManager.instance.PlayMusic(musicBoss3);
+        }
     }
     public void OpenBoss4()
     {
         HideAllPanels();
         if (Boss4 != null) Boss4.SetActive(true);
+        
+        if (AudioManager.instance != null && musicBoss4 != null)
+        {
+            AudioManager.instance.PlayMusic(musicBoss4);
+        }
     }
 
     // --- Versus Panels ---
@@ -94,21 +125,41 @@ public class StoryPanelManager : MonoBehaviour
     {
         HideAllPanels();
         if (VersusBOSS1 != null) VersusBOSS1.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenVersusBoss2()
     {
         HideAllPanels();
         if (VersusBOSSS2 != null) VersusBOSSS2.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenVersusBoss3()
     {
         HideAllPanels();
         if (VersusBOSSS3 != null) VersusBOSSS3.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenVersusBoss4()
     {
         HideAllPanels();
         if (VersusBOSSS4 != null) VersusBOSSS4.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
 
     // --- W Panels (Victoire) ---
@@ -116,21 +167,41 @@ public class StoryPanelManager : MonoBehaviour
     {
         HideAllPanels();
         if (w1 != null) w1.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenW2()
     {
         HideAllPanels();
         if (w2 != null) w2.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenW3()
     {
         HideAllPanels();
         if (w3 != null) w3.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenW4()
     {
         HideAllPanels();
         if (w4 != null) w4.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
 
     // --- L Panels (Défaite) ---
@@ -138,20 +209,40 @@ public class StoryPanelManager : MonoBehaviour
     {
         HideAllPanels();
         if (l1 != null) l1.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenL2()
     {
         HideAllPanels();
         if (l2 != null) l2.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenL3()
     {
         HideAllPanels();
         if (l3 != null) l3.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
     public void OpenL4()
     {
         HideAllPanels();
         if (l4 != null) l4.SetActive(true);
+        
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayDefaultMusic();
+        }
     }
 }

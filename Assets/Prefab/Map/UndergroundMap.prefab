@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapRefs
   leftSpawn: {fileID: 4389129347285728177}
   rightSpawn: {fileID: 9087337513351115155}
+  mapMusic: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
 --- !u!1 &8114197778764836287
 GameObject:
   m_ObjectHideFlags: 0
