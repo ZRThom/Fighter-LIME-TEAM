@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu Instance { get; private set; }
+    public bool CanPause { get; private set; } = true;
 
     [Header("PanelPause")]
     [SerializeField] private GameObject pauseRoot;
@@ -45,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (!PausePressedThisFrame()) return;
+        if (!CanPause && !IsPaused) return; // secu ignore echap ou start
         if (!IsPaused)
         {
             PauseGame();
@@ -59,6 +61,13 @@ public class PauseMenu : MonoBehaviour
         {
             ResumeGame();
         }
+    }
+
+    public void SetCanPause(bool value)
+    {
+        CanPause = value;
+        // secu si deja en pause (force le retour)
+        if (!CanPause && IsPaused) ResumeGame();
     }
 
     private bool PausePressedThisFrame()

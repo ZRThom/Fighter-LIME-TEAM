@@ -111,6 +111,8 @@ public class RoundManager1v1 : MonoBehaviour
         isRoundActive = false;
         isEndingRound = true;
 
+        if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(false);
+
         if (timerScript != null) timerScript.StopTimer(); 
         
         if (FightManager.Instance != null) FightManager.Instance.SetPlayersControl(false);
@@ -143,6 +145,8 @@ public class RoundManager1v1 : MonoBehaviour
             yield return new WaitForSecondsRealtime(endMenuDelay);
 
             if (winPanel != null) winPanel.SetActive(false);
+
+            if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(false);
             if (endPanel != null) endPanel.SetActive(true);
 
             isEndingRound = false;
@@ -208,6 +212,9 @@ public class RoundManager1v1 : MonoBehaviour
     {
         isRoundActive = false;
 
+        //fix pause
+        if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(false);
+
         if (FightManager.Instance != null) FightManager.Instance.SetPlayersControl(false);
         if (timerScript != null) timerScript.StopTimer();
         if (countDownUI != null)
@@ -219,6 +226,8 @@ public class RoundManager1v1 : MonoBehaviour
         if (timerScript != null) timerScript.ResetTimer();
 
         isRoundActive = true;
+
+        if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(true);
     }
 
     private void ResetNewRound()
@@ -281,12 +290,14 @@ public class RoundManager1v1 : MonoBehaviour
     public void RestartMatch()
     {
         Time.timeScale = 1f;
+        if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeCharacter()
     {
         Time.timeScale = 1f;
+        if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(true);
         if (GameManagerSelect.Instance != null)
         {
             GameManagerSelect.Instance.firstSelectedPrefab = null;
@@ -303,6 +314,7 @@ public class RoundManager1v1 : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
+        if (PauseMenu.Instance != null) PauseMenu.Instance.SetCanPause(true);
         SceneManager.LoadScene(mainMenuSceneName);
     }
 }
