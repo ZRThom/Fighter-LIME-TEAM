@@ -24894,10 +24894,10 @@ MonoBehaviour:
   panelPerso3: {fileID: 1657866469}
   panelPerso4: {fileID: 1277027753}
   panelPerso5: {fileID: 514080568}
-  musicPerso1: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
-  musicPerso2: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicPerso1: {fileID: 8300000, guid: f6e7884adf7ba974b9a76201fb896249, type: 3}
+  musicPerso2: {fileID: 8300000, guid: e8f7e9507a2c2c9429f8cc2666fcdbbe, type: 3}
   musicPerso3: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
-  musicPerso4: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicPerso4: {fileID: 8300000, guid: e84e44b0c8f52804284b9ea105305353, type: 3}
   musicPersoKiffeur: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
 --- !u!1 &1974671645
 GameObject:

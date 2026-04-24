@@ -26027,9 +26027,9 @@ MonoBehaviour:
   Boss3: {fileID: 446289189}
   Boss4: {fileID: 1082935239}
   musicBoss1: {fileID: 8300000, guid: 553ea5dedad84f66a8441d5811b0f373, type: 3}
-  musicBoss2: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicBoss2: {fileID: 8300000, guid: e84e44b0c8f52804284b9ea105305353, type: 3}
   musicBoss3: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
-  musicBoss4: {fileID: 8300000, guid: 417756628294396a29a508a02b4bbd99, type: 3}
+  musicBoss4: {fileID: 8300000, guid: e8f7e9507a2c2c9429f8cc2666fcdbbe, type: 3}
   VersusBOSS1: {fileID: 1924978185}
   VersusBOSSS2: {fileID: 2091774904}
   VersusBOSSS3: {fileID: 1085645781}
