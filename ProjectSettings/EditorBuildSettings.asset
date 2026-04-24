@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/About-Menu.unity
     guid: 554ca0f932b9840ec96c1322516900c1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PLAYM 1V1.unity
     guid: 09406916ecfe24e45af7025d414c5077
   - enabled: 0
@@ -28,14 +28,14 @@ EditorBuildSettings:
     guid: f3703d3c7859cd647950573fcb2dc966
   - enabled: 1
     path: Assets/Scenes/Battlefield STORY.unity
-    guid: 34b2c9cc593f57846a0729a3751409b3
+    guid: ff41ea5c927f12086ae2fc9895468297
   - enabled: 1
     path: Assets/Scenes/Battlefield TEST.unity
     guid: 8ba368ceb2f6ea24bb9441ee0a464221
   - enabled: 0
     path: Assets/Scenes/Shop.unity
     guid: 5796eb31012df4514b28aa4a6b7e53e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Profil.unity
     guid: 02672b81b67670846b73d34a41ff0ee4
   - enabled: 0
@@ -53,7 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battlefield 1v1.unity
     guid: 21df9275c1a1f432db30eb7897b2401f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PLAYM STORY.unity
     guid: 3b6d99952d067884b8c4d4165e9e6523
   - enabled: 1
