@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RealMenuManager : MonoBehaviour
 {
@@ -10,9 +11,8 @@ public class RealMenuManager : MonoBehaviour
     public GameObject panelSettings;
     public GameObject panelCredits;
     public GameObject panelProfil;
-
     public GameObject panelRaph;
-
+    public GameObject panelShop;
 
     [Header("panel sous panelPlay")]
     public GameObject panelPlay1v1;
@@ -38,12 +38,15 @@ public class RealMenuManager : MonoBehaviour
 
     void HideAllPanels()
     {
+        panelMenu.SetActive(false); 
+
         panelPlay.SetActive(false);
         panelSettings.SetActive(false);
         panelCredits.SetActive(false);
         panelProfil.SetActive(false);
 
         panelRaph.SetActive(false);
+        panelShop.SetActive(false);
         
         panelPerso1.SetActive(false);
         panelPerso2.SetActive(false);
@@ -60,6 +63,18 @@ public class RealMenuManager : MonoBehaviour
     {
         HideAllPanels();
         panelMenu.SetActive(true);
+    }
+
+    // shop
+    public void OpenPanelShop()
+    {
+        HideAllPanels();
+        panelShop.SetActive(true);
+    }
+
+    public void PanelShopBack()
+    {
+        OpenMainMenu();
     }
 
     // play

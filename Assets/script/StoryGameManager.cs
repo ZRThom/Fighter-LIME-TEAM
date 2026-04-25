@@ -76,7 +76,10 @@ public class StoryGameManager : MonoBehaviour
         {
             if (p1Won)
             {
-                // Player 1 Victory: Show corresponding 'W' panel
+                PlayerPrefs.SetInt("DernierStageFini", bossLevel);
+                PlayerPrefs.Save();
+                Debug.Log("Victoire enregistrée : Stage " + bossLevel);
+
                 if (bossLevel == 1) panelManager.OpenW1();
                 else if (bossLevel == 2) panelManager.OpenW2();
                 else if (bossLevel == 3) panelManager.OpenW3();
@@ -84,7 +87,6 @@ public class StoryGameManager : MonoBehaviour
             }
             else
             {
-                // Player 1 Defeat: Show corresponding 'L' panel
                 if (bossLevel == 1) panelManager.OpenL1();
                 else if (bossLevel == 2) panelManager.OpenL2();
                 else if (bossLevel == 3) panelManager.OpenL3();
