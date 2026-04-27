@@ -9,6 +9,7 @@ public class RealMenuManager : MonoBehaviour
     public GameObject panelMenu;
     public GameObject panelPlay;
     public GameObject panelSettings;
+    public GameObject panelSettingsCommand;
     public GameObject panelCredits;
     public GameObject panelProfil;
 
@@ -56,6 +57,7 @@ public class RealMenuManager : MonoBehaviour
         panelSettings.SetActive(false);
         panelCredits.SetActive(false);
         panelProfil.SetActive(false);
+        panelSettingsCommand.SetActive(false);
 
         panelRaph.SetActive(false);
         
@@ -244,6 +246,14 @@ public class RealMenuManager : MonoBehaviour
     {
         OpenMainMenu();
         panelProfil.SetActive(true);
+    }
+
+    // settings
+    public void PanelSettingsCommand()
+    {
+        HideAllPanels();
+        panelSettings.SetActive(true);
+        panelSettingsCommand.SetActive(true);
     }
 
     // play training
