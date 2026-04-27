@@ -9,6 +9,8 @@ public class HighlightControllerButton : MonoBehaviour
     {
         button = GetComponent<Button>();
     }
+
+    // update controller (a fix, bug de panel) 
     void Update()
     {
         if (EventSystem.current.currentSelectedGameObject == gameObject)
