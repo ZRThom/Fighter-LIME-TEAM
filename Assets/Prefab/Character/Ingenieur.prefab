@@ -352,7 +352,7 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
-  attackDamage: 10
+  attackDamage: 12
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
