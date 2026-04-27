@@ -537,8 +537,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous venez de battre \nAnger The Mental Rage Robot ! \n\nPROCHAIN :\nEt
-    Apr\xE8s Anger ? \nLa PAIX"
+  m_text: 'You have just defeated
+
+    Anger The Mental Rage Robot!
+
+
+    NEXT:
+
+    And
+    After Anger?
+
+    PEACE'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -3820,7 +3829,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nLa cit\xE9 a \xE9t\xE9 consum\xE9e\n par Anger..."
+  m_text: '
+
+
+    The city was consumed
+
+    by Anger...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -4659,8 +4673,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous venez de battre \nKiffeur , The Prisonner ! \n\nPROCHAIN : \nAnger
-    , The Mental Rage Robot...."
+  m_text: 'You''ve just been born!
+
+    Kiffeur, The Prisoner!
+
+
+    NEXT:
+
+    Anger,
+    The Mental Rage Robot...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -4797,7 +4818,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nLa cit\xE9 a \xE9t\xE9 consum\xE9e\n par Anger..."
+  m_text: '
+
+
+    The city was consumed
+
+    by Anger...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -7196,7 +7222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous Avez P\xE9ri...."
+  m_text: You have perished....
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -7837,8 +7863,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous venez de battre \nJojo The SteamMaster ! \n\nPROCHAIN : \nKiffeur,
-    The Prisonner...."
+  m_text: 'You just beat
+
+    Jojo the Steammaster!
+
+
+    NEXT:
+
+    Kiffeur, The
+    Prisoner...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -8491,6 +8524,187 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: c8d9817338b5a7b4bae85838298c8624, type: 3}
   m_PrefabInstance: {fileID: 567763826}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &568372934
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 946754356797920960, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_text
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473889880507806876, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_text
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677176316740428936, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_Name
+      value: PauseMenuGO
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677176316740428936, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677324569210314882, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2231.0989
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1469.7736
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781748917703128459, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_text
+      value: Do you really want to leave?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352229592381827895, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_text
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850478445858196886, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
+      propertyPath: m_text
+      value: Quit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
 --- !u!1 &573647108
 GameObject:
   m_ObjectHideFlags: 0
@@ -10747,7 +10961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2332, y: -580.6}
+  m_AnchoredPosition: {x: 2480, y: -554}
   m_SizeDelta: {x: 1874.5596, y: 315.1263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789107192
@@ -10770,7 +10984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lancer la partie
+  m_text: 'Start ! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -11336,163 +11550,6 @@ Transform:
   - {fileID: 1876096746}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &847753247
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744433882277726595, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3193129708182074659, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3398671077801482555, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3677176316740428936, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_Name
-      value: PauseMenuGO
-      objectReference: {fileID: 0}
-    - target: {fileID: 3677176316740428936, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6224428328773006892, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2231.0989
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1469.7736
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598779456009169234, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0a233ec0113edd84daed5476e5e35877, type: 3}
 --- !u!1 &848330100
 GameObject:
   m_ObjectHideFlags: 0
@@ -11642,7 +11699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2336, y: -557}
+  m_AnchoredPosition: {x: 2475, y: -551}
   m_SizeDelta: {x: 1874.5596, y: 315.1263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853499891
@@ -11665,7 +11722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lancer la partie
+  m_text: 'Start ! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -12586,7 +12643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Une Ann\xE9e Plus Tard...."
+  m_text: One Year Later....
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -14611,7 +14668,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nLa cit\xE9 a \xE9t\xE9 consum\xE9e\n par Anger..."
+  m_text: '
+
+
+    The city was consumed
+
+    by Anger...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -14858,7 +14920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2378, y: -586.68}
+  m_AnchoredPosition: {x: 2480, y: -563}
   m_SizeDelta: {x: 1874.5596, y: 315.1263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023949590
@@ -14881,7 +14943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lancer la partie
+  m_text: Start !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -15645,7 +15707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085645781}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1919.2909, y: 1072.4543, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16641,8 +16703,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous venez de battre \nBlob The PoliceMan ! \n\nPROCHAIN : \nJOJO The
-    SteamMaster...."
+  m_text: 'You just beat
+
+    Blob the Policeman!
+
+
+    NEXT:
+
+    JOJO the Steammaster...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -16933,7 +17001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2373, y: -537}
+  m_AnchoredPosition: {x: 2475, y: -552}
   m_SizeDelta: {x: 1874.5596, y: 315.1263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187354560
@@ -16956,7 +17024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lancer la partie
+  m_text: 'Start ! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -23628,10 +23696,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Une Fois Anger vaincu, \nJojo redevenu Maitre de la Vapuris \nEnferma
-    en Prison dans la Meme Cellule Ce bon vieux Kiffeur et Le Blob le Policier.....\nQuant
-    \xE0 Ingenio, il re\xE7u la m\xE9daille d'h\xE9ro de Vapuris et parti explorer
-    d'autres Horizons....."
+  m_text: 'Once Anger was defeated,
+
+    Jojo, having regained his position as Master
+    of Vapuris, imprisoned good old Kiffeur and the Blob the Policeman in the same
+    cell.....
+
+    As for Ingenio, he received the Vapuris hero medal and left to
+    explore other horizons.....'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -27281,7 +27353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous Avez P\xE9ri...."
+  m_text: You have perished....
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -28847,8 +28919,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 276, y: -272}
-  m_SizeDelta: {x: 1720.0198, y: 867.9447}
+  m_AnchoredPosition: {x: 276, y: -263.28372}
+  m_SizeDelta: {x: 1720.0198, y: 885.3773}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923060806
 MonoBehaviour:
@@ -28870,7 +28942,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nLa cit\xE9 a \xE9t\xE9 consum\xE9e\n par Anger..."
+  m_text: '
+
+
+    The city was consumed
+
+    by Anger...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -29046,7 +29123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous Avez P\xE9ri...."
+  m_text: You have perished....
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -30252,7 +30329,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous Avez P\xE9ri...."
+  m_text: You have perished....
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -32503,4 +32580,4 @@ SceneRoots:
   - {fileID: 1969694824}
   - {fileID: 1889460282}
   - {fileID: 705980159}
-  - {fileID: 847753247}
+  - {fileID: 568372934}

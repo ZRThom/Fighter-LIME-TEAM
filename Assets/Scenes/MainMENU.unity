@@ -2963,11 +2963,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Qui est-il ?\nKiffeur , un d\xE9g\xE9ner\xE9 de twitter, a \xE9t\xE9 emprisonn\xE9
-    par Anger pour une cause inqui\xE9tante....\n\nSon Histoire\nAutrefois p\xE8re
-    de famille, apr\xE8s s'etre sub chez Amouranth , ce grand kiffeur s'est mis a
-    avoir une adoration pour les pieds , surtout ceux d'Anger...\n\nSon But\nOBEIR,
-    KIFFER et LECHER....."
+  m_text: 'Who is he?
+
+    Kiffeur, a Twitter degenerate, has been imprisoned by
+    Anger for a disturbing reason...
+
+    
+
+    His Story
+
+    Formerly a family
+    man, after subscribing to Amouranth, this self-proclaimed "kiffer" developed
+    a foot fetish, especially for Anger''s feet...
+
+    
+
+    His Goal
+
+    OBEY,
+    ENJOY, and LICK...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -3184,12 +3198,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Qui est-il ?\nJojo ancien maitre de la Cit\xE9 de Vapuris, a fait prosp\xE9rer
-    la cit\xE9 pendant vingts ans , les citoyens le respecte comme un h\xE9ros.\n\nSon
-    Histoire\nAutrefois maitre de la cit\xE9 Vapuris, Jojo est d\xE9tronn\xE9 par
-    Anger et lui jure fid\xE9lit\xE9 pour \xE9viter de finir consumm\xE9 par la catastrophe
-    \"Grande Surcharge\".\n\nSon But\nTrouver un adversaire capable de le d\xE9livrer
-    de l'emprise de Anger."
+  m_text: 'Who is he?
+
+    Jojo, former ruler of Vapuris, led the city to prosperity
+    for twenty years. The citizens respect him as a hero.
+
+    
+
+    His Story
+
+    Once
+    the ruler of Vapuris, Jojo was dethroned by Anger and swore allegiance to him
+    to avoid being consumed by the "Great Overload" catastrophe.
+
+    
+
+    His
+    Goal
+
+    To find an opponent capable of freeing him from Anger''s control.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -3401,12 +3428,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Le Blob est un ancien officier de la milice urbaine de Vaporis dont l'armure
-    a \xE9t\xE9 directement greff\xE9e aux valves de la ville. \n\nSon Histoire \nL\xE2che
-    ou bris\xE9 par la peur, il a jur\xE9 fid\xE9lit\xE9 \xE0 Anger lors de la prise
-    de contr\xF4le des conduits centraux pour \xE9viter d'\xEAtre consum\xE9. \n\nSon
-    But\nTraquer et capturer tout citoyen tentant de saboter la pression, avec pour
-    priorit\xE9 absolue l'arrestation d'Ingenio."
+  m_text: 'The Blob is a former Vaporis city militia officer whose armor was directly
+    grafted onto the city''s pressure vessels.
+
+    
+
+    His Story
+
+    Whether
+    cowardly or broken by fear, he swore allegiance to Anger during the takeover
+    of the central conduits to avoid being consumed.
+
+    
+
+    His Goal
+
+    To
+    hunt down and capture any citizen attempting to sabotage the pressure system,
+    with the arrest of Ingenio as his top priority.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -16046,13 +16085,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Qui est-il ? \nAnger est une entit\xE9 colossale, mi-homme mi-chaudi\xE8re,
-    n\xE9e d'une fusion tragique entre un ing\xE9nieur et la vapeur noire. Il est
-    le ma\xEEtre des conduits centraux de Vaporis.\n\n Son Histoire \nAutrefois mentor
-    d'Ingenio \xE0 la Forge Royale, il a \xE9t\xE9 consum\xE9 par une exp\xE9rience
-    de surpression qui a mal tourn\xE9 lors de la \"Grande Surcharge\". \n\n Son
-    But\nAnger cherche \xE0 provoquer l'explosion totale des r\xE9servoirs de la
-    ville pour lib\xE9rer sa propre souffrance. \n"
+  m_text: 'Who is he?
+
+    Anger is a colossal entity, half-man, half-boiler, born
+    from a tragic fusion between an engineer and black steam. He is the master of
+    Vaporis''s central conduits.
+
+    
+
+    His Story
+
+    Once Ingenio''s mentor
+    at the Royal Forge, he was consumed by a superpressure experiment gone wrong
+    during the "Great Overload."
+
+    
+
+    His Goal
+
+    Anger seeks to trigger
+    the total explosion of the city''s reservoirs to unleash his own suffering.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -16166,7 +16218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: -78.49982}
+  m_AnchoredPosition: {x: 360, y: -22.72}
   m_SizeDelta: {x: 646, y: 583.4396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260988839
@@ -16189,12 +16241,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Qui est-il ? \nAncien prodige de la Grande Forge de Vaporis, Ingenio est
-    un m\xE9canicien de g\xE9nie reconnaissable \xE0 sa chevelure rousse et ses lunettes
-    de pr\xE9cision. \n\nSon Histoire \nSa vie bascule lors de la \"Grande Surcharge\",
-    une catastrophe industrielle qui transforma son mentor en une entit\xE9 de m\xE9tal
-    et de rage pure nomm\xE9e Anger. \n\nSon But\nAtteindre le sommet de la Tour
-    de Pression pour affronter Anger et le raisonner tel un bon disciple."
+  m_text: 'Who is he?
+
+    
+
+    A former prodigy of the Great Vaporis Forge, Ingenio
+    is a mechanical genius recognizable by his red hair and precision glasses.
+
+    
+
+    His
+    Story
+
+    His life changed dramatically during the "Great Overload," an industrial
+    catastrophe that transformed his mentor into an entity of metal and pure rage
+    named Anger.
+
+    
+
+    His Goal
+
+    To reach the top of the Pressure Tower
+    to confront Anger and reason with him like a true disciple.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -21037,8 +21105,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "INCARNEZ INGENIO. \nVOTRE BUT ?\nLIBERER LA CITE DE VAPURIS DES MAINS
-    D'ANGER, \nUN ETRE SANGLANT QUI RASE TOUT MEME VOS PROCHES...."
+  m_text: 'Become Ingenio.
+
+    Your goal?
+
+    To liberate the city of Vapuris from
+    the clutches of Anger,
+
+    a bloodthirsty being who razes everything, even your
+    loved ones...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
