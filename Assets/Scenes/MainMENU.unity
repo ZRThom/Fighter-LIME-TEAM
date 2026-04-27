@@ -501,10 +501,10 @@ RectTransform:
   - {fileID: 436878848}
   m_Father: {fileID: 187600920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 718.3866, y: -228.1644}
+  m_SizeDelta: {x: 450, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &38934103
 MonoBehaviour:
@@ -3244,20 +3244,20 @@ MonoBehaviour:
     Kiffeur, a Twitter degenerate, has been imprisoned by
     Anger for a disturbing reason...
 
-    
+
 
     His Story
 
-    Formerly a family
-    man, after subscribing to Amouranth, this self-proclaimed "kiffer" developed
-    a foot fetish, especially for Anger''s feet...
+    Formerly a family man,
+    after subscribing to Amouranth, this self-proclaimed "kiffer" developed a foot
+    fetish, especially for Anger''s feet...
 
-    
+
 
     His Goal
 
-    OBEY,
-    ENJOY, and LICK...'
+    OBEY, ENJOY, and
+    LICK...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -3479,7 +3479,7 @@ MonoBehaviour:
     Jojo, former ruler of Vapuris, led the city to prosperity
     for twenty years. The citizens respect him as a hero.
 
-    
+
 
     His Story
 
@@ -3487,12 +3487,12 @@ MonoBehaviour:
     the ruler of Vapuris, Jojo was dethroned by Anger and swore allegiance to him
     to avoid being consumed by the "Great Overload" catastrophe.
 
-    
 
-    His
-    Goal
 
-    To find an opponent capable of freeing him from Anger''s control.'
+    His Goal
+
+    To
+    find an opponent capable of freeing him from Anger''s control.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -3707,21 +3707,21 @@ MonoBehaviour:
   m_text: 'The Blob is a former Vaporis city militia officer whose armor was directly
     grafted onto the city''s pressure vessels.
 
-    
+
 
     His Story
 
-    Whether
-    cowardly or broken by fear, he swore allegiance to Anger during the takeover
-    of the central conduits to avoid being consumed.
+    Whether cowardly
+    or broken by fear, he swore allegiance to Anger during the takeover of the central
+    conduits to avoid being consumed.
 
-    
+
 
     His Goal
 
-    To
-    hunt down and capture any citizen attempting to sabotage the pressure system,
-    with the arrest of Ingenio as his top priority.'
+    To hunt down and capture
+    any citizen attempting to sabotage the pressure system, with the arrest of Ingenio
+    as his top priority.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -7255,10 +7255,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -35}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531983449
 MonoBehaviour:
@@ -7393,10 +7393,10 @@ RectTransform:
   - {fileID: 1536925552}
   m_Father: {fileID: 187600920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 228.3866, y: -228.1644}
+  m_SizeDelta: {x: 450, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536779269
 MonoBehaviour:
@@ -8021,10 +8021,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -215}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633088710
 MonoBehaviour:
@@ -8303,10 +8303,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -155}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635187122
 MonoBehaviour:
@@ -9112,10 +9112,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -35}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &658901894
 MonoBehaviour:
@@ -13237,10 +13237,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -275}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927888072
 MonoBehaviour:
@@ -15305,10 +15305,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -155}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1061478549
 MonoBehaviour:
@@ -15442,10 +15442,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -95}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062912414
 MonoBehaviour:
@@ -16037,7 +16037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1076347665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17451,10 +17451,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -335}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176027361
 MonoBehaviour:
@@ -17995,10 +17995,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -215}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206866882
 MonoBehaviour:
@@ -18743,20 +18743,20 @@ MonoBehaviour:
     from a tragic fusion between an engineer and black steam. He is the master of
     Vaporis''s central conduits.
 
-    
+
 
     His Story
 
-    Once Ingenio''s mentor
-    at the Royal Forge, he was consumed by a superpressure experiment gone wrong
-    during the "Great Overload."
+    Once Ingenio''s mentor at
+    the Royal Forge, he was consumed by a superpressure experiment gone wrong during
+    the "Great Overload."
 
-    
+
 
     His Goal
 
-    Anger seeks to trigger
-    the total explosion of the city''s reservoirs to unleash his own suffering.'
+    Anger seeks to trigger the total explosion
+    of the city''s reservoirs to unleash his own suffering.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -18895,12 +18895,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Who is he?
 
-    
+
 
     A former prodigy of the Great Vaporis Forge, Ingenio
     is a mechanical genius recognizable by his red hair and precision glasses.
 
-    
+
 
     His
     Story
@@ -18909,12 +18909,12 @@ MonoBehaviour:
     catastrophe that transformed his mentor into an entity of metal and pure rage
     named Anger.
 
-    
+
 
     His Goal
 
-    To reach the top of the Pressure Tower
-    to confront Anger and reason with him like a true disciple.'
+    To reach the top of the Pressure Tower to confront
+    Anger and reason with him like a true disciple.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
   m_sharedMaterial: {fileID: -7697690669607560752, guid: fdb6cc9a5fa304bc0a5e3d620dfcc96a, type: 2}
@@ -20589,10 +20589,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -395}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377130696
 MonoBehaviour:
@@ -21024,10 +21024,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -275}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414109628
 MonoBehaviour:
@@ -22697,10 +22697,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -95}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529474488
 MonoBehaviour:
@@ -26543,10 +26543,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -395}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1810723236
 MonoBehaviour:
@@ -29920,10 +29920,10 @@ RectTransform:
   - {fileID: 1981944065}
   m_Father: {fileID: 187600920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1208.3866, y: -228.1644}
+  m_SizeDelta: {x: 450, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040354072
 MonoBehaviour:
@@ -30273,10 +30273,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -335}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086686066
 MonoBehaviour:
