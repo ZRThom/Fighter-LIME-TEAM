@@ -8,54 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMENU.unity
     guid: 5c0e322ef8fe445a39bcd879a5c31634
-  - enabled: 0
-    path: Assets/Scenes/PLAY MENU.unity
-    guid: c6b6720d0539947aab7b47ac66daba48
-  - enabled: 0
-    path: Assets/Scenes/PanelPLAY.unity
-    guid: 576b9a22fc6bda548a93cef7e6325262
-  - enabled: 0
-    path: Assets/Scenes/Settings.unity
-    guid: 87ca80acd38489b48ae1b461f28040e7
-  - enabled: 0
-    path: Assets/Scenes/About-Menu.unity
-    guid: 554ca0f932b9840ec96c1322516900c1
-  - enabled: 0
-    path: Assets/Scenes/PLAYM 1V1.unity
-    guid: 09406916ecfe24e45af7025d414c5077
-  - enabled: 0
-    path: Assets/Scenes/blob.unity
-    guid: f3703d3c7859cd647950573fcb2dc966
   - enabled: 1
     path: Assets/Scenes/Battlefield STORY.unity
     guid: ff41ea5c927f12086ae2fc9895468297
   - enabled: 1
     path: Assets/Scenes/Battlefield TEST.unity
     guid: 8ba368ceb2f6ea24bb9441ee0a464221
-  - enabled: 0
-    path: Assets/Scenes/Shop.unity
-    guid: 5796eb31012df4514b28aa4a6b7e53e8
-  - enabled: 0
-    path: Assets/Scenes/Profil.unity
-    guid: 02672b81b67670846b73d34a41ff0ee4
-  - enabled: 0
-    path: Assets/Scenes/anger.unity
-    guid: efbb30c3e4a759d42bd5594d5499a1d2
-  - enabled: 0
-    path: Assets/Scenes/EasterEggRaph.unity
-    guid: 38a29507342f64b368d092f138d584b4
-  - enabled: 0
-    path: Assets/Scenes/EasterEgg1.unity
-    guid: 70354ca1fb89c40a6abde694992ba27f
-  - enabled: 0
-    path: Assets/Scenes/ingenio.unity
-    guid: 5ca15c0ddc1366d429bd4c86accd8f09
   - enabled: 1
     path: Assets/Scenes/Battlefield 1v1.unity
     guid: 21df9275c1a1f432db30eb7897b2401f
-  - enabled: 0
-    path: Assets/Scenes/PLAYM STORY.unity
-    guid: 3b6d99952d067884b8c4d4165e9e6523
   - enabled: 1
     path: Assets/Scenes/versus_load.unity
     guid: 24bbe436b109fdd4aba2932cd3831cb0
