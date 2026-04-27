@@ -92,10 +92,9 @@ public class MenuSettings : MonoBehaviour
         SetSFXVolume();
     }
 
-    public void SetFullScreen(bool IsFullScreen)
+    public void ToggleFullScreen()
     {
-        Screen.fullScreen = IsFullScreen;
-
+        Screen.fullScreen = !Screen.fullScreen;
     }
 
     public void SetResolution(int resolutionIndex)
