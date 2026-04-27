@@ -13,11 +13,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseRoot;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject confirmPanel;
+    [SerializeField] private GameObject commandPanel;
 
     [Header("PanelPauseVerif")]
     
     [SerializeField] private Button firstSelectedButton;
     [SerializeField] private Button backButton;
+    [SerializeField] private Button backCommand;
     [SerializeField] private string mainMenuSceneName = "MainMenu";
 
     private PlayerInputHandler[] playerInputs;
@@ -41,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         if (pauseRoot != null) pauseRoot.SetActive(false);
         if (pausePanel != null) pausePanel.SetActive(true);
         if (confirmPanel != null) confirmPanel.SetActive(false);
+        if (commandPanel != null) commandPanel.SetActive(false);
     }
 
     private void Update()
@@ -119,6 +122,7 @@ public class PauseMenu : MonoBehaviour
         if (pauseRoot != null) pauseRoot.SetActive(true);
         if (pausePanel != null) pausePanel.SetActive(true);
         if (confirmPanel != null) confirmPanel.SetActive(false);
+        if (commandPanel != null) commandPanel.SetActive(false);
 
         SetSelected(firstSelectedButton);
     }
@@ -147,6 +151,16 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void ShowCommandPanel()
+    {
+        if (!IsPaused) return;
+
+        if (pausePanel != null) pausePanel.SetActive(false);
+        if (commandPanel != null) commandPanel.SetActive(true);
+
+        SetSelected(backCommand);
+    }
+
     public void ShowConfirmPanel()
     {
         if (!IsPaused) return;
@@ -163,6 +177,7 @@ public class PauseMenu : MonoBehaviour
 
         if (pausePanel != null) pausePanel.SetActive(true);
         if (confirmPanel != null) confirmPanel.SetActive(false);
+        if (commandPanel != null) commandPanel.SetActive(false);
 
         SetSelected(firstSelectedButton);
     }
