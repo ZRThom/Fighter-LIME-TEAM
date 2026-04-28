@@ -138,7 +138,7 @@ public class RoundManager1v1 : MonoBehaviour
 
         if (matchFinished)
         {
-            if (endWinText != null) endWinText.text = GetWinnerDisplayName(winner) + " est le gagnant de ce match!";
+            if (endWinText != null) endWinText.text = GetWinnerDisplayName(winner) + " is the winner of this game";
             
             foreach (PlayerRage rage in FindObjectsOfType<PlayerRage>()) rage.ResetForMatch();
 
@@ -247,7 +247,7 @@ public class RoundManager1v1 : MonoBehaviour
         if (winText != null)
         {
             if (winner == 0) winText.text = "égalité"; // egalite
-            else winText.text = GetWinnerDisplayName(winner) + " remporte ce round!";
+            else winText.text = GetWinnerDisplayName(winner) + " wins this round!";
         }
     }
 
