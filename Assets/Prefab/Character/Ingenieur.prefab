@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8493401213687078619}
   - component: {fileID: 1304923952111681261}
   - component: {fileID: 4933644032083062572}
-  - component: {fileID: 949692714231528773}
+  - component: {fileID: 7249366614538140046}
   - component: {fileID: 1701803089992481076}
   - component: {fileID: 3604350058194443160}
   - component: {fileID: 7460219665297908702}
@@ -163,8 +163,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &949692714231528773
-BoxCollider2D:
+--- !u!60 &7249366614538140046
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -197,18 +197,43 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.024494912, y: 0.3333338}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5882353, y: -0.6923077}
-    oldSize: {x: 0.17, y: 0.26}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.19052756, y: 0.29139185}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.07012471, y: 0.43038416}
+      - {x: 0.060136136, y: 0.4301573}
+      - {x: 0.060284354, y: 0.44015822}
+      - {x: 0.040247105, y: 0.4403847}
+      - {x: 0.04009344, y: 0.4503864}
+      - {x: 0.020345984, y: 0.45018357}
+      - {x: 0.020221401, y: 0.46024048}
+      - {x: 0.00017293822, y: 0.46028665}
+      - {x: -0.00000016088597, y: 0.4702115}
+      - {x: -0.009292891, y: 0.470061}
+      - {x: -0.04046973, y: 0.47032356}
+      - {x: -0.060659368, y: 0.4705425}
+      - {x: -0.060258955, y: 0.46047378}
+      - {x: -0.060922273, y: 0.32038438}
+      - {x: -0.061437402, y: 0.27918264}
+      - {x: -0.050046645, y: 0.2793997}
+      - {x: -0.050018735, y: 0.26889718}
+      - {x: -0.028909756, y: 0.26874387}
+      - {x: -0.029755231, y: 0.28003353}
+      - {x: -0.0199304, y: 0.2784861}
+      - {x: -0.02065526, y: 0.19024988}
+      - {x: 0.07036539, y: 0.18925439}
+      - {x: 0.07044599, y: 0.34009877}
+      - {x: 0.07015648, y: 0.42004567}
+  m_UseDelaunayMesh: 0
 --- !u!114 &1701803089992481076
 MonoBehaviour:
   m_ObjectHideFlags: 0
