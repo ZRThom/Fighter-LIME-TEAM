@@ -395,6 +395,14 @@ MonoBehaviour:
   allowController: 1
   aiAgroRange: 10
   aiAttackRangeDist: 1.5
+  feed: {fileID: 0}
+  spriteLeft: {fileID: 8305031673964656184, guid: b518dff3c7390c0439ee4b4125bd7e6c, type: 3}
+  spriteRight: {fileID: 465263266627340700, guid: 13081a127a7f0104186e60ed3da2596d, type: 3}
+  spriteCrouch: {fileID: -6341203830336250105, guid: 205b04ad6a12b8445a755e83d26896ba, type: 3}
+  spriteJump: {fileID: 1477500189799927033, guid: de98f281b13b29c4693298e26b34156c, type: 3}
+  spriteAttack: {fileID: 6901609578399241014, guid: e5bd6cb21cac1bc43aa43fb149bafcc5, type: 3}
+  spriteShield: {fileID: 5300624914145920071, guid: 0175a17f1cd3c634dbbd27a4966eb960, type: 3}
+  spriteSpecial: {fileID: 6740637115276810673, guid: 764476cfa9fec0d4686fc8b6c4c943e5, type: 3}
 --- !u!114 &850917913869377847
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1977,6 +1977,7 @@ GameObject:
   - component: {fileID: 1625083565}
   - component: {fileID: 1625083564}
   - component: {fileID: 1625083563}
+  - component: {fileID: 1625083566}
   m_Layer: 5
   m_Name: play button
   m_TagString: Untagged
@@ -2097,6 +2098,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625083561}
   m_CullTransparentMesh: 1
+--- !u!114 &1625083566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625083561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073c4282f4208dc4da7b221d3e9b6036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightControllerButton
 --- !u!1 &1630448550
 GameObject:
   m_ObjectHideFlags: 0
