@@ -25,7 +25,8 @@ public class PlayerMouvement : MonoBehaviour
         state = ps;
 
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true; 
+        rb.freezeRotation = true;
+        rb.gravityScale = 2.5f; 
         col = GetComponent<BoxCollider2D>();
         
         if (col != null)

@@ -306,19 +306,19 @@ MonoBehaviour:
     rageHitEffect: 3
     rageEffectPrefab: {fileID: 3025700644437683485, guid: ed7fd4779be4f354baac997a1c90653e, type: 3}
     rageEffectScale: {x: 1, y: 1, z: 1}
-  moveSpeed: 3
-  jumpForce: 5
+  moveSpeed: 7
+  jumpForce: 10
   attackRange: 0.5
-  attackDamage: 10
+  attackDamage: 5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
   maxRage: 100
-  rageGainPerHit: 15
-  attackNormalSpeed: 0.05
+  rageGainPerHit: 18
+  attackNormalSpeed: 0.005
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
-  maxShieldTime: 15
+  maxShieldTime: 20
   shieldBurnOutCooldown: 30
   groundCheck: {fileID: 1933046388922387656}
   groundCheckRadius: 0.12
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4426017e2c057ff4d875b1b9158637f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 100
+  maxHealth: 75
   playerID: 2
   currentHealth: 0
 --- !u!114 &835807808889868480
