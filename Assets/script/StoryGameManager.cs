@@ -76,10 +76,17 @@ public class StoryGameManager : MonoBehaviour
         {
             if (p1Won)
             {
+<<<<<<< Updated upstream
                 PlayerPrefs.SetInt("DernierStageFini", bossLevel);
                 PlayerPrefs.Save();
                 Debug.Log("Victoire enregistrée : Stage " + bossLevel);
 
+=======
+                PlayerPrefs.SetInt("CharacterUnlocked_" + bossLevel, 1);
+                PlayerPrefs.Save();
+
+                // Player 1 Victory: Show corresponding 'W' panel
+>>>>>>> Stashed changes
                 if (bossLevel == 1) panelManager.OpenW1();
                 else if (bossLevel == 2) panelManager.OpenW2();
                 else if (bossLevel == 3) panelManager.OpenW3();
