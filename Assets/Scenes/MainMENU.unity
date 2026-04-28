@@ -549,6 +549,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5308970591740374954, guid: 556ee83b54f546945805245334bcee25, type: 3}
   m_PrefabInstance: {fileID: 1231755252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &49343772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3887987270800989625, guid: 556ee83b54f546945805245334bcee25, type: 3}
+  m_PrefabInstance: {fileID: 1231755252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49343767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1583a95744b54924582637f63a4f93b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+--- !u!114 &61370668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2177429288614771372, guid: 556ee83b54f546945805245334bcee25, type: 3}
+  m_PrefabInstance: {fileID: 1231755252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &106233277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1432,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &174092056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4520733512250288079, guid: 556ee83b54f546945805245334bcee25, type: 3}
+  m_PrefabInstance: {fileID: 1231755252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &187600919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,7 +2135,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 243353651}
           m_TargetAssemblyTypeName: CharacterSelectUI, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: OnCharacterSelected
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2127,6 +2160,7 @@ MonoBehaviour:
   selectionMarkP1: {fileID: 259209504}
   selectionMarkP2: {fileID: 1121109804}
   characterPrefab: {fileID: 5288267862035165445, guid: f6f1bd12cccb46a43b3d5a651a4f338c, type: 3}
+  characterID: 2
 --- !u!114 &243353652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,7 +2549,7 @@ GameObject:
   - component: {fileID: 246847487}
   - component: {fileID: 246847486}
   m_Layer: 7
-  m_Name: spriteAnger
+  m_Name: spriteJojo
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4843,7 +4877,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 375043709}
           m_TargetAssemblyTypeName: CharacterSelectUI, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: OnCharacterSelected
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4868,6 +4902,7 @@ MonoBehaviour:
   selectionMarkP1: {fileID: 1199029190}
   selectionMarkP2: {fileID: 510948542}
   characterPrefab: {fileID: 8817952671848854763, guid: bfe2996ce640e40469255888cd2eceec, type: 3}
+  characterID: 1
 --- !u!114 &375043710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5037,6 +5072,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376577004}
   m_CullTransparentMesh: 1
+--- !u!114 &379428238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2827476509853779267, guid: 556ee83b54f546945805245334bcee25, type: 3}
+  m_PrefabInstance: {fileID: 1231755252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &383866871
 GameObject:
   m_ObjectHideFlags: 0
@@ -9019,6 +9065,7 @@ GameObject:
   - component: {fileID: 657853645}
   - component: {fileID: 657853647}
   - component: {fileID: 657853646}
+  - component: {fileID: 657853648}
   m_Layer: 5
   m_Name: perso2
   m_TagString: Untagged
@@ -9061,7 +9108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9085,6 +9132,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657853644}
   m_CullTransparentMesh: 1
+--- !u!114 &657853648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657853644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec63bc8e08c47984091489dd004e5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
+  selectionMarkP1: {fileID: 1610156240}
+  selectionMarkP2: {fileID: 1865322967}
+  characterPrefab: {fileID: 0}
+  characterID: 0
 --- !u!1 &658901892
 GameObject:
   m_ObjectHideFlags: 0
@@ -10346,7 +10409,7 @@ GameObject:
   - component: {fileID: 738466638}
   - component: {fileID: 738466637}
   m_Layer: 7
-  m_Name: spriteAnger
+  m_Name: spriteEngino
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11717,6 +11780,7 @@ GameObject:
   - component: {fileID: 815677299}
   - component: {fileID: 815677301}
   - component: {fileID: 815677300}
+  - component: {fileID: 815677302}
   m_Layer: 5
   m_Name: perso1
   m_TagString: Untagged
@@ -11759,7 +11823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11783,6 +11847,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815677298}
   m_CullTransparentMesh: 1
+--- !u!114 &815677302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815677298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec63bc8e08c47984091489dd004e5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
+  selectionMarkP1: {fileID: 2011812417}
+  selectionMarkP2: {fileID: 1990539989}
+  characterPrefab: {fileID: 0}
+  characterID: 4
 --- !u!1 &816557410
 GameObject:
   m_ObjectHideFlags: 0
@@ -11914,7 +11994,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 819927459}
           m_TargetAssemblyTypeName: CharacterSelectUI, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: OnCharacterSelected
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11939,6 +12019,7 @@ MonoBehaviour:
   selectionMarkP1: {fileID: 1610156240}
   selectionMarkP2: {fileID: 1865322967}
   characterPrefab: {fileID: 2436490214716693051, guid: c6364ad84b29949489c9ec7411e5a7fc, type: 3}
+  characterID: 0
 --- !u!114 &819927460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18511,9 +18592,157 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 49343772}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCharacterClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800325863824840420, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 49343772}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCharacterClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2968505704771761478, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 49343772}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCharacterClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176752182111661835, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887987270800989625, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: characterImages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887987270800989625, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: 'characterImages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 174092056}
+    - target: {fileID: 3887987270800989625, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: 'characterImages.Array.data[1]'
+      value: 
+      objectReference: {fileID: 379428238}
+    - target: {fileID: 3887987270800989625, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: 'characterImages.Array.data[2]'
+      value: 
+      objectReference: {fileID: 61370668}
+    - target: {fileID: 3887987270800989625, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: 'characterImages.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1544557844}
     - target: {fileID: 5308970591740374954, guid: 556ee83b54f546945805245334bcee25, type: 3}
       propertyPath: m_Name
       value: PanelShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 49343772}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCharacterClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShopManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154095742595717663, guid: 556ee83b54f546945805245334bcee25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8845847147394531810, guid: 556ee83b54f546945805245334bcee25, type: 3}
       propertyPath: m_Color.b
@@ -21696,6 +21925,7 @@ GameObject:
   - component: {fileID: 1448551373}
   - component: {fileID: 1448551375}
   - component: {fileID: 1448551374}
+  - component: {fileID: 1448551376}
   m_Layer: 5
   m_Name: perso3
   m_TagString: Untagged
@@ -21738,7 +21968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -21762,6 +21992,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448551372}
   m_CullTransparentMesh: 1
+--- !u!114 &1448551376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448551372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec63bc8e08c47984091489dd004e5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
+  selectionMarkP1: {fileID: 1199029190}
+  selectionMarkP2: {fileID: 510948542}
+  characterPrefab: {fileID: 0}
+  characterID: 1
 --- !u!1 &1450805167
 GameObject:
   m_ObjectHideFlags: 0
@@ -23103,6 +23349,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540916394}
   m_CullTransparentMesh: 1
+--- !u!114 &1544557844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1661866441303376762, guid: 556ee83b54f546945805245334bcee25, type: 3}
+  m_PrefabInstance: {fileID: 1231755252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1545911624
 GameObject:
   m_ObjectHideFlags: 0
@@ -23162,7 +23419,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1545911627}
           m_TargetAssemblyTypeName: CharacterSelectUI, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: OnCharacterSelected
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -23187,6 +23444,7 @@ MonoBehaviour:
   selectionMarkP1: {fileID: 1464409114}
   selectionMarkP2: {fileID: 1927668818}
   characterPrefab: {fileID: 2436490214716693051, guid: bb34dc66e9488e544b427ca5852d1f7e, type: 3}
+  characterID: 3
 --- !u!114 &1545911628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23786,6 +24044,7 @@ GameObject:
   - component: {fileID: 1619885431}
   - component: {fileID: 1619885433}
   - component: {fileID: 1619885432}
+  - component: {fileID: 1619885434}
   m_Layer: 5
   m_Name: perso5
   m_TagString: Untagged
@@ -23852,6 +24111,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619885430}
   m_CullTransparentMesh: 1
+--- !u!114 &1619885434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619885430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec63bc8e08c47984091489dd004e5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
+  selectionMarkP1: {fileID: 259209504}
+  selectionMarkP2: {fileID: 1121109804}
+  characterPrefab: {fileID: 0}
+  characterID: 2
 --- !u!1 &1626375323
 GameObject:
   m_ObjectHideFlags: 0
@@ -25998,7 +26273,7 @@ GameObject:
   - component: {fileID: 1740856310}
   - component: {fileID: 1740856309}
   m_Layer: 7
-  m_Name: spriteAnger
+  m_Name: spriteBlob
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27374,7 +27649,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1876555397}
           m_TargetAssemblyTypeName: CharacterSelectUI, Assembly-CSharp
-          m_MethodName: OnPointerDown
+          m_MethodName: OnCharacterSelected
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -27399,6 +27674,7 @@ MonoBehaviour:
   selectionMarkP1: {fileID: 2011812417}
   selectionMarkP2: {fileID: 1990539989}
   characterPrefab: {fileID: 5077581533744391883, guid: 38024c08986ddfb479547391e15e21a7, type: 3}
+  characterID: 4
 --- !u!114 &1876555398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29071,7 +29347,7 @@ GameObject:
   - component: {fileID: 1990324865}
   - component: {fileID: 1990324864}
   m_Layer: 7
-  m_Name: spriteAnger
+  m_Name: spriteKiffeur
   m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29719,6 +29995,7 @@ GameObject:
   - component: {fileID: 2020942124}
   - component: {fileID: 2020942126}
   - component: {fileID: 2020942125}
+  - component: {fileID: 2020942127}
   m_Layer: 5
   m_Name: perso4
   m_TagString: Untagged
@@ -29785,6 +30062,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020942123}
   m_CullTransparentMesh: 1
+--- !u!114 &2020942127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020942123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec63bc8e08c47984091489dd004e5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectUI
+  selectionMarkP1: {fileID: 1464409114}
+  selectionMarkP2: {fileID: 1927668818}
+  characterPrefab: {fileID: 0}
+  characterID: 3
 --- !u!1 &2026123992
 GameObject:
   m_ObjectHideFlags: 0
