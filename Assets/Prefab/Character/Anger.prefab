@@ -173,7 +173,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 66f38d33d086d094d87cb861a20faf01, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -209,9 +209,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.7718153, y: 1.11201}
+    - - {x: -0.0919075, y: 0.94401765}
+      - {x: -0.688128, y: 1.1412718}
+      - {x: -0.94535875, y: 1.057635}
+      - {x: -0.7718153, y: 1.11201}
       - {x: -0.76863, y: 1.0531949}
-      - {x: -0.9543915, y: 1.0536175}
+      - {x: -0.9482808, y: 1.0556544}
       - {x: -0.95682716, y: 0.76363957}
       - {x: -0.9533844, y: 0.5904951}
       - {x: -0.89239407, y: 0.592409}
