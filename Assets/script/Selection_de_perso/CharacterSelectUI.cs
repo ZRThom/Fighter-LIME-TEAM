@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections; 
 
 public class CharacterSelectUI : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class CharacterSelectUI : MonoBehaviour
     public GameObject selectionMarkP2;
     public GameObject characterPrefab;
 
+    [Header("Glow Feedback")]
+    public Image frameGlow; 
+
     [Header("Unlock Settings")]
-    public int characterID = 0; // 0 for Enginio, 1-4 for Bosses
+    public int characterID = 0; 
 
     private void Start() 
     { 
@@ -23,12 +27,6 @@ public class CharacterSelectUI : MonoBehaviour
     {
         bool isPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterID, 0) == 1;
         
-        Button btn = GetComponent<Button>();
-
-        if (btn != null)
-        {
-            btn.interactable = isPurchased;
-        }
     }
 
     public void OnCharacterSelected(BaseEventData data)
@@ -37,11 +35,15 @@ public class CharacterSelectUI : MonoBehaviour
 
         if (!isPurchased)
         {
-            Debug.Log("<color=red>ACCESS DENIED:</color> You must buy this character in the Shop first!");
+            StopAllCoroutines(); 
+            StartCoroutine(FlashColor(Color.red));
+            Debug.Log("BLOQUÉ !");
             return;
         }
 
-        Debug.Log("<color=green>ACCESS GRANTED:</color> Character " + gameObject.name + " selected!");
+        StopAllCoroutines();
+        StartCoroutine(FlashColor(Color.green));
+        Debug.Log("SÉLECTIONNÉ !");
 
         PointerEventData eventData = (PointerEventData)data;
 
@@ -55,5 +57,16 @@ public class CharacterSelectUI : MonoBehaviour
             selectionMarkP2.SetActive(true);
             GameManagerSelect.Instance.SelectPlayer(2, characterPrefab);
         }
+    }
+
+    IEnumerator FlashColor(Color targetColor)
+    {
+        if (frameGlow == null) yield break;
+
+        frameGlow.color = targetColor;
+
+        yield return new WaitForSecondsRealtime(0.2f);
+        
+        frameGlow.color = Color.white;
     }
 }
