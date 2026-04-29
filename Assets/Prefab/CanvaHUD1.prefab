@@ -210,9 +210,9 @@ MonoBehaviour:
   - {fileID: 5808262334939237411, guid: 0b7e24fe28e41594ab4ac9a7248b09ad, type: 3}
   - {fileID: -3772529106293097852, guid: 0b7e24fe28e41594ab4ac9a7248b09ad, type: 3}
   animSpeed: 0.1
-  scrollSpeed: 1
-  resetPositionX: -20
-  startPositionX: 20
+  scrollSpeed: 0
+  resetPositionX: 0
+  startPositionX: 0
 --- !u!114 &6726677271308679435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2386,9 +2386,9 @@ MonoBehaviour:
   - {fileID: 5808262334939237411, guid: 0b7e24fe28e41594ab4ac9a7248b09ad, type: 3}
   - {fileID: -3772529106293097852, guid: 0b7e24fe28e41594ab4ac9a7248b09ad, type: 3}
   animSpeed: 0.1
-  scrollSpeed: 1
-  resetPositionX: -20
-  startPositionX: 20
+  scrollSpeed: 0
+  resetPositionX: 0
+  startPositionX: 0
 --- !u!114 &740812885645372650
 MonoBehaviour:
   m_ObjectHideFlags: 0
