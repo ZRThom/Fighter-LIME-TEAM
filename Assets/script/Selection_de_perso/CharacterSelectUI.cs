@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
 
-public class CharacterSelectUI : MonoBehaviour
+public class CharacterSelectUI : MonoBehaviour, ISubmitHandler
 {
     public GameObject selectionMarkP1;
     public GameObject selectionMarkP2;
@@ -49,26 +49,17 @@ public class CharacterSelectUI : MonoBehaviour
             selectionMarkP2.SetActive(true);
             GameManagerSelect.Instance.SelectPlayer(2, characterPrefab);
         }
+        Debug.Log($"Click {eventData.button} on {characterPrefab.name}");
     }
 
-    void ResetOtherMarks(int playerNumber)
+    public void OnSubmit(BaseEventData eventData)
     {
-        CharacterSelectUI[] allButtons = FindObjectsOfType<CharacterSelectUI>();
+        if (p1Selected != null) p1Selected.selectionMarkP1.SetActive(false);
+
+        selectionMarkP1.SetActive(true);
+        p1Selected = this;
+        GameManagerSelect.Instance.SelectPlayer(1, characterPrefab);
+        Debug.Log($"controller P1 on {characterPrefab.name}");
         
-        foreach (CharacterSelectUI btn in allButtons)
-        {
-            if (playerNumber == 1 && btn.selectionMarkP1 != null)
-                btn.selectionMarkP1.SetActive(false);
-            else if (playerNumber == 2 && btn.selectionMarkP2 != null)
-                btn.selectionMarkP2.SetActive(false);
-        }
-    }
-
-    IEnumerator FlashColor(Color targetColor)
-    {
-        if (frameGlow == null) yield break;
-        frameGlow.color = targetColor;
-        yield return new WaitForSecondsRealtime(0.2f);
-        frameGlow.color = Color.white;
     }
 }

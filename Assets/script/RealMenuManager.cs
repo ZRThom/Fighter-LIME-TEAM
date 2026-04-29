@@ -53,6 +53,7 @@ public class RealMenuManager : MonoBehaviour
 
     void HideAllPanels()
     {
+        panelMenu.SetActive(false);
         panelPlay.SetActive(false);
         panelSettings.SetActive(false);
         panelCredits.SetActive(false);
@@ -156,9 +157,8 @@ public class RealMenuManager : MonoBehaviour
     // profil perso 1
     public void PanelProfilPerso1()
     {
+        HideAllPanels();
         panelPerso1.SetActive(true);
-        panelProfil.SetActive(false);
-        panelMenu.SetActive(false);
         
         if (AudioManager.instance != null && musicPerso1 != null)
         {
@@ -168,16 +168,15 @@ public class RealMenuManager : MonoBehaviour
 
     public void PanelProfilPerso1Back()
     {
-        OpenMainMenu();
+        HideAllPanels();
         panelProfil.SetActive(true);
     }
 
     // profil perso 2
     public void PanelProfilPerso2()
     {
+        HideAllPanels();
         panelPerso2.SetActive(true);
-        panelProfil.SetActive(false);
-        panelMenu.SetActive(false);
         
         if (AudioManager.instance != null && musicPerso2 != null)
         {
@@ -187,16 +186,15 @@ public class RealMenuManager : MonoBehaviour
 
     public void PanelProfilPerso2Back()
     {
-        OpenMainMenu();
+        HideAllPanels();
         panelProfil.SetActive(true);
     }
 
     // profil perso 3
     public void PanelProfilPerso3()
     {
+        HideAllPanels();
         panelPerso3.SetActive(true);
-        panelProfil.SetActive(false);
-        panelMenu.SetActive(false);
         
         if (AudioManager.instance != null && musicPerso3 != null)
         {
@@ -206,16 +204,15 @@ public class RealMenuManager : MonoBehaviour
 
     public void PanelProfilPerso3Back()
     {
-        OpenMainMenu();
+        HideAllPanels();
         panelProfil.SetActive(true);
     }
 
     // profil perso 4
     public void PanelProfilPerso4()
     {
+        HideAllPanels();
         panelPerso4.SetActive(true);
-        panelProfil.SetActive(false);
-        panelMenu.SetActive(false);
         
         if (AudioManager.instance != null && musicPerso4 != null)
         {
@@ -225,16 +222,15 @@ public class RealMenuManager : MonoBehaviour
 
     public void PanelProfilPerso4Back()
     {
-        OpenMainMenu();
+        HideAllPanels();
         panelProfil.SetActive(true);
     }
 
     // profil perso 5
     public void PanelProfilPerso5()
     {
+        HideAllPanels();
         panelPerso5.SetActive(true);
-        panelProfil.SetActive(false);
-        panelMenu.SetActive(false);
         
         if (AudioManager.instance != null && musicPersoKiffeur != null)
         {
@@ -244,7 +240,7 @@ public class RealMenuManager : MonoBehaviour
 
     public void PanelProfilPerso5Back()
     {
-        OpenMainMenu();
+        HideAllPanels();
         panelProfil.SetActive(true);
     }
 

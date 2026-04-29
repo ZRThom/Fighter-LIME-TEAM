@@ -16,6 +16,21 @@ public class PlayerInputHandler : MonoBehaviour
     private float aiMoveTimer = 0f;
     private float aiMoveDir = 0f;
 
+    [Header("training input feed")]
+    [SerializeField] private TrainingInputFeed feed;
+    [SerializeField] private Sprite spriteLeft;
+    [SerializeField] private Sprite spriteRight;
+    [SerializeField] private Sprite spriteCrouch;
+    [SerializeField] private Sprite spriteJump;
+    [SerializeField] private Sprite spriteAttack;
+    [SerializeField] private Sprite spriteShield;
+    [SerializeField] private Sprite spriteSpecial;
+
+    private int lastStickHorizontalDirection = 0;
+    private bool lastStickDown = false;
+    [SerializeField] private float stickInputTest = 0.5f;
+
+    [Header("getter / setter")]
     public bool InputsEnabled { get; private set; } = true;
     public Vector2 MoveInput { get; private set; }
     public bool JumpTriggered { get; set; }
@@ -27,6 +42,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     private PlayerConfig config;
     private PlayerState state;
+
+    private void Awake()
+    {
+        if (feed == null) feed = FindFirstObjectByType<TrainingInputFeed>();
+    }
 
     public void Init(PlayerConfig pc)
     {
@@ -49,6 +69,15 @@ public class PlayerInputHandler : MonoBehaviour
         ShieldPressed = false;
         CrouchHeld = false;
         SpecialTrigger = false;
+    }
+
+    private void RegisterTrainingInput(Sprite sprite)
+    {
+        //check pr motnrer que le p1
+        if (config == null || config.playerNumber != 1) return;
+
+        if (feed == null || sprite == null) return;
+        feed.RegisterInput(sprite);
     }
 
     public void ReadInputs()
@@ -84,14 +113,32 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 if (Keyboard.current.aKey.isPressed) h = -1f;
                 else if (Keyboard.current.dKey.isPressed) h = 1f;
+                if (Keyboard.current.aKey.wasPressedThisFrame) RegisterTrainingInput(spriteLeft);
+                if (Keyboard.current.dKey.wasPressedThisFrame) RegisterTrainingInput(spriteRight);
 
-                if (Keyboard.current.spaceKey.wasPressedThisFrame) jump = true;
+                if (Keyboard.current.spaceKey.wasPressedThisFrame)
+                {
+                    jump = true;
+                    RegisterTrainingInput(spriteJump);
+                }
+
                 if (Keyboard.current.sKey.isPressed) crouch = true;
+                if (Keyboard.current.sKey.wasPressedThisFrame) RegisterTrainingInput(spriteCrouch);
 
-                if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) attack = true;
+                if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+                {
+                    attack = true;
+                    RegisterTrainingInput(spriteAttack);
+                }
+
                 if (Keyboard.current.eKey.isPressed) shield = true;
+                if (Keyboard.current.eKey.wasPressedThisFrame) RegisterTrainingInput(spriteShield);
 
-                if (Keyboard.current.tKey.wasPressedThisFrame) special = true;
+                if (Keyboard.current.tKey.wasPressedThisFrame)
+                {
+                    special = true;
+                    RegisterTrainingInput(spriteSpecial);
+                }
             }
             else
             {
@@ -103,7 +150,7 @@ public class PlayerInputHandler : MonoBehaviour
 
                 if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame) attack = true;
                 
-                if (Keyboard.current.rightCtrlKey.isPressed) shield = true; 
+                if (Keyboard.current.bKey.isPressed) shield = true; 
 
                 if (Keyboard.current.yKey.wasPressedThisFrame) special = true;
             }
@@ -117,20 +164,92 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 var myGamepad = Gamepad.all[gamepadIndex];
 
-                float gamepadX = myGamepad.leftStick.x.ReadValue();
+        //        float gamepadX = myGamepad.leftStick.x.ReadValue();
+        //        if (Mathf.Abs(gamepadX) > 0.1f) h = gamepadX;
+
+        //        if (myGamepad.buttonSouth.wasPressedThisFrame)
+        //        {
+        //            jump = true;
+        //            RegisterTrainingInput(spriteJump);
+        //        }
+        //        
+        //        if (myGamepad.buttonWest.wasPressedThisFrame)
+        //        {
+        //            attack = true;
+        //            RegisterTrainingInput(spriteAttack);
+        //        }
+
+        //        if (myGamepad.rightShoulder.isPressed) shield = true;
+        //        if (myGamepad.rightShoulder.wasPressedThisFrame) RegisterTrainingInput(spriteShield);
+
+        //        if (myGamepad.buttonNorth.wasPressedThisFrame)
+        //        {
+        //            special = true;
+        //            RegisterTrainingInput(spriteSpecial);
+        //        }
+        //        
+        //        bool stickDown = myGamepad.leftStick.y.ReadValue() < -0.5f;
+        //        bool dpadDown = myGamepad.dpad.down.isPressed;
+        //        if (stickDown || dpadDown) crouch = true;
+
+        //        if (myGamepad.dpad.left.wasPressedThisFrame) RegisterTrainingInput(spriteLeft);
+        //        if (myGamepad.dpad.right.wasPressedThisFrame) RegisterTrainingInput(spriteRight);
+        //        if (myGamepad.dpad.down.wasPressedThisFrame) RegisterTrainingInput(spriteCrouch);
+
+                Vector2 stick = myGamepad.leftStick.ReadValue();
+                float gamepadX = stick.x;
+
                 if (Mathf.Abs(gamepadX) > 0.1f) h = gamepadX;
 
-                if (myGamepad.buttonSouth.wasPressedThisFrame) jump = true;
-                if (myGamepad.buttonWest.wasPressedThisFrame) attack = true;
-                if (myGamepad.rightShoulder.isPressed) shield = true;
-                if (myGamepad.buttonNorth.wasPressedThisFrame) special = true;
-                
-                bool stickDown = myGamepad.leftStick.y.ReadValue() < -0.5f;
+                // stick left / right
+                int currentStickHorizontalDirection = 0;
+
+                if (stick.x < -stickInputTest) currentStickHorizontalDirection = -1;
+                else if (stick.x > stickInputTest) currentStickHorizontalDirection = 1;
+
+                if (currentStickHorizontalDirection != lastStickHorizontalDirection)
+                {
+                    if (currentStickHorizontalDirection == -1) RegisterTrainingInput(spriteLeft);
+                    else if (currentStickHorizontalDirection == 1) RegisterTrainingInput(spriteRight);
+
+                    lastStickHorizontalDirection = currentStickHorizontalDirection;
+                }
+
+                // stick  crouch
+                bool stickDown = stick.y < -stickInputTest;
                 bool dpadDown = myGamepad.dpad.down.isPressed;
+
                 if (stickDown || dpadDown) crouch = true;
+                if (stickDown && !lastStickDown) RegisterTrainingInput(spriteCrouch);
+                lastStickDown = stickDown;
+
+                if (myGamepad.buttonSouth.wasPressedThisFrame)
+                {
+                    jump = true;
+                    RegisterTrainingInput(spriteJump);
+                }
+
+                if (myGamepad.buttonWest.wasPressedThisFrame)
+                {
+                    attack = true;
+                    RegisterTrainingInput(spriteAttack);
+                }
+
+                if (myGamepad.rightShoulder.isPressed) shield = true;
+                if (myGamepad.rightShoulder.wasPressedThisFrame) RegisterTrainingInput(spriteShield);
+
+                if (myGamepad.buttonNorth.wasPressedThisFrame)
+                {
+                    special = true;
+                    RegisterTrainingInput(spriteSpecial);
+                }
+
+                //drag feed
+                if (myGamepad.dpad.left.wasPressedThisFrame) RegisterTrainingInput(spriteLeft);
+                if (myGamepad.dpad.right.wasPressedThisFrame) RegisterTrainingInput(spriteRight);
+                if (myGamepad.dpad.down.wasPressedThisFrame) RegisterTrainingInput(spriteCrouch);
             }
         }
-
 
         MoveInput = new Vector2(h, 0f);
 

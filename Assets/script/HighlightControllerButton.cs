@@ -2,26 +2,50 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class HighlightControllerButton : MonoBehaviour
+public class HighlightControllerButton : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private Button button;
-    void Awake()
+    private Graphic targetGraphic;
+    private void Awake()
     {
         button = GetComponent<Button>();
+        if (button != null) targetGraphic = button.targetGraphic;
     }
 
-    // update controller (a fix, bug de panel) 
-    void Update()
+    // update controller (bug panel fix avec defaultPanelSelect) 
+    public void OnSelect(BaseEventData eventData)
     {
-        if (EventSystem.current.currentSelectedGameObject == gameObject)
+        ApplyHighlightedColor();
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        ApplyNormalColor();
+    }
+
+    private void OnEnable()
+    {
+        if (EventSystem.current != null && EventSystem.current.currentSelectedGameObject == gameObject)
         {
-            var colors = button.colors;
-            button.image.color = colors.highlightedColor;
+            ApplyHighlightedColor();
         }
         else
         {
-            var colors = button.colors;
-            button.image.color = colors.normalColor;
+            ApplyNormalColor();
         }
+    }
+
+    private void ApplyHighlightedColor()
+    {
+        if (button == null || targetGraphic == null) return;
+        
+        targetGraphic.color = button.colors.highlightedColor;
+    }
+
+    private void ApplyNormalColor()
+    {
+        if (button == null || targetGraphic == null) return;
+        
+        targetGraphic.color = button.colors.normalColor;
     }
 }
