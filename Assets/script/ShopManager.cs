@@ -2,47 +2,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    [Header("Drag the Parent Buttons here (Persos_Stage_1, etc.)")]
+    [Header("Glissez les images des boutons ici")]
     public List<Image> characterImages;
 
-    void Start() { UpdateButtons(); }
+    void Start() 
+    { 
+        PlayerPrefs.SetInt("Purchased_Char_1", 1);
+        PlayerPrefs.Save();
+
+        UpdateButtons(); 
+    }
+    
     private void OnEnable() { UpdateButtons(); }
 
     public void UpdateButtons()
     {
-        int progression = PlayerPrefs.GetInt("DernierStageFini", 0);
-        
         for (int i = 0; i < characterImages.Count; i++)
         {
             if (characterImages[i] == null) continue;
 
-            int requirement = i + 1;
-            bool isAlreadyPurchased = PlayerPrefs.GetInt("Purchased_Char_" + requirement, 0) == 1;
+            int characterNumber = i + 1;
+            bool isAlreadyPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterNumber, 0) == 1;
 
-            Color targetColor = isAlreadyPurchased ? Color.white : new Color(0.3f, 0.3f, 0.3f, 0.6f);
-
-            ApplyLook(characterImages[i], targetColor, isAlreadyPurchased);
-        }
-    }
-
-    private void ApplyLook(Image mainImg, Color color, bool purchased)
-    {
-        Transform chainsTransform = mainImg.transform.Find("Chains");
-        if (chainsTransform != null)
-        {
-            chainsTransform.gameObject.SetActive(!purchased);
-        }
-
-        mainImg.color = color;
-        Image[] children = mainImg.GetComponentsInChildren<Image>(true);
-        foreach (Image img in children)
-        {
-            if (img.gameObject.name != "Chains" && img.transform.parent.name != "Chains")
+            if (isAlreadyPurchased)
             {
-                img.color = color;
+                TextMeshProUGUI[] textComponents = characterImages[i].GetComponentsInChildren<TextMeshProUGUI>(true);
+                
+                foreach (TextMeshProUGUI txt in textComponents)
+                {
+                    if (txt.text.Contains("CONDITION") || txt.text.Contains("STAGE") || txt.text.Length > 10) 
+                    {
+                        txt.text = "PERSONNAGE DÉVERROUILLÉ";
+                    }
+                }
             }
         }
     }
@@ -58,36 +54,12 @@ public class ShopManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Purchased_Char_" + characterNumber, 1);
             PlayerPrefs.Save();
-            StopAllCoroutines();
-            StartCoroutine(FlashGreenEffect(characterImages[characterNumber - 1]));
+            
+            UpdateButtons();
         }
         else
         {
-            StopAllCoroutines(); 
-            StartCoroutine(FlashRedEffect(characterImages[characterNumber - 1]));
+            Debug.Log("Stage trop bas pour débloquer ce perso !");
         }
-    }
-
-    IEnumerator FlashRedEffect(Image targetImage)
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            ApplyLook(targetImage, Color.red, false);
-            yield return new WaitForSecondsRealtime(0.1f);
-            ApplyLook(targetImage, new Color(0.3f, 0.3f, 0.3f, 0.6f), false);
-            yield return new WaitForSecondsRealtime(0.1f);
-        }
-    }
-
-    IEnumerator FlashGreenEffect(Image targetImage)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            ApplyLook(targetImage, Color.green, true);
-            yield return new WaitForSecondsRealtime(0.08f);
-            ApplyLook(targetImage, Color.white, true);
-            yield return new WaitForSecondsRealtime(0.08f);
-        }
-        UpdateButtons();
     }
 }
