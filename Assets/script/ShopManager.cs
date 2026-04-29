@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
-    [Header("Glissez les images des boutons ici")]
+    [Header("ORDRE : 0:Enginio, 1:Blob, 2:Jojo, 3:Monstre, 4:Boss")]
     public List<Image> characterImages;
 
     void Start() 
     { 
+        PlayerPrefs.SetInt("Purchased_Char_0", 1);
         PlayerPrefs.SetInt("Purchased_Char_1", 1);
         PlayerPrefs.Save();
 
@@ -25,80 +25,41 @@ public class ShopManager : MonoBehaviour
         {
             if (characterImages[i] == null) continue;
 
-            int characterNumber = i + 1;
-            bool isAlreadyPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterNumber, 0) == 1;
-
-            Color targetColor = isAlreadyPurchased ? Color.white : new Color(0.7f, 0.7f, 0.7f, 0.8f);
-            ApplyLook(characterImages[i], targetColor);
-
-            if (isAlreadyPurchased)
+            bool isPurchased = PlayerPrefs.GetInt("Purchased_Char_" + i, 0) == 1;
+            TextMeshProUGUI[] textComponents = characterImages[i].GetComponentsInChildren<TextMeshProUGUI>(true);
+            
+            foreach (TextMeshProUGUI txt in textComponents)
             {
-                TextMeshProUGUI[] textComponents = characterImages[i].GetComponentsInChildren<TextMeshProUGUI>(true);
-                
-                foreach (TextMeshProUGUI txt in textComponents)
+                if (txt.text.Length > 5) 
                 {
-                    if (txt.text.Contains("CONDITION") || txt.text.Contains("STAGE") || txt.text.Length > 10) 
+                    if (isPurchased)
                     {
                         txt.text = "PERSONNAGE DÉVERROUILLÉ";
+                        txt.color = Color.green;
+                    }
+                    else
+                    {
+                        txt.color = Color.white;
+                        if (i == 2) txt.text = "CONDITION DE DÉBLOCAGE : FINIR LE STAGE 2";
+                        else if (i == 3) txt.text = "CONDITION DE DÉBLOCAGE : FINIR LE STAGE 3";
+                        else if (i == 4) txt.text = "CONDITION DE DÉBLOCAGE : FINIR LE STAGE 4";
                     }
                 }
             }
         }
     }
 
-    private void ApplyLook(Image mainImg, Color color)
+    public void OnCharacterClick(int id)
     {
-        mainImg.color = color;
-        Image[] children = mainImg.GetComponentsInChildren<Image>(true);
-        foreach (Image img in children)
-        {
-            img.color = color;
-        }
-    }
+        if (PlayerPrefs.GetInt("Purchased_Char_" + id, 0) == 1) return;
 
-    public void OnCharacterClick(int characterNumber)
-    {
         int progression = PlayerPrefs.GetInt("DernierStageFini", 0);
-        bool isAlreadyPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterNumber, 0) == 1;
 
-        if (isAlreadyPurchased) return;
-
-        if (progression >= characterNumber)
+        if (progression >= id)
         {
-            PlayerPrefs.SetInt("Purchased_Char_" + characterNumber, 1);
+            PlayerPrefs.SetInt("Purchased_Char_" + id, 1);
             PlayerPrefs.Save();
-            
-            StopAllCoroutines();
-            StartCoroutine(FlashGreenEffect(characterImages[characterNumber - 1]));
+            UpdateButtons();
         }
-        else
-        {
-            Debug.Log("Stage trop bas pour débloquer ce perso !");
-            StopAllCoroutines(); 
-            StartCoroutine(FlashRedEffect(characterImages[characterNumber - 1]));
-        }
-    }
-
-    IEnumerator FlashRedEffect(Image targetImage)
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            ApplyLook(targetImage, Color.red);
-            yield return new WaitForSecondsRealtime(0.1f);
-            ApplyLook(targetImage, new Color(0.7f, 0.7f, 0.7f, 0.8f));
-            yield return new WaitForSecondsRealtime(0.1f);
-        }
-    }
-
-    IEnumerator FlashGreenEffect(Image targetImage)
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            ApplyLook(targetImage, Color.green);
-            yield return new WaitForSecondsRealtime(0.08f);
-            ApplyLook(targetImage, Color.white);
-            yield return new WaitForSecondsRealtime(0.08f);
-        }
-        UpdateButtons();
     }
 }
