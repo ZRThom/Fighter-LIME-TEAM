@@ -3,13 +3,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
 
-public class CharacterSelectUI : MonoBehaviour, ISubmitHandler
+public class CharacterSelectUI : MonoBehaviour
 {
     public GameObject selectionMarkP1;
     public GameObject selectionMarkP2;
     public GameObject characterPrefab;
-    public Image frameGlow; 
-    public int characterID = 0; 
+    public Image frameGlow;
+    public int characterID = 0;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class CharacterSelectUI : MonoBehaviour, ISubmitHandler
     public void OnCharacterSelected(BaseEventData data)
     {
         PointerEventData eventData = (PointerEventData)data;
-        
+
         bool isPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterID, 0) == 1;
 
         if (!isPurchased)
@@ -49,17 +49,26 @@ public class CharacterSelectUI : MonoBehaviour, ISubmitHandler
             selectionMarkP2.SetActive(true);
             GameManagerSelect.Instance.SelectPlayer(2, characterPrefab);
         }
-        Debug.Log($"Click {eventData.button} on {characterPrefab.name}");
     }
 
-    public void OnSubmit(BaseEventData eventData)
+    void ResetOtherMarks(int playerNumber)
     {
-        if (p1Selected != null) p1Selected.selectionMarkP1.SetActive(false);
+        CharacterSelectUI[] allButtons = FindObjectsOfType<CharacterSelectUI>();
 
-        selectionMarkP1.SetActive(true);
-        p1Selected = this;
-        GameManagerSelect.Instance.SelectPlayer(1, characterPrefab);
-        Debug.Log($"controller P1 on {characterPrefab.name}");
-        
+        foreach (CharacterSelectUI btn in allButtons)
+        {
+            if (playerNumber == 1 && btn.selectionMarkP1 != null)
+                btn.selectionMarkP1.SetActive(false);
+            else if (playerNumber == 2 && btn.selectionMarkP2 != null)
+                btn.selectionMarkP2.SetActive(false);
+        }
+    }
+
+    IEnumerator FlashColor(Color targetColor)
+    {
+        if (frameGlow == null) yield break;
+        frameGlow.color = targetColor;
+        yield return new WaitForSecondsRealtime(0.2f);
+        frameGlow.color = Color.white;
     }
 }
