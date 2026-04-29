@@ -311,7 +311,7 @@ MonoBehaviour:
     m_Bits: 8
   maxRage: 100
   rageGainPerHit: 14
-  attackNormalSpeed: 0.009
+  attackNormalSpeed: 0.07
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
   maxShieldTime: 15
