@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MapSelect : MonoBehaviour
+public class MapSelect : MonoBehaviour, ISubmitHandler
 {
     public GameObject selectionMark;
     public GameObject mapPrefab;
@@ -14,6 +14,16 @@ public class MapSelect : MonoBehaviour
         {
             return;
         }
+        SelectMap();
+    }
+
+    public void OnSubmit(BaseEventData ventData)
+    {
+        SelectMap();
+    }
+
+    public void SelectMap()
+    {
         if (currentSelected != null)
         {
             currentSelected.selectionMark.SetActive(false);
