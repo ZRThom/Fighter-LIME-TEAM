@@ -8,15 +8,8 @@ public class ShopManager : MonoBehaviour
     [Header("Drag the Parent Buttons here (Persos_Stage_1, etc.)")]
     public List<Image> characterImages;
 
-    void Start()
-    {
-        UpdateButtons();
-    }
-
-    private void OnEnable()
-    {
-        UpdateButtons();
-    }
+    void Start() { UpdateButtons(); }
+    private void OnEnable() { UpdateButtons(); }
 
     public void UpdateButtons()
     {
@@ -27,26 +20,30 @@ public class ShopManager : MonoBehaviour
             if (characterImages[i] == null) continue;
 
             int requirement = i + 1;
-            bool isUnlocked = (progression >= requirement);
             bool isAlreadyPurchased = PlayerPrefs.GetInt("Purchased_Char_" + requirement, 0) == 1;
 
-            Color targetColor;
-            if (isAlreadyPurchased) targetColor = Color.white;
-            else if (isUnlocked) targetColor = new Color(0.5f, 0.5f, 0.5f, 1f);
-            else targetColor = new Color(0f, 0f, 0f, 1f);
+            Color targetColor = isAlreadyPurchased ? Color.white : new Color(0.3f, 0.3f, 0.3f, 0.6f);
 
-            ApplyColorToButton(characterImages[i], targetColor);
+            ApplyLook(characterImages[i], targetColor, isAlreadyPurchased);
         }
     }
 
-    private void ApplyColorToButton(Image mainImg, Color color)
+    private void ApplyLook(Image mainImg, Color color, bool purchased)
     {
+        Transform chainsTransform = mainImg.transform.Find("Chains");
+        if (chainsTransform != null)
+        {
+            chainsTransform.gameObject.SetActive(!purchased);
+        }
+
         mainImg.color = color;
-        Image[] children = mainImg.GetComponentsInChildren<Image>();
+        Image[] children = mainImg.GetComponentsInChildren<Image>(true);
         foreach (Image img in children)
         {
-            img.color = color;
-            img.canvasRenderer.SetColor(color);
+            if (img.gameObject.name != "Chains" && img.transform.parent.name != "Chains")
+            {
+                img.color = color;
+            }
         }
     }
 
@@ -61,9 +58,6 @@ public class ShopManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Purchased_Char_" + characterNumber, 1);
             PlayerPrefs.Save();
-            
-            Debug.Log("<color=green>PURCHASE SUCCESS!</color>");
-            
             StopAllCoroutines();
             StartCoroutine(FlashGreenEffect(characterImages[characterNumber - 1]));
         }
@@ -76,24 +70,22 @@ public class ShopManager : MonoBehaviour
 
     IEnumerator FlashRedEffect(Image targetImage)
     {
-        Color flashColor = Color.red;
         for (int i = 0; i < 2; i++)
         {
-            ApplyColorToButton(targetImage, flashColor);
+            ApplyLook(targetImage, Color.red, false);
             yield return new WaitForSecondsRealtime(0.1f);
-            ApplyColorToButton(targetImage, Color.black);
+            ApplyLook(targetImage, new Color(0.3f, 0.3f, 0.3f, 0.6f), false);
             yield return new WaitForSecondsRealtime(0.1f);
         }
     }
 
     IEnumerator FlashGreenEffect(Image targetImage)
     {
-        Color flashColor = Color.green;
         for (int i = 0; i < 3; i++)
         {
-            ApplyColorToButton(targetImage, flashColor);
+            ApplyLook(targetImage, Color.green, true);
             yield return new WaitForSecondsRealtime(0.08f);
-            ApplyColorToButton(targetImage, Color.white);
+            ApplyLook(targetImage, Color.white, true);
             yield return new WaitForSecondsRealtime(0.08f);
         }
         UpdateButtons();
