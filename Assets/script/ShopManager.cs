@@ -28,6 +28,9 @@ public class ShopManager : MonoBehaviour
             int characterNumber = i + 1;
             bool isAlreadyPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterNumber, 0) == 1;
 
+            Color targetColor = isAlreadyPurchased ? Color.white : new Color(0.7f, 0.7f, 0.7f, 0.8f);
+            ApplyLook(characterImages[i], targetColor);
+
             if (isAlreadyPurchased)
             {
                 TextMeshProUGUI[] textComponents = characterImages[i].GetComponentsInChildren<TextMeshProUGUI>(true);
@@ -43,6 +46,16 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    private void ApplyLook(Image mainImg, Color color)
+    {
+        mainImg.color = color;
+        Image[] children = mainImg.GetComponentsInChildren<Image>(true);
+        foreach (Image img in children)
+        {
+            img.color = color;
+        }
+    }
+
     public void OnCharacterClick(int characterNumber)
     {
         int progression = PlayerPrefs.GetInt("DernierStageFini", 0);
@@ -55,11 +68,37 @@ public class ShopManager : MonoBehaviour
             PlayerPrefs.SetInt("Purchased_Char_" + characterNumber, 1);
             PlayerPrefs.Save();
             
-            UpdateButtons();
+            StopAllCoroutines();
+            StartCoroutine(FlashGreenEffect(characterImages[characterNumber - 1]));
         }
         else
         {
             Debug.Log("Stage trop bas pour débloquer ce perso !");
+            StopAllCoroutines(); 
+            StartCoroutine(FlashRedEffect(characterImages[characterNumber - 1]));
         }
+    }
+
+    IEnumerator FlashRedEffect(Image targetImage)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            ApplyLook(targetImage, Color.red);
+            yield return new WaitForSecondsRealtime(0.1f);
+            ApplyLook(targetImage, new Color(0.7f, 0.7f, 0.7f, 0.8f));
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+    }
+
+    IEnumerator FlashGreenEffect(Image targetImage)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            ApplyLook(targetImage, Color.green);
+            yield return new WaitForSecondsRealtime(0.08f);
+            ApplyLook(targetImage, Color.white);
+            yield return new WaitForSecondsRealtime(0.08f);
+        }
+        UpdateButtons();
     }
 }
