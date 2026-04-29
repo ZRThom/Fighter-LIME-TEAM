@@ -11,9 +11,20 @@ public class CharacterSelectUI : MonoBehaviour
     public Image frameGlow; 
     public int characterID = 0; 
 
+    private void Start()
+    {
+
+        if (characterID == 0 || characterID == 1)
+        {
+            PlayerPrefs.SetInt("Purchased_Char_" + characterID, 1);
+            PlayerPrefs.Save();
+        }
+    }
+
     public void OnCharacterSelected(BaseEventData data)
     {
         PointerEventData eventData = (PointerEventData)data;
+        
         bool isPurchased = PlayerPrefs.GetInt("Purchased_Char_" + characterID, 0) == 1;
 
         if (!isPurchased)
@@ -39,15 +50,16 @@ public class CharacterSelectUI : MonoBehaviour
             GameManagerSelect.Instance.SelectPlayer(2, characterPrefab);
         }
     }
+
     void ResetOtherMarks(int playerNumber)
     {
         CharacterSelectUI[] allButtons = FindObjectsOfType<CharacterSelectUI>();
         
         foreach (CharacterSelectUI btn in allButtons)
         {
-            if (playerNumber == 1)
+            if (playerNumber == 1 && btn.selectionMarkP1 != null)
                 btn.selectionMarkP1.SetActive(false);
-            else
+            else if (playerNumber == 2 && btn.selectionMarkP2 != null)
                 btn.selectionMarkP2.SetActive(false);
         }
     }

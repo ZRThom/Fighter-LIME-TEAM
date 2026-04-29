@@ -35,7 +35,6 @@ public class ShopManager : MonoBehaviour
                     if (isPurchased)
                     {
                         txt.text = "PERSONNAGE DÉVERROUILLÉ";
-                        txt.color = Color.green;
                     }
                     else
                     {
