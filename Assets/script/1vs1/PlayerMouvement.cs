@@ -4,9 +4,9 @@ public class PlayerMouvement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D col;
-    
+
     private PlayerConfig config;
-    private PlayerInputHandler input; 
+    private PlayerInputHandler input;
     private PlayerState state;
 
     // Collider data
@@ -25,9 +25,10 @@ public class PlayerMouvement : MonoBehaviour
         state = ps;
 
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true; 
+        rb.freezeRotation = true;
+        rb.gravityScale = 2.5f;
         col = GetComponent<BoxCollider2D>();
-        
+
         if (col != null)
         {
             standingColliderSize = col.size;
@@ -46,7 +47,7 @@ public class PlayerMouvement : MonoBehaviour
         }
 
 
-        
+
         //  Ground Check 
         if (config.groundCheck != null)
             state.isGrounded = Physics2D.OverlapCircle(config.groundCheck.position, config.groundCheckRadius, config.groundLayer);
@@ -87,9 +88,14 @@ public class PlayerMouvement : MonoBehaviour
 
     void HandleFlip()
     {
+        if (state.isAttacking || state.isSpecialAttacking || state.isHit || state.animationLocked)
+            return;
+
         if (config.opponentTransform == null) return;
 
         float xDiff = config.opponentTransform.position.x - transform.position.x;
+
+        if (Mathf.Abs(xDiff) < 0.1f) return;
 
         if (xDiff > 0 && !state.facingRight)
         {
@@ -142,7 +148,7 @@ public class PlayerMouvement : MonoBehaviour
             state.isShielding = false;
             if (currentShieldTimer > 0)
             {
-                currentShieldTimer -= Time.deltaTime * 2f; 
+                currentShieldTimer -= Time.deltaTime * 2f;
                 if (currentShieldTimer < 0) currentShieldTimer = 0;
             }
         }
@@ -161,5 +167,22 @@ public class PlayerMouvement : MonoBehaviour
         if (col == null) return;
         col.size = standingColliderSize;
         col.offset = standingColliderOffset;
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                if (contact.normal.y < -0.8f)
+                {
+                    float direction = (collision.transform.position.x > transform.position.x) ? 1f : -1f;
+
+                    float vitesseGlissade = 4f; // Vitesse d'éjection
+
+                    collision.transform.position += new Vector3(direction * vitesseGlissade * Time.deltaTime, 0f, 0f);
+                }
+            }
+        }
     }
 }

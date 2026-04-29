@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427643523424706982}
   - component: {fileID: 7663072036746060902}
-  - component: {fileID: 150465162484157041}
+  - component: {fileID: 7868074096068933223}
   - component: {fileID: 1088955109032370743}
   - component: {fileID: 4927641249766557284}
   - component: {fileID: 748933516669656433}
@@ -135,8 +135,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &150465162484157041
-BoxCollider2D:
+--- !u!60 &7868074096068933223
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -145,7 +145,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 66f38d33d086d094d87cb861a20faf01, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -169,18 +169,41 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.044740178, y: 0.3268749}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5882353, y: -0.6923077}
-    oldSize: {x: 0.17, y: 0.26}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.15353687, y: 0.28456724}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.108679846, y: 0.40680897}
+      - {x: 0.09929013, y: 0.40674883}
+      - {x: 0.099682875, y: 0.4371157}
+      - {x: 0.089133404, y: 0.43695515}
+      - {x: 0.08842364, y: 0.44672114}
+      - {x: 0.06988597, y: 0.44693184}
+      - {x: 0.06995623, y: 0.45744687}
+      - {x: 0.03870955, y: 0.4574385}
+      - {x: 0.038636718, y: 0.4467399}
+      - {x: 0.009080206, y: 0.4471984}
+      - {x: 0.010007121, y: 0.43717906}
+      - {x: -0.021417944, y: 0.43771902}
+      - {x: -0.02185897, y: 0.3168719}
+      - {x: -0.0108124055, y: 0.3172998}
+      - {x: -0.0109032, y: 0.26659986}
+      - {x: 0.009324564, y: 0.26712835}
+      - {x: 0.009387362, y: 0.27652806}
+      - {x: 0.019094473, y: 0.27654102}
+      - {x: 0.019094478, y: 0.2778635}
+      - {x: 0.018236883, y: 0.18652815}
+      - {x: 0.10964339, y: 0.18644404}
+      - {x: 0.10913924, y: 0.36760667}
+  m_UseDelaunayMesh: 0
 --- !u!114 &1088955109032370743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,19 +329,19 @@ MonoBehaviour:
     rageHitEffect: 3
     rageEffectPrefab: {fileID: 3025700644437683485, guid: ed7fd4779be4f354baac997a1c90653e, type: 3}
     rageEffectScale: {x: 1, y: 1, z: 1}
-  moveSpeed: 3
-  jumpForce: 5
+  moveSpeed: 7
+  jumpForce: 10
   attackRange: 0.5
-  attackDamage: 10
+  attackDamage: 5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
   maxRage: 100
-  rageGainPerHit: 15
-  attackNormalSpeed: 0.05
+  rageGainPerHit: 18
+  attackNormalSpeed: 0.005
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
-  maxShieldTime: 15
+  maxShieldTime: 20
   shieldBurnOutCooldown: 30
   groundCheck: {fileID: 1933046388922387656}
   groundCheckRadius: 0.12
@@ -433,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4426017e2c057ff4d875b1b9158637f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 100
+  maxHealth: 75
   playerID: 2
   currentHealth: 0
 --- !u!114 &835807808889868480

@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8493401213687078619}
   - component: {fileID: 4933644032083062572}
-  - component: {fileID: 949692714231528773}
+  - component: {fileID: -5895356877042605790}
   - component: {fileID: 1701803089992481076}
   - component: {fileID: 3604350058194443160}
   - component: {fileID: 7460219665297908702}
@@ -93,7 +93,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 66f38d33d086d094d87cb861a20faf01, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -104,8 +104,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &949692714231528773
-BoxCollider2D:
+--- !u!60 &-5895356877042605790
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -138,18 +138,45 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.010170937, y: 0.320938}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5882353, y: -0.6923077}
-    oldSize: {x: 0.17, y: 0.26}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.14305785, y: 0.26175138}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04994527, y: 0.40996847}
+      - {x: 0.04987582, y: 0.4199038}
+      - {x: 0.03985999, y: 0.41988102}
+      - {x: 0.040058777, y: 0.4299648}
+      - {x: 0.019811269, y: 0.4304449}
+      - {x: 0.020283377, y: 0.43994075}
+      - {x: -0.0002055564, y: 0.44026825}
+      - {x: -0.00036009494, y: 0.43054083}
+      - {x: -0.020048626, y: 0.43040848}
+      - {x: -0.019989587, y: 0.42050683}
+      - {x: -0.029976262, y: 0.42026433}
+      - {x: -0.030162437, y: 0.40993595}
+      - {x: -0.04006947, y: 0.40993625}
+      - {x: -0.039820455, y: 0.389727}
+      - {x: -0.05036778, y: 0.38994718}
+      - {x: -0.050145876, y: 0.36958745}
+      - {x: -0.050445747, y: 0.26921767}
+      - {x: -0.029657975, y: 0.2698369}
+      - {x: -0.029613405, y: 0.28026566}
+      - {x: -0.019559361, y: 0.2792777}
+      - {x: -0.020326117, y: 0.18971758}
+      - {x: 0.035413686, y: 0.18947446}
+      - {x: 0.070311934, y: 0.18958226}
+      - {x: 0.07041129, y: 0.3401057}
+      - {x: 0.060459025, y: 0.33974028}
+      - {x: 0.059880614, y: 0.40993932}
+  m_UseDelaunayMesh: 0
 --- !u!114 &1701803089992481076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,13 +305,13 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 5
   attackRange: 0.5
-  attackDamage: 10
+  attackDamage: 13
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
   maxRage: 100
-  rageGainPerHit: 15
-  attackNormalSpeed: 0.05
+  rageGainPerHit: 14
+  attackNormalSpeed: 0.009
   attackAirSpeed: 0.2
   attackCrouchSpeed: 0.18
   maxShieldTime: 15
@@ -402,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4426017e2c057ff4d875b1b9158637f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 100
+  maxHealth: 130
   playerID: 2
   currentHealth: 0
 --- !u!114 &2079715249052879586

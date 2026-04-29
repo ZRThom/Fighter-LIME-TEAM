@@ -505,6 +505,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 718.3866, y: -228.1644}
   m_SizeDelta: {x: 450, y: 430}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 718.3866, y: -228.1644}
+  m_SizeDelta: {x: 450, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &38934103
 MonoBehaviour:
@@ -2935,6 +2939,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &258096548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258096542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073c4282f4208dc4da7b221d3e9b6036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlightControllerButton
 --- !u!1 &259209504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,16 +3276,23 @@ MonoBehaviour:
 
 
 
+
     His Story
 
+    Formerly a family man,
+    after subscribing to Amouranth, this self-proclaimed "kiffer" developed a foot
+    fetish, especially for Anger''s feet...
     Formerly a family man,
     after subscribing to Amouranth, this self-proclaimed "kiffer" developed a foot
     fetish, especially for Anger''s feet...
 
 
 
+
     His Goal
 
+    OBEY, ENJOY, and
+    LICK...'
     OBEY, ENJOY, and
     LICK...'
   m_isRightToLeft: 0
@@ -3495,6 +3518,7 @@ MonoBehaviour:
 
 
 
+
     His Story
 
     Once
@@ -3503,8 +3527,12 @@ MonoBehaviour:
 
 
 
+
+    His Goal
     His Goal
 
+    To
+    find an opponent capable of freeing him from Anger''s control.'
     To
     find an opponent capable of freeing him from Anger''s control.'
   m_isRightToLeft: 0
@@ -3723,16 +3751,24 @@ MonoBehaviour:
 
 
 
+
     His Story
 
+    Whether cowardly
+    or broken by fear, he swore allegiance to Anger during the takeover of the central
+    conduits to avoid being consumed.
     Whether cowardly
     or broken by fear, he swore allegiance to Anger during the takeover of the central
     conduits to avoid being consumed.
 
 
 
+
     His Goal
 
+    To hunt down and capture
+    any citizen attempting to sabotage the pressure system, with the arrest of Ingenio
+    as his top priority.'
     To hunt down and capture
     any citizen attempting to sabotage the pressure system, with the arrest of Ingenio
     as his top priority.'
@@ -7340,6 +7376,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -35}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -35}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531983449
 MonoBehaviour:
@@ -7474,6 +7514,10 @@ RectTransform:
   - {fileID: 1536925552}
   m_Father: {fileID: 187600920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 228.3866, y: -228.1644}
+  m_SizeDelta: {x: 450, y: 430}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 228.3866, y: -228.1644}
@@ -8106,6 +8150,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -215}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -215}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633088710
 MonoBehaviour:
@@ -8384,6 +8432,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -155}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -155}
@@ -9207,6 +9259,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -35}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -35}
@@ -13319,6 +13375,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -275}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -275}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927888072
 MonoBehaviour:
@@ -15387,6 +15447,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -155}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -155}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1061478549
 MonoBehaviour:
@@ -15520,6 +15584,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -95}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -95}
@@ -16116,6 +16184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+  m_IsActive: 0
   m_IsActive: 0
 --- !u!114 &1076347665
 MonoBehaviour:
@@ -17560,6 +17629,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -335}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -335}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176027361
 MonoBehaviour:
@@ -18114,6 +18187,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -215}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -215}
@@ -18877,16 +18954,23 @@ MonoBehaviour:
 
 
 
+
     His Story
 
+    Once Ingenio''s mentor at
+    the Royal Forge, he was consumed by a superpressure experiment gone wrong during
+    the "Great Overload."
     Once Ingenio''s mentor at
     the Royal Forge, he was consumed by a superpressure experiment gone wrong during
     the "Great Overload."
 
 
 
+
     His Goal
 
+    Anger seeks to trigger the total explosion
+    of the city''s reservoirs to unleash his own suffering.'
     Anger seeks to trigger the total explosion
     of the city''s reservoirs to unleash his own suffering.'
   m_isRightToLeft: 0
@@ -19029,8 +19113,10 @@ MonoBehaviour:
 
 
 
+
     A former prodigy of the Great Vaporis Forge, Ingenio
     is a mechanical genius recognizable by his red hair and precision glasses.
+
 
 
 
@@ -19043,8 +19129,11 @@ MonoBehaviour:
 
 
 
+
     His Goal
 
+    To reach the top of the Pressure Tower to confront
+    Anger and reason with him like a true disciple.'
     To reach the top of the Pressure Tower to confront
     Anger and reason with him like a true disciple.'
   m_isRightToLeft: 0
@@ -20726,6 +20815,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -395}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -395}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1377130696
 MonoBehaviour:
@@ -21157,6 +21250,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 436878848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -275}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -275}
@@ -22844,6 +22941,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -95}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -95}
@@ -26693,6 +26794,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -395}
   m_SizeDelta: {x: 400, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -395}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1810723236
 MonoBehaviour:
@@ -30098,6 +30203,10 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1208.3866, y: -228.1644}
   m_SizeDelta: {x: 450, y: 430}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1208.3866, y: -228.1644}
+  m_SizeDelta: {x: 450, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040354072
 MonoBehaviour:
@@ -30434,6 +30543,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1536925552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -335}
+  m_SizeDelta: {x: 400, y: 50}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 225, y: -335}
