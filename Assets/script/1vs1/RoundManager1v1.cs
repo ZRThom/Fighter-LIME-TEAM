@@ -43,6 +43,10 @@ public class RoundManager1v1 : MonoBehaviour
     [SerializeField] private TMP_Text endWinText;
     [SerializeField] private float endMenuDelay = 2f;
 
+    [Header("Respawn Animation")]
+    [SerializeField] private float respawnAnimationDuration = 1.2f;
+    [SerializeField] private float respawnJumpHeight = 3f;
+
     [Header("Scene")]
     [SerializeField] private string mainMenuSceneName = "MainMENU";
     [SerializeField] private string characterSelectSceneName = "MainMENU";
@@ -158,7 +162,7 @@ public class RoundManager1v1 : MonoBehaviour
         if (winPanel != null) winPanel.SetActive(false);
 
         isEndingRound = false;
-        ResetNewRound();
+        StartCoroutine(RespawnWithJumpAnimation());
         yield break;
     }
 
@@ -232,12 +236,82 @@ public class RoundManager1v1 : MonoBehaviour
 
     private void ResetNewRound()
     {
-        if (FightManager.Instance != null) FightManager.Instance.ResetPlayersForNewRound();
+        if (FightManager.Instance != null) 
+        {
+            FightManager.Instance.ResetPlayersForNewRound();
+            EnsurePlayersAreFacingEachOther(FightManager.Instance.player1, FightManager.Instance.player2);
+        }
 
         if (p1HealthScript != null) p1HealthScript.ResetHealth(); 
         if (p2HealthScript != null) p2HealthScript.ResetHealth();
         
         StartCoroutine(StartRoundCountdown());
+    }
+
+    private IEnumerator RespawnWithJumpAnimation()
+    {
+        if (FightManager.Instance == null || FightManager.Instance.player1 == null || FightManager.Instance.player2 == null)
+        {
+            yield break;
+        }
+
+        GameObject player1 = FightManager.Instance.player1;
+        GameObject player2 = FightManager.Instance.player2;
+
+        FightManager.Instance.ResetPlayersForNewRound();
+        FightManager.Instance.SetPlayersControl(false);
+
+        Vector3 p1FinalPos = FightManager.Instance.P1SpawnPos;
+        Vector3 p2FinalPos = FightManager.Instance.P2SpawnPos;
+
+        Vector3 centerPos = (p1FinalPos + p2FinalPos) * 0.5f;
+
+        player1.transform.position = centerPos;
+        player2.transform.position = centerPos;
+
+        // Animate jump
+        float elapsedTime = 0f;
+        while (elapsedTime < respawnAnimationDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / respawnAnimationDuration;
+
+            float jumpCurve = Mathf.Sin(t * Mathf.PI) * respawnJumpHeight;
+
+            Vector3 p1Pos = Vector3.Lerp(centerPos, p1FinalPos, t);
+            Vector3 p2Pos = Vector3.Lerp(centerPos, p2FinalPos, t);
+
+            p1Pos.y += jumpCurve;
+            p2Pos.y += jumpCurve;
+
+            player1.transform.position = p1Pos;
+            player2.transform.position = p2Pos;
+
+            yield return null;
+        }
+
+        player1.transform.position = p1FinalPos;
+        player2.transform.position = p2FinalPos;
+
+        EnsurePlayersAreFacingEachOther(player1, player2);
+
+        FightManager.Instance.SetPlayersControl(true);
+        StartCoroutine(StartRoundCountdown());
+    }
+
+    private void EnsurePlayersAreFacingEachOther(GameObject player1, GameObject player2)
+    {
+        if (player1 == null || player2 == null) return;
+
+        // Player1 doit regarder à droite (scale.x > 0)
+        Vector3 p1Scale = player1.transform.localScale;
+        p1Scale.x = Mathf.Abs(p1Scale.x);
+        player1.transform.localScale = p1Scale;
+
+        // Player2 doit regarder à gauche (scale.x < 0)
+        Vector3 p2Scale = player2.transform.localScale;
+        p2Scale.x = -Mathf.Abs(p2Scale.x);
+        player2.transform.localScale = p2Scale;
     }
 
     private void ShowWinnerPanel(int winner)
